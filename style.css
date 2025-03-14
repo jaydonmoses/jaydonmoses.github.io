@@ -9,27 +9,55 @@ body {
     overflow-x: hidden;
 }
 
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(to right, rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), url('background.jpg') no-repeat center center/cover;
+    text-align: center;
+}
+.hero h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+}
+.hero h2 {
+    font-size: 1.5rem;
+    font-weight: lighter;
+}
+
 /* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.6);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 1000;
+    padding: 20px;
+    background: transparent;
+    transition: all 0.5s;
 }
-.navbar .menu-list {
+
+.navbar.small-navbar {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+.menu-list {
     list-style: none;
     display: flex;
+    justify-content: center;
     gap: 20px;
 }
-.navbar .menu-list .links {
+.menu-list .links {
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+.menu-list .links:hover {
+    color: #ffcc00;
 }
 
 /* Sections */
