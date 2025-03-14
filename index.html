@@ -22,16 +22,18 @@
             </div>
         </div>
         <div class="profile-picture">
+            <img src="profile-picture.jpg" alt="Your Profile Picture">
         </div>
-        <h1>Jaydon Moses</h1>
-        <p>Computer Science and Biology</p>
-        <button id="contact-button">Contact Me</button>
-        <a href="#" id="download-resume">Download Resume</a>
+        <div class="header-content">
+            <h1>Jaydon Moses</h1>
+            <p>Computer Science and Biology</p>
+            <a href="#" id="download-resume-header">Download Resume</a>
+        </div>
     </header>
 
     <section id="features">
         <div class="container">
-            <div class="card" id="resume-card">
+            <div class="feature-card" data-section="resume-content">
                 <div class="icon">
                     <i class="fas fa-file-alt"></i>
                 </div>
@@ -43,7 +45,7 @@
                 </p>
             </div>
 
-            <div class="card" id="projects-card">
+            <div class="feature-card" data-section="projects-content">
                 <div class="icon">
                     <i class="fas fa-code"></i>
                 </div>
@@ -58,14 +60,14 @@
     </section>
 
     <section id="content-area">
-        <div id="resume-content" class="hidden card-like">
-            <div class="card-content">
-                <h2>Resume</h2>
-                <div class="resume-input">
-                    <textarea id="resume-textarea" placeholder="Input resume"></textarea>
-                    <button id="add-resume">Add Resume</button>
-                </div>
-                <div class="resume-content">
+        <div id="resume-content" class="hidden">
+            <div class="card-like">
+                <div class="card-content">
+                    <h2>Resume</h2>
+                    <div class="resume-pdf-container">
+                        <embed src="your-resume.pdf" type="application/pdf" width="100%" height="600px">
+                    </div>
+                    <a href="your-resume.pdf" download="JaydonMoses_Resume.pdf" class="download-button">Download Resume</a>
                 </div>
             </div>
         </div>
@@ -75,36 +77,20 @@
                 <h2>My Projects</h2>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card" data-description="Description of Project 1">
                     <h3>Project 1</h3>
-                    <p>Description of Project 1</p>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-description="Description of Project 2">
                     <h3>Project 2</h3>
-                    <p>Description of Project 2</p>
                 </div>
-                <div class="project-card">
+                <div class="project-card" data-description="Description of Project 3">
                     <h3>Project 3</h3>
-                    <p>Description of Project 3</p>
                 </div>
             </div>
             <div class="video-demo">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
-    </section>
-
-    <section id="contact-form">
-        <h2>Contact Me</h2>
-        <form id="email-form">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" required>
-            <label for="body">Body</label>
-            <textarea id="body" name="body" rows="4" required></textarea>
-            <button type="submit">Submit</button>
-        </form>
     </section>
 
     <footer>
@@ -131,9 +117,15 @@
 
     <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">×</span>
             <p id="modal-text"></p>
         </div>
+    </div>
+
+    <div id="navbar">
+        <a href="#features">Features</a>
+        <a href="#resume-content">Resume</a>
+        <a href="#projects-content">Projects</a>
     </div>
 
 </body>
