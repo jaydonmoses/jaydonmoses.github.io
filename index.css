@@ -1,0 +1,57 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.navbar .menu-list {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+.navbar .menu-list .links {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    margin-top: 60px;
+}
+
+h2 {
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Background Animation */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    background-size: 400% 400%;
+    animation: gradientMove 15s ease infinite;
+}
