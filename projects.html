@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaydon Moses - Projects</title>
+    <style>
+        /* --- Overall Styling --- */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0; /* Light grey background */
+            color: #333; /* Dark grey text */
+        }
+
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* --- Project Item Styling --- */
+        .project-item {
+            margin-bottom: 2em;
+            padding-bottom: 1em;
+            border-bottom: 1px solid #ccc; /* Separator line */
+        }
+
+        .project-item:last-child {
+            border-bottom: none; /* No separator on the last item */
+        }
+
+        .project-item h2 {
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            color: #e53935; /* Red title */
+        }
+
+        .project-item h3 {
+            font-size: 1.1em;
+            margin-top: 0.5em;
+            margin-bottom: 0.2em;
+            color: #666; /* Grey subtitle */
+        }
+
+        .project-item p {
+            margin-bottom: 1em;
+        }
+
+        .project-item .project-links {
+            margin-top: 1em;
+        }
+
+        .project-item .project-links a {
+            display: inline-block;
+            margin-right: 1em;
+            color: #007bff; /* Blue link color */
+            text-decoration: none;
+        }
+
+        .project-item .project-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Media Styling (Photos/Videos) --- */
+        .project-media {
+            margin-top: 1em;
+        }
+
+        .project-media img,
+        .project-media video {
+            max-width: 100%; /* Responsive media */
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center media */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <section class="project-item">
+            <h2>2D Multiplayer Game</h2>
+            <h3>Languages Used</h3>
+            <p>Unity, C#</p>
+            <h3>Description</h3>
+            <p>Developed a C#-based control system in Unity, utilizing physics for movement and combat mechanics. Designed vibrant background environments with multiple map layouts to enhance gameplay. Integrated Unity's networking framework which allowed for real-time multiplayer.</p>
+            <div class="project-media">
+                <img src="placeholder-game.jpg" alt="2D Multiplayer Game Screenshot">
+                </div>
+            <div class="project-links">
+                <a href="#">GitHub (Optional)</a>
+            </div>
+        </section>
+
+        <section class="project-item">
+            <h2>Blackjack Game</h2>
+            <h3>Languages Used</h3>
+            <p>Java, Swing</p>
+            <h3>Description</h3>
+            <p>Developed a fully functional Blackjack game in Java with a graphical user interface (GUI) using Swing. Implemented betting mechanics, player-dealer interactions, and an autonomous dealer AI following standard Blackjack rules. Designed an interactive card display system where the dealer's hidden card is dynamically revealed. Utilized OOP principles (Encapsulation, Polymorphism) to create a modular and maintainable codebase[cite: 7, 8, 9].</p>
+            <div class="project-media">
+                <img src="placeholder-blackjack.jpg" alt="Blackjack Game Screenshot">
+            </div>
+            <div class="project-links">
+                <a href="#">GitHub (Optional)</a>
+            </div>
+        </section>
+
+        <section class="project-item">
+            <h2>NFL Statistics Displayer</h2>
+            <h3>Languages Used</h3>
+            <p>JavaScript</p>
+            <h3>Description</h3>
+            <p>Developed an automated JavaScript-based data pipeline to collect and analyze real-time NFL statistics from AWS NextGen Stats. Built an interactive JavaScript visualization dashboard using D3.js/Chart.js to track team and player performance. Leveraged AWS cloud services for efficient data storage, retrieval, and real-time updates of NFL analytics[cite: 10, 11, 12].</p>
+            <div class="project-media">
+                <img src="placeholder-nfl.jpg" alt="NFL Statistics Displayer Screenshot">
+            </div>
+            <div class="project-links">
+                <a href="#">GitHub (Optional)</a>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
