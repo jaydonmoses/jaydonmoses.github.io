@@ -209,40 +209,5 @@ p {
     border: 2px solid #fff;
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 1rem;
-    position: relative;
-    z-index: 1;
+    cursor: pointer
 }
-
-#download-resume-header:hover {
-    background: #fff;
-    color: #00adef;
-}
-
-section {
-    padding: 2rem;
-    margin-bottom: 2rem;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    /* Smooth transitions */
-}
-
-h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 3px solid #e67e22;
-    padding-bottom: 0.5rem;
-    color: #000;
-    /* Darken section titles */
-}
-
-/* Features Section */
-#features {
-    background: transparent;
-}
-    /* No background for features */
