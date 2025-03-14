@@ -1,94 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaydon Moses | Resume</title>
+    <title>Jaydon Moses - Portfolio</title>
     <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
 </head>
+
 <body>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Jaydon Moses</h1>
-            <h2>Computer Science & Biology Student</h2>
-        </div>
-    </header>
-    
-    <nav class="navbar">
-        <ul class="menu-list">
-            <li><a class="links" href="#education">Education</a></li>
-            <li><a class="links" href="#skills">Skills</a></li>
-            <li><a class="links" href="#experience">Experience</a></li>
-            <li><a class="links" href="#projects">Projects</a></li>
-            <li><a class="links" href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-    
-    <section id="education">
-        <h2>Education</h2>
-        <p><strong>Northeastern University</strong> | Khoury College of Computer Science</p>
-        <p><em>Expected Graduation: May 2028</em></p>
-        <p>Bachelor of Science, Computer Science and Biology</p>
-    </section>
-    
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Programming:</strong> C#, Java, Python, C, C++, JavaScript</li>
-            <li><strong>Web & Database:</strong> MySQL, AWS, HTML, CSS, React</li>
-            <li><strong>Tools & Frameworks:</strong> Unity</li>
-            <li><strong>Certifications:</strong> Python (Kaggle)</li>
-        </ul>
-    </section>
-    
-    <section id="experience">
-        <h2>Experience</h2>
-        <div class="job">
-            <h3>Assistant Manager | Irving Oil</h3>
-            <p><em>Dover, NH | Jul 2023 – Sep 2024</em></p>
-            <ul>
-                <li>Managed daily store operations and vendor coordination.</li>
-                <li>Provided customer service and issue resolution.</li>
-                <li>Supervised employees, optimizing schedules and task delegation.</li>
-            </ul>
-        </div>
-        <div class="job">
-            <h3>Cashier | Flip The Bird</h3>
-            <p><em>Danvers, MA | Feb 2024 – Aug 2024</em></p>
-            <ul>
-                <li>Handled large volumes of customer transactions.</li>
-                <li>Managed kitchen prep and smoothie station operations.</li>
-            </ul>
-        </div>
-    </section>
-    
+    <header>
+        <div class="profile-picture">
+            </div>
+        <h1>Jaydon Moses</h1>
+        <p>Computer Science and Biology</p>
+        <button id="contact-button">Contact Me</button>
+        <a href="#" id="download-resume">Download Resume</a>  </header>
+
     <section id="projects">
         <h2>Projects</h2>
-        <div class="project">
-            <h3>2D Multiplayer Game</h3>
-            <p><em>Unity, C#</em></p>
-            <p>Developed a real-time multiplayer game with Unity’s networking framework.</p>
+        <div class="project-input">
+            <textarea id="project-textarea" placeholder="Input project"></textarea>
+            <button id="add-project">Add Project</button>
         </div>
-        <div class="project">
-            <h3>Blackjack Game</h3>
-            <p><em>Java, Swing</em></p>
-            <p>Created a GUI-based Blackjack game with OOP principles.</p>
-        </div>
-        <div class="project">
-            <h3>NFL Statistics Displayer</h3>
-            <p><em>JavaScript</em></p>
-            <p>Built an interactive NFL analytics dashboard using AWS and D3.js.</p>
-        </div>
+        <div class="project-list">
+            </div>
     </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:jaydon.10.moses@gmail.com">jaydon.10.moses@gmail.com</a></p>
-        <p>Phone: (978) 594-7083</p>
-        <p><a href="https://www.linkedin.com/in/jaydonmoses/" target="_blank">LinkedIn Profile</a></p>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <div class="resume-input">
+            <textarea id="resume-textarea" placeholder="Input resume"></textarea>
+            <button id="add-resume">Add Resume</button>
+        </div>
+        <div class="resume-content">
+            </div>
     </section>
-    
-    <script src="index.js"></script>
+
+    <section id="contact-form">
+        <h2>Contact Me</h2>
+        <form id="email-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+            <label for="body">Body</label>
+            <textarea id="body" name="body" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Jaydon Moses</p>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
 </body>
+
 </html>
