@@ -3,7 +3,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth; /* Smooth scrolling for links */
+    scroll-behavior: smooth;
+    /* Smooth scrolling for links */
 }
 
 body {
@@ -54,7 +55,8 @@ header {
     /* Use flexbox for layout */
     align-items: center;
     /* Center items vertically */
-    min-height: 400px; /* Ensure header has some height */
+    min-height: 400px;
+    /* Ensure header has some height */
 }
 
 #container {
@@ -226,7 +228,8 @@ section {
     margin-bottom: 2rem;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease; /* Smooth transitions */
+    transition: all 0.3s ease;
+    /* Smooth transitions */
 }
 
 h2 {
@@ -234,115 +237,12 @@ h2 {
     margin-bottom: 1.5rem;
     border-bottom: 3px solid #e67e22;
     padding-bottom: 0.5rem;
-    color: #000; /* Darken section titles */
+    color: #000;
+    /* Darken section titles */
 }
 
 /* Features Section */
 #features {
     background: transparent;
+}
     /* No background for features */
-    box-shadow: none;
-    /* No shadow for features */
-    padding: 4rem 0;
-    /* More vertical spacing */
-}
-
-#features .container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-.feature-card {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-    width: 250px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out;
-    /* Smooth transform */
-}
-
-.feature-card .icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #00adef;
-}
-
-.feature-card .title {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-.feature-card p {
-    color: #666;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-    /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    /* Stronger shadow on hover */
-}
-
-/* Resume Section */
-#resume-content {
-    /* Existing styles, adjust as needed */
-}
-
-.card-like {
-    background-color: #f8f8f8;
-    /* Light background for cards */
-    color: #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.card-content {
-    padding: 2rem;
-}
-
-.card-like h2 {
-    color: #000;
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.resume-pdf-container {
-    margin-bottom: 1rem;
-}
-
-.download-button {
-    background-color: #0076e5;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.2s ease-in-out;
-}
-
-.download-button:hover {
-    background-color: #00adef;
-}
-
-/* Projects Section */
-#projects-content {
-    background-color: #f8f8f8;
-    /* Light background */
-    padding: 2rem;
-    text-align: center;
-}
-
-.projects-header h2 {
-    color: #000;
-    margin-bottom: 2rem;
-}
