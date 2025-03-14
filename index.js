@@ -79,4 +79,28 @@ document.addEventListener('DOMContentLoaded', function() {
             resumeTextarea.value = ''; // Clear the textarea
         }
     });
+
+    // --- Card Click Handling ---
+    const resumeCard = document.getElementById('resume-card');
+    const projectsCard = document.getElementById('projects-card');
+    const resumeContentDiv = document.getElementById('resume-content');
+    const projectsContentDiv = document.getElementById('projects-content');
+
+    resumeCard.addEventListener('click', function() {
+        resumeContentDiv.classList.remove('hidden');
+        projectsContentDiv.classList.add('hidden');
+        window.scrollTo({
+            top: document.getElementById('content-area').offsetTop,
+            behavior: 'smooth'
+        });
+    });
+
+    projectsCard.addEventListener('click', function() {
+        projectsContentDiv.classList.remove('hidden');
+        resumeContentDiv.classList.add('hidden');
+        window.scrollTo({
+            top: document.getElementById('content-area').offsetTop,
+            behavior: 'smooth'
+        });
+    });
 });

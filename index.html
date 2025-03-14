@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaydon Moses - Portfolio</title>
-    <link rel="stylesheet" href="index.css">
-    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -16,26 +17,54 @@
         <h1>Jaydon Moses</h1>
         <p>Computer Science and Biology</p>
         <button id="contact-button">Contact Me</button>
-        <a href="#" id="download-resume">Download Resume</a>  </header>
+        <a href="#" id="download-resume">Download Resume</a> </header>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project-input">
-            <textarea id="project-textarea" placeholder="Input project"></textarea>
-            <button id="add-project">Add Project</button>
-        </div>
-        <div class="project-list">
+    <section id="features">
+        <div class="container">
+            <div class="card" id="resume-card">
+                <div class="icon">
+                    <i class="fas fa-file-alt"></i> </div>
+                <div class="title">
+                    Resume
+                </div>
+                <p>
+                    View my resume and professional experience.
+                </p>
             </div>
+
+            <div class="card" id="projects-card">
+                <div class="icon">
+                    <i class="fas fa-code"></i> </div>
+                <div class="title">
+                    Projects
+                </div>
+                <p>
+                    Explore my portfolio of projects.
+                </p>
+            </div>
+        </div>
     </section>
 
-    <section id="resume">
-        <h2>Resume</h2>
-        <div class="resume-input">
-            <textarea id="resume-textarea" placeholder="Input resume"></textarea>
-            <button id="add-resume">Add Resume</button>
-        </div>
-        <div class="resume-content">
+    <section id="content-area">
+        <div id="resume-content" class="hidden">
+            <h2>Resume</h2>
+            <div class="resume-input">
+                <textarea id="resume-textarea" placeholder="Input resume"></textarea>
+                <button id="add-resume">Add Resume</button>
             </div>
+            <div class="resume-content">
+                </div>
+        </div>
+
+        <div id="projects-content" class="hidden">
+            <h2>Projects</h2>
+            <div class="project-input">
+                <textarea id="project-textarea" placeholder="Input project"></textarea>
+                <button id="add-project">Add Project</button>
+            </div>
+            <div class="project-list">
+                </div>
+        </div>
     </section>
 
     <section id="contact-form">
