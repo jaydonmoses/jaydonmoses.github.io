@@ -9,14 +9,128 @@ body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
-    color: #333;
+    color: #421820; /* Darker text color from palette */
 }
 
 header {
-    background: #505050;
+    background: linear-gradient(135deg, #00adef 0%, #0076e5 100%);
     color: #fff;
     padding: 2rem 0;
     text-align: center;
+    position: relative;
+    /* Needed for z-index */
+    overflow: hidden;
+    /* Hide overflowing circles */
+}
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    /* Place circles behind header content */
+}
+
+#container-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#circle-small {
+    -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: 0s;
+    position: absolute;
+    top: 200px;
+    left: -150px;
+    background: #fff;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    opacity: 0.4;
+}
+
+#circle-medium {
+    -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: 0.3s;
+    position: absolute;
+    top: 50px;
+    left: -300px;
+    background: #fff;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+
+#circle-large {
+    -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: 0.6s;
+    position: absolute;
+    top: -100px;
+    left: -450px;
+    background: #fff;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    opacity: 0.2;
+}
+
+#circle-xlarge {
+    -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: 0.9s;
+    position: absolute;
+    top: -250px;
+    left: -600px;
+    background: #fff;
+    width: 1200px;
+    height: 1200px;
+    border-radius: 50%;
+    opacity: 0.1;
+}
+
+#circle-xxlarge {
+    -webkit-animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation: circle-small-scale 3s ease-in-out infinite alternate;
+    animation-timing-function: cubic-bezier(.6, 0, .4, 1);
+    animation-delay: 1.2s;
+    position: absolute;
+    top: -400px;
+    left: -750px;
+    background: #fff;
+    width: 1500px;
+    height: 1500px;
+    border-radius: 50%;
+    opacity: 0.05;
+}
+
+@-webkit-keyframes circle-small-scale {
+    0% {
+        -webkit-transform: scale(1.0);
+    }
+    100% {
+        -webkit-transform: scale(1.1);
+    }
+}
+
+@keyframes circle-small-scale {
+    0% {
+        transform: scale(1.0);
+    }
+    100% {
+        transform: scale(1.1);
+    }
 }
 
 .profile-picture {
@@ -26,6 +140,8 @@ header {
     overflow: hidden;
     margin: 0 auto 1rem;
     border: 5px solid #fff;
+    position: relative;
+    z-index: 1;
 }
 
 .profile-picture img {
@@ -37,15 +153,20 @@ header {
 h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    color: #91171F; /* Use a strong color for headings */
+    position: relative;
+    z-index: 1;
 }
 
 p {
     font-size: 1.2rem;
+    position: relative;
+    z-index: 1;
 }
 
 button,
 #download-resume {
-    background: #e67e22;
+    background: #BA1F33; /* Use a vibrant color for buttons */
     color: #fff;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -55,6 +176,8 @@ button,
     text-decoration: none;
     display: inline-block;
     margin-top: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 button:hover,
@@ -142,11 +265,59 @@ h2 {
 }
 
 footer {
-    text-align: center;
-    padding: 1rem 0;
-    background: #333;
+    background-color: #111;
+    /* Dark background */
     color: #fff;
-    font-size: 0.9rem;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+}
+
+.footer-left a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 2rem;
+}
+
+.get-quote-button {
+    background-color: #fff;
+    color: #111;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-right p {
+    margin: 0.5rem 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 1rem;
 }
 
 /* Modal Styles */
@@ -202,56 +373,4 @@ footer {
     padding: 2rem;
     margin-bottom: 2rem;
     background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#features .container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.card {
-    width: 300px;
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card .icon {
-    font-size: 2rem;
-    color: #e67e22;
-    margin-bottom: 1rem;
-}
-
-.card .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 0.5rem;
-}
-
-.hidden {
-    display: none;
-}
-
-#content-area {
-    padding: 2rem;
-    margin-bottom: 2rem;
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#content-area h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 3px solid #e67e22;
-    padding-bottom: 0.5rem;
 }

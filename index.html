@@ -12,18 +12,29 @@
 
 <body>
     <header>
-        <div class="profile-picture">
+        <div id="container">
+            <div id="container-inside">
+                <div id="circle-small"></div>
+                <div id="circle-medium"></div>
+                <div id="circle-large"></div>
+                <div id="circle-xlarge"></div>
+                <div id="circle-xxlarge"></div>
             </div>
+        </div>
+        <div class="profile-picture">
+        </div>
         <h1>Jaydon Moses</h1>
         <p>Computer Science and Biology</p>
         <button id="contact-button">Contact Me</button>
-        <a href="#" id="download-resume">Download Resume</a> </header>
+        <a href="#" id="download-resume">Download Resume</a>
+    </header>
 
     <section id="features">
         <div class="container">
             <div class="card" id="resume-card">
                 <div class="icon">
-                    <i class="fas fa-file-alt"></i> </div>
+                    <i class="fas fa-file-alt"></i>
+                </div>
                 <div class="title">
                     Resume
                 </div>
@@ -34,7 +45,8 @@
 
             <div class="card" id="projects-card">
                 <div class="icon">
-                    <i class="fas fa-code"></i> </div>
+                    <i class="fas fa-code"></i>
+                </div>
                 <div class="title">
                     Projects
                 </div>
@@ -46,24 +58,39 @@
     </section>
 
     <section id="content-area">
-        <div id="resume-content" class="hidden">
-            <h2>Resume</h2>
-            <div class="resume-input">
-                <textarea id="resume-textarea" placeholder="Input resume"></textarea>
-                <button id="add-resume">Add Resume</button>
-            </div>
-            <div class="resume-content">
+        <div id="resume-content" class="hidden card-like">
+            <div class="card-content">
+                <h2>Resume</h2>
+                <div class="resume-input">
+                    <textarea id="resume-textarea" placeholder="Input resume"></textarea>
+                    <button id="add-resume">Add Resume</button>
                 </div>
+                <div class="resume-content">
+                </div>
+            </div>
         </div>
 
         <div id="projects-content" class="hidden">
-            <h2>Projects</h2>
-            <div class="project-input">
-                <textarea id="project-textarea" placeholder="Input project"></textarea>
-                <button id="add-project">Add Project</button>
+            <div class="projects-header">
+                <h2>My Projects</h2>
             </div>
-            <div class="project-list">
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Project 1</h3>
+                    <p>Description of Project 1</p>
                 </div>
+                <div class="project-card">
+                    <h3>Project 2</h3>
+                    <p>Description of Project 2</p>
+                </div>
+                <div class="project-card">
+                    <h3>Project 3</h3>
+                    <p>Description of Project 3</p>
+                </div>
+            </div>
+            <div class="video-demo">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="Project Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
 
@@ -81,7 +108,25 @@
     </section>
 
     <footer>
-        <p>&copy; 2024 Jaydon Moses</p>
+        <div class="footer-container">
+            <div class="footer-left">
+                <a href="mailto:hello@art4web.co">hello@art4web.co</a>
+                <button class="get-quote-button">Get a quote</button>
+            </div>
+            <div class="footer-right">
+                <p>+421 902 468 085</p>
+                <p>Prague / Vienna / Bojnice (CET)</p>
+            </div>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-behance"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-viber"></i></a>
+        </div>
     </footer>
 
     <div id="modal" class="modal">
