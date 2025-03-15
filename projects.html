@@ -5,127 +5,248 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaydon Moses - Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
     <style>
         /* --- Overall Styling --- */
         body {
-            font-family: sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f0f0f0; /* Light grey background */
-            color: #333; /* Dark grey text */
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
         }
 
         .container {
             width: 80%;
-            max-width: 800px;
+            max-width: 1200px;
             margin: auto;
             background-color: #fff;
-            padding: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* --- Menu Icon --- */
+        .menu-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            left: auto;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* --- Dropdown Menu --- */
+        .dropdown-menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(248, 248, 248, 0.95);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .dropdown-menu a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.5em;
+            margin: 10px 0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #e53935;
+            color: #fff;
+        }
+
+        /* --- Main Content Styling --- */
+        .projects-header {
+            background-color: #e53935;
+            color: #fff;
+            padding: 2em;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .projects-header h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.2em;
+        }
+
+        .projects-body {
+            padding: 2em;
+        }
+
+        section {
+            margin-bottom: 2em;
+        }
+
+        section h2 {
+            font-size: 1.8em;
+            color: #e53935;
+            border-bottom: 2px solid #e53935;
+            padding-bottom: 0.5em;
+            margin-bottom: 1em;
+            position: relative;
+            overflow: hidden;
         }
 
         /* --- Project Item Styling --- */
         .project-item {
-            margin-bottom: 2em;
-            padding-bottom: 1em;
-            border-bottom: 1px solid #ccc; /* Separator line */
-        }
-
-        .project-item:last-child {
-            border-bottom: none; /* No separator on the last item */
-        }
-
-        .project-item h2 {
-            font-size: 1.5em;
-            margin-top: 0;
-            margin-bottom: 0.5em;
-            color: #e53935; /* Red title */
+            margin-bottom: 1.5em;
+            position: relative;
+            overflow: hidden;
         }
 
         .project-item h3 {
-            font-size: 1.1em;
-            margin-top: 0.5em;
+            font-size: 1.2em;
+            font-weight: bold;
             margin-bottom: 0.2em;
-            color: #666; /* Grey subtitle */
         }
 
         .project-item p {
-            margin-bottom: 1em;
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 0.5em;
         }
 
-        .project-item .project-links {
-            margin-top: 1em;
+        .project-item ul {
+            list-style: disc;
+            padding-left: 20px;
         }
 
-        .project-item .project-links a {
-            display: inline-block;
-            margin-right: 1em;
-            color: #007bff; /* Blue link color */
-            text-decoration: none;
+        .project-item li {
+            font-size: 1em;
+            margin-bottom: 0.3em;
         }
 
-        .project-item .project-links a:hover {
-            text-decoration: underline;
+        .project-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0);
+            transition: transform 0.3s ease;
         }
 
-        /* --- Media Styling (Photos/Videos) --- */
-        .project-media {
-            margin-top: 1em;
+        .project-item:hover::before {
+            transform: scale(1.02);
         }
 
-        .project-media img,
-        .project-media video {
-            max-width: 100%; /* Responsive media */
-            height: auto;
-            display: block;
-            margin: 0 auto; /* Center media */
+        /* --- Animated Background (Subtle Gradient) --- */
+        .projects-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(-90deg, #444, #555, #444);
+            z-index: -1;
+            animation: gradientShift 5s infinite alternate;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
     </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('dropdownMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </head>
 
 <body>
+
     <div class="container">
-        <section class="project-item">
-            <h2>2D Multiplayer Game</h2>
-            <h3>Languages Used</h3>
-            <p>Unity, C#</p>
-            <h3>Description</h3>
-            <p>Developed a C#-based control system in Unity, utilizing physics for movement and combat mechanics. Designed vibrant background environments with multiple map layouts to enhance gameplay. Integrated Unity's networking framework which allowed for real-time multiplayer.</p>
-            <div class="project-media">
-                <img src="placeholder-game.jpg" alt="2D Multiplayer Game Screenshot">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="index.html">Home</a>
+        </div>
+
+        <header class="projects-header">
+            <h1>PROJECTS</h1>
+        </header>
+
+        <div class="projects-body">
+            <section class="projects-section">
+                <h2>PROJECTS</h2>
+                <div class="project-item">
+                    <h3>2D multiplayer game developed in Unity</h3>
+                    <p>Unity, C#</p>
+                    <ul>
+                        <li>Developed a C#-based control system in Unity, utilizing physics for movement and
+                            combat mechanics</li>
+                        <li>Designed vibrant background environments with multiple map layouts to enhance
+                            gameplay</li>
+                        <li>Integrated Unity's networking framework which allowed for real-time multiplayer</li>
+                    </ul>
                 </div>
-            <div class="project-links">
-                <a href="#">GitHub (Optional)</a>
-            </div>
-        </section>
-
-        <section class="project-item">
-            <h2>Blackjack Game</h2>
-            <h3>Languages Used</h3>
-            <p>Java, Swing</p>
-            <h3>Description</h3>
-            <p>Developed a fully functional Blackjack game in Java with a graphical user interface (GUI) using Swing. Implemented betting mechanics, player-dealer interactions, and an autonomous dealer AI following standard Blackjack rules. Designed an interactive card display system where the dealer's hidden card is dynamically revealed. Utilized OOP principles (Encapsulation, Polymorphism) to create a modular and maintainable codebase[cite: 7, 8, 9].</p>
-            <div class="project-media">
-                <img src="placeholder-blackjack.jpg" alt="Blackjack Game Screenshot">
-            </div>
-            <div class="project-links">
-                <a href="#">GitHub (Optional)</a>
-            </div>
-        </section>
-
-        <section class="project-item">
-            <h2>NFL Statistics Displayer</h2>
-            <h3>Languages Used</h3>
-            <p>JavaScript</p>
-            <h3>Description</h3>
-            <p>Developed an automated JavaScript-based data pipeline to collect and analyze real-time NFL statistics from AWS NextGen Stats. Built an interactive JavaScript visualization dashboard using D3.js/Chart.js to track team and player performance. Leveraged AWS cloud services for efficient data storage, retrieval, and real-time updates of NFL analytics[cite: 10, 11, 12].</p>
-            <div class="project-media">
-                <img src="placeholder-nfl.jpg" alt="NFL Statistics Displayer Screenshot">
-            </div>
-            <div class="project-links">
-                <a href="#">GitHub (Optional)</a>
-            </div>
-        </section>
+                <div class="project-item">
+                    <h3>Blackjack game in Java</h3>
+                    <p>Java, Swing</p>
+                    <ul>
+                        <li>Developed a fully functional Blackjack game in Java with a graphical user interface (GUI)
+                            using Swing.</li>
+                        <li>Implemented betting mechanics, player-dealer interactions, and an autonomous dealer AI
+                            following standard Blackjack rules.</li>
+                        <li>Designed an interactive card display system where the dealer's hidden card is dynamically
+                            revealed.</li>
+                        <li>Utilized OOP principles (Encapsulation, Polymorphism) to create a modular and maintainable
+                            codebase.</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <h3>NFL Statistics Displayer</h3>
+                    <p>JavaScript</p>
+                    <ul>
+                        <li>Developed an automated JavaScript-based data pipeline to collect and analyze real-time
+                            NFL statistics from AWS NextGen Stats.</li>
+                        <li>Built an interactive JavaScript visualization dashboard using D3.js/Chart.js to track team
+                            and player performance.</li>
+                        <li>Leveraged AWS cloud services for efficient data storage, retrieval, and real-time updates
+                            of NFL analytics.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </div>
 </body>
 

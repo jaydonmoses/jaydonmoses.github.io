@@ -18,6 +18,7 @@
             background-color: #f0f0f0;
             color: #333;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         .container {
@@ -27,48 +28,37 @@
             overflow: hidden;
         }
 
-        /* --- Profile Section (Initial) --- */
-        #profile {
+        /* --- Hero Section --- */
+        #hero {
             background-color: #fff;
-            padding: 40px;
+            padding: 100px 40px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             margin-bottom: 30px;
-            position: relative; /* Needed for absolute positioning of links */
-            transition: all 0.3s ease; /* Smooth transition */
         }
 
-        #profile img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 5px solid #ddd;
-            margin-bottom: 20px;
-        }
-
-        #profile h2 {
-            color: #e53935;
+        #hero h1 {
+            color: #333;
             margin-top: 0;
-            font-size: 2.5em;
+            font-size: 3em;
         }
 
-        #profile p {
+        #hero p {
             color: #666;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            margin-bottom: 40px;
         }
 
-        .profile-links {
+        .hero-buttons {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
         }
 
-        .profile-link-block {
+        .hero-button {
             background-color: #e53935;
             color: #fff;
-            padding: 12px 25px;
+            padding: 15px 30px;
             text-decoration: none;
             border-radius: 8px;
             margin: 0 15px;
@@ -76,41 +66,82 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        .profile-link-block:hover {
+        .hero-button:hover {
             background-color: #c42f2b;
             transform: scale(1.05);
         }
 
-        /* --- Navigation Bar (After Scroll) --- */
-        #profile.nav-active {
+        /* --- Navigation Bar --- */
+        #navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000; /* Ensure it stays on top */
-            padding: 10px 0; /* Reduced padding */
+            z-index: 1000;
+            background-color: #f8f8f8;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
         }
 
-        #profile.nav-active img {
-            display: none; /* Hide image in nav mode */
+        #navbar h2 {
+            font-size: 1.2em;
+            margin: 0;
         }
 
-        #profile.nav-active h2 {
-            font-size: 1.5em; /* Smaller name in nav mode */
-            margin: 0 20px; /* Add spacing around name */
+        .nav-links {
+            position: relative;
         }
 
-        #profile.nav-active .profile-links {
-            margin-top: 0; /* Remove extra margin */
+        /* Dropdown Button */
+        .dropbtn {
+            background-color: #e53935;
+            color: white;
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
         }
 
-        #profile.nav-active .profile-link-block {
-            padding: 8px 16px; /* Smaller buttons in nav mode */
-            margin: 0 10px;
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 8px;
+        }
+
+        /* Links inside the dropdown */
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show the dropdown menu on hover */
+        .nav-links:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Dropdown icon */
+        .dropbtn::after {
+            content: " \25BC";
+            font-size: 0.8em;
+            margin-left: 5px;
         }
 
         /* --- About Me Section --- */
@@ -133,6 +164,70 @@
             text-align: center;
             font-size: 1.1em;
             color: #555;
+        }
+
+        /* --- Highlights Section --- */
+        #highlights {
+            background-color: #fff;
+            padding: 40px;
+            margin-top: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        #highlights h2 {
+            color: #e53935;
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            /* Enable smooth scrolling on iOS */
+            scroll-padding: 20px;
+            /* Add padding for better visibility */
+        }
+
+        .carousel-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1 0 100%;
+            /* Ensure each item takes full width */
+            scroll-snap-align: start;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 0 10px;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .carousel-item p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .carousel-item a {
+            background-color: #e53935;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-item a:hover {
+            background-color: #c42f2b;
         }
 
         /* --- Contact Section --- */
@@ -234,25 +329,64 @@
 </head>
 
 <body>
-
     <div class="container">
-        <section id="profile" class="section-highlight">
-            <img src="profile-placeholder.jpg" alt="Your Profile Picture">
-            <h2>Jaydon Moses</h2>
-            <p>Computer Science and Biology</p>
-            <div class="profile-links">
-                <a href="resume.html" class="profile-link-block">Resume</a>
-                <a href="#about-me" class="profile-link-block">About Me</a>
-                <a href="#contact" class="profile-link-block">Contact</a>
+        <section id="hero">
+            <h1>Jaydon Moses</h1>
+            <p>Aspiring Computer Scientist and Biologist</p>
+            <div class="hero-buttons">
+                <a href="resume.html" class="hero-button">Resume</a>
+                <a href="projects.html" class="hero-button">Projects</a>
             </div>
         </section>
 
-        <section id="about-me" class="section-highlight">
+        <nav id="navbar">
+            <h2>Jaydon Moses</h2>
+            <div class="nav-links">
+                <button class="dropbtn">
+                    Menu
+                    <span class="dropdown-icon">&#9660;</span>
+                </button>
+                <div class="dropdown-content">
+                    <a href="resume.html">Resume</a>
+                    <a href="projects.html">Projects</a>
+                </div>
+            </div>
+        </nav>
+
+        <section id="about-me">
             <h2>About Me</h2>
-            <p>Standard chunk of Lorem Ipsum used since the 1500s is showed below for those interested.</p>
+            <p>I am a first-year student in Computer Science and Biology at Northeastern University. I am also
+                interested in biotech and software as a career focus. The ability to utilize technology to make life
+                easier is the core of my goal. I am proficient in a variety of programming languages, including SQL,
+                Python, and JavaScript. Feel free to reach out to me at either
+                <a href="mailto:moses.ja@northeastern.edu">moses.ja@northeastern.edu</a> or
+                <a href="mailto:jaydon.10.moses@gmail.com">jaydon.10.moses@gmail.com</a>.
+            </p>
+            <a href="#contact" class="hero-button">Contact Me</a>
         </section>
 
-        <section id="contact" class="section-highlight">
+        <section id="highlights">
+            <h2>Highlights</h2>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="placeholder-image1.jpg" alt="Highlight 1">
+                    <p>Description of Highlight 1. This could be a brief summary of a project or achievement.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="placeholder-image2.jpg" alt="Highlight 2">
+                    <p>Description of Highlight 2. This could be a brief summary of a project or achievement.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="carousel-item">
+                    <img src="placeholder-image3.jpg" alt="Highlight 3">
+                    <p>Description of Highlight 3. This could be a brief summary of a project or achievement.</p>
+                    <a href="#">Learn More</a>
+                </div>
+                </div>
+        </section>
+
+        <section id="contact">
             <h2>Contact Me</h2>
             <form>
                 <label for="name">Name</label>
@@ -280,19 +414,27 @@
     </footer>
 
     <script>
+        // --- No Navbar Initially ---
+        document.getElementById('navbar').style.display = 'none';
+
         // --- Navigation Bar on Scroll ---
-        const profileSection = document.getElementById('profile');
+        const heroSection = document.getElementById('hero');
+        const navbar = document.getElementById('navbar');
 
         function updateNavbar() {
-            if (window.scrollY > profileSection.offsetHeight) {
-                profileSection.classList.add('nav-active');
+            if (window.scrollY > heroSection.offsetHeight) {
+                navbar.style.display = 'flex';
             } else {
-                profileSection.classList.remove('nav-active');
+                navbar.style.display = 'none';
             }
         }
 
-        window.addEventListener('scroll', updateNavbar);
-        window.addEventListener('load', updateNavbar); // Also check on page load
+        window.addEventListener('scroll', updateNavbar, {
+            passive: true
+        });
+        window.addEventListener('load', updateNavbar, {
+            passive: true
+        });
 
         // --- Section Highlighting on Scroll ---
         const sections = document.querySelectorAll('.section-highlight');
@@ -301,7 +443,8 @@
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.offsetHeight;
-                if (window.scrollY >= sectionTop - sectionHeight / 2 && window.scrollY < sectionTop + sectionHeight / 2) {
+                if (window.scrollY >= sectionTop - sectionHeight / 2 && window.scrollY < sectionTop + sectionHeight /
+                    2) {
                     section.classList.add('section-highlighted');
                 } else {
                     section.classList.remove('section-highlighted');
@@ -309,8 +452,12 @@
             });
         }
 
-        window.addEventListener('scroll', highlightOnScroll);
-        window.addEventListener('load', highlightOnScroll);
+        window.addEventListener('scroll', highlightOnScroll, {
+            passive: true
+        });
+        window.addEventListener('load', highlightOnScroll, {
+            passive: true
+        });
     </script>
 
 </body>
