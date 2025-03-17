@@ -22,7 +22,7 @@
 
     <!-- Hero Section -->
     <section class="flex flex-col items-center text-center bg-gradient-to-r from-red-500 to-red-700 text-white py-32 rounded-b-3xl mt-16">
-        <img src="Images for Website/profile-picture.jpg" alt="Jaydon Moses" class="w-40 h-40 rounded-full shadow-lg mb-4">
+        <img src="Images for Website/profile-picture.png" alt="Jaydon Moses" class="w-40 h-40 rounded-full shadow-lg mb-4">
         <h1 class="text-5xl font-bold">Jaydon Moses</h1>
         <p class="text-xl mt-4">Aspiring Computer Scientist & Biologist</p>
     </section>
@@ -42,7 +42,7 @@
 <section id="recent-accomplishments" class="bg-white p-10 shadow-lg rounded-lg text-center mt-12">
     <h2 class="text-3xl font-bold text-red-500">Recent Accomplishments</h2>
     <div class="flex flex-col md:flex-row items-center mt-6">
-        <img src="Images for Website/accomplishment-placeholder.jpg" alt="Recent Accomplishment" class="w-full md:w-1/3 rounded-lg shadow-md mb-6 md:mb-0">
+        <img src="Images for Website/recent-accomplishment.png" alt="Recent Accomplishment" class="w-full md:w-1/3 rounded-lg shadow-md mb-6 md:mb-0">
 
         <div class="md:ml-6 w-full md:w-2/3 mt-6 md:mt-0">
             <p class="text-lg text-gray-600">
@@ -69,7 +69,13 @@
             <div class="w-3/4 ml-8">
                 <section id="education" class="resume-section bg-white p-6 shadow-lg rounded-lg">
                     <h3 class="text-2xl font-semibold text-red-500">Education</h3>
-                    <p class="text-lg text-gray-600 mt-4"><strong>Northeastern University</strong> (Boston, MA)<br><em>Sept. 2024 – Present</em><br>Bachelor of Science in Computer Science and Biology</p>
+                    <div class="flex items-center mt-4">
+                        <img src="Images for Website/NU_icon.png" alt="Northeastern University Icon" class="w-10 h-10 mr-2"> <p class="text-lg text-gray-600">
+                            <strong>Northeastern University</strong> (Boston, MA)<br>
+                            <em>Sept. 2024 – Present</em><br>
+                            Bachelor of Science in Computer Science and Biology
+                        </p>
+                    </div>
                 </section>
 
                 <section id="skills" class="resume-section bg-white p-6 shadow-lg rounded-lg mt-6 hidden">
@@ -92,7 +98,7 @@
 
     <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 mb-6">
         <div class="flex items-center mb-4">
-            <img src="Images for Website/Irving-Oil.png" alt="Irving Oil" class="w-12 h-12 mr-4">
+            <img src="Images for Website/Irving_Oil.png" alt="Irving Oil" class="w-12 h-12 mr-4">
             <h4 class="text-xl font-semibold text-gray-800">Assistant Manager, Irving Oil</h4>
         </div>
         <p class="text-lg text-gray-600">
@@ -138,19 +144,22 @@
     <h3 class="text-2xl font-semibold text-red-500 mb-4">Projects</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
-            <video class="w-full h-40 object-cover" muted loop>
-                <source src="Images for Website/Fighter - SampleScene - Windows, Mac, Linux - Unity 2021.3.12f1 Personal _DX11_ 2024-04-01 11-18-05.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="video-container"> 
+                <video class="w-full h-40 object-cover" muted loop>
+                    <source src="Images for Website/Fighter - SampleScene - Windows, Mac, Linux - Unity 2021.3.12f1 Personal _DX11_ 2024-04-01 11-18-05.mp4" type="video/mp4">                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div class="p-4">
                 <h4 class="text-xl font-semibold text-gray-800">2D Multiplayer Game</h4>
             </div>
         </div>
         <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
-            <video class="w-full h-40 object-cover" muted loop>
-                <source src="videos/placeholder-video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+            <div class="video-container">
+                <video class="w-full h-40 object-cover" muted loop>
+                    <source src="videos/placeholder-video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
             <div class="p-4">
                 <h4 class="text-xl font-semibold text-gray-800">Blackjack in Java</h4>
             </div>
@@ -194,6 +203,23 @@
             document.querySelectorAll(".resume-tab").forEach(tab => tab.classList.remove("bg-gray-200", "text-red-500", "font-bold"));
             document.getElementById(`${section}-tab`).classList.add("bg-gray-200", "text-red-500", "font-bold");
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+        const videoContainers = document.querySelectorAll('.video-container');
+
+        videoContainers.forEach(container => {
+            const video = container.querySelector('video');
+
+            container.addEventListener('mouseenter', () => {
+                video.play();
+            });
+
+            container.addEventListener('mouseleave', () => {
+                video.pause();
+                video.currentTime = 0; // Reset video to the beginning
+            });
+        });
+    });
     </script>
 </body>
 
