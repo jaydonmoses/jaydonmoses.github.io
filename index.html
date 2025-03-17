@@ -214,7 +214,39 @@
             transform: scale(1.1); /* Enlarge on hover */
         }
 
-      </style>
+        .video-container video {
+        transition: transform 0.3s ease;
+        }
+        /* ... your other styles ... */
+
+        .video-container video {
+            transition: transform 0.3s ease;
+        }
+
+        .video-container:hover video {
+            transform: scale(1.5); /* Increased scale value */
+        }
+
+        video:-webkit-full-screen {
+            width: 100%;
+            height: 100%;
+        }
+
+        video:-moz-full-screen {
+            width: 100%;
+            height: 100%;
+        }
+
+        video:-ms-fullscreen {
+            width: 100%;
+            height: 100%;
+        }
+
+        video:fullscreen {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 
     <script>
         function showSection(section) {
@@ -225,8 +257,9 @@
             document.getElementById(`${section}-tab`).classList.add("bg-gray-200", "text-red-500", "font-bold");
         }
 
+        
         document.addEventListener('DOMContentLoaded', function() {
-        const videoContainers = document.querySelectorAll('.video-container');
+            const videoContainers = document.querySelectorAll('.video-container');
 
         videoContainers.forEach(container => {
             const video = container.querySelector('video');
@@ -237,11 +270,23 @@
 
             container.addEventListener('mouseleave', () => {
                 video.pause();
-                video.currentTime = 0; // Reset video to the beginning
+                video.currentTime = 0;
+            });
+
+            video.addEventListener('click', () => {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.mozRequestFullScreen) {
+                    video.mozRequestFullScreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) {
+                    video.msRequestFullscreen();
+                }
             });
         });
     });
-    </script>
+</script>
 </body>
 
 </html>
