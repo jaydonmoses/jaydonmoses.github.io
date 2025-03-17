@@ -5,461 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaydon Moses - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
-    <style>
-        /* --- Overall Styling --- */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-            color: #333;
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        /* --- Hero Section --- */
-        #hero {
-            background-color: #fff;
-            padding: 100px 40px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        #hero h1 {
-            color: #333;
-            margin-top: 0;
-            font-size: 3em;
-        }
-
-        #hero p {
-            color: #666;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-button {
-            background-color: #e53935;
-            color: #fff;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            margin: 0 15px;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        .hero-button:hover {
-            background-color: #c42f2b;
-            transform: scale(1.05);
-        }
-
-        /* --- Navigation Bar --- */
-        #navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: #f8f8f8;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        #navbar h2 {
-            font-size: 1.2em;
-            margin: 0;
-        }
-
-        .nav-links {
-            position: relative;
-        }
-
-        /* Dropdown Button */
-        .dropbtn {
-            background-color: #e53935;
-            color: white;
-            padding: 10px;
-            font-size: 1em;
-            border: none;
-            cursor: pointer;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-        }
-
-        /* Dropdown Content (Hidden by Default) */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            border-radius: 8px;
-        }
-
-        /* Links inside the dropdown */
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: #ddd;
-        }
-
-        /* Show the dropdown menu on hover */
-        .nav-links:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Dropdown icon */
-        .dropbtn::after {
-            content: " \25BC";
-            font-size: 0.8em;
-            margin-left: 5px;
-        }
-
-        /* --- About Me Section --- */
-        #about-me {
-            background-color: #f9f9f9;
-            padding: 40px;
-            margin-top: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
-            border-radius: 8px;
-        }
-
-        #about-me h2 {
-            color: #e53935;
-            text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-        }
-
-        #about-me p {
-            text-align: center;
-            font-size: 1.1em;
-            color: #555;
-        }
-
-        /* --- Highlights Section --- */
-        #highlights {
-            background-color: #fff;
-            padding: 40px;
-            margin-top: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        #highlights h2 {
-            color: #e53935;
-            text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-        }
-
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            /* Enable smooth scrolling on iOS */
-            scroll-padding: 20px;
-            /* Add padding for better visibility */
-        }
-
-        .carousel-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex: 1 0 100%;
-            /* Ensure each item takes full width */
-            scroll-snap-align: start;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin: 0 10px;
-        }
-
-        .carousel-item img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .carousel-item p {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .carousel-item a {
-            background-color: #e53935;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .carousel-item a:hover {
-            background-color: #c42f2b;
-        }
-
-        /* --- Contact Section --- */
-        #contact {
-            background-color: #fff;
-            padding: 40px;
-            margin-top: 30px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-
-        #contact h2 {
-            color: #e53935;
-            text-align: center;
-            font-size: 2.2em;
-            margin-bottom: 30px;
-        }
-
-        #contact form {
-            width: 70%;
-            margin: auto;
-        }
-
-        #contact label {
-            display: block;
-            margin-top: 15px;
-            color: #555;
-            font-weight: bold;
-        }
-
-        #contact input,
-        #contact textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 8px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1em;
-        }
-
-        #contact textarea {
-            resize: vertical;
-        }
-
-        #contact button {
-            background-color: #e53935;
-            color: #fff;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            display: block;
-            margin: 30px auto;
-            font-size: 1.1em;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-
-        #contact button:hover {
-            background-color: #c42f2b;
-            transform: scale(1.03);
-        }
-
-        #contact .contact-info {
-            text-align: center;
-            margin-top: 30px;
-            color: #666;
-            font-size: 1.1em;
-        }
-
-        /* --- Footer Section --- */
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            font-size: 0.9em;
-        }
-
-        footer p {
-            margin: 10px 0;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: underline;
-        }
-
-        /* --- Section Highlighting --- */
-        .section-highlight {
-            transition: background-color 0.5s ease;
-        }
-
-        .section-highlighted {
-            background-color: #f0f0f0;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div class="container">
-        <section id="hero">
-            <h1>Jaydon Moses</h1>
-            <p>Aspiring Computer Scientist and Biologist</p>
-            <div class="hero-buttons">
-                <a href="resume.html" class="hero-button">Resume</a>
-                <a href="projects.html" class="hero-button">Projects</a>
+<body class="bg-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md py-4 px-8 flex justify-between items-center z-50">
+        <h2 class="text-xl font-bold text-gray-800">Jaydon Moses</h2>
+        <div class="space-x-6">
+            <a href="#about-me" class="text-red-500 font-semibold hover:text-red-600 transition">About</a>
+            <a href="#resume" class="text-red-500 font-semibold hover:text-red-600 transition">Resume</a>
+            <a href="#contact" class="text-red-500 font-semibold hover:text-red-600 transition">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="flex flex-col items-center text-center bg-gradient-to-r from-red-500 to-red-700 text-white py-32 rounded-b-3xl mt-16">
+        <img src="your-image.jpg" alt="Jaydon Moses" class="w-40 h-40 rounded-full shadow-lg mb-4">
+        <h1 class="text-5xl font-bold">Jaydon Moses</h1>
+        <p class="text-xl mt-4">Aspiring Computer Scientist & Biologist</p>
+        <div class="mt-6 space-x-4">
+            <a href="#resume" class="bg-white text-red-500 px-6 py-3 rounded-lg font-semibold shadow-md hover:scale-105 transition">View Resume</a>
+        </div>
+    </section>
+
+    <div class="container mx-auto px-8 py-12">
+        <!-- About Me Section -->
+        <section id="about-me" class="bg-white p-10 shadow-lg rounded-lg text-center">
+            <h2 class="text-3xl font-bold text-red-500">About Me</h2>
+            <p class="text-lg text-gray-600 mt-4">I am a first-year student in Computer Science and Biology at Northeastern University. I am interested in biotech and software, aiming to leverage technology to improve lives. I am proficient in SQL, Python, and JavaScript. Feel free to contact me!</p>
+        </section>
+
+        <!-- Resume Section -->
+        <div id="resume" class="flex container mx-auto px-8 py-12">
+            <!-- Sidebar -->
+            <div class="w-1/4 p-6 bg-white shadow-lg rounded-lg sticky top-24">
+                <h2 class="text-3xl font-bold text-red-500 mb-4">Resume</h2>
+                <div class="space-y-4">
+                    <button class="resume-tab active w-full text-left text-lg font-semibold text-gray-700 hover:text-red-500 hover:bg-gray-100 py-2 px-4 rounded-lg transition" id="education-tab" onclick="showSection('education')">
+                        Education
+                    </button>
+                    <button class="resume-tab w-full text-left text-lg font-semibold text-gray-700 hover:text-red-500 hover:bg-gray-100 py-2 px-4 rounded-lg transition" id="skills-tab" onclick="showSection('skills')">
+                        Technical Skills
+                    </button>
+                    <button class="resume-tab w-full text-left text-lg font-semibold text-gray-700 hover:text-red-500 hover:bg-gray-100 py-2 px-4 rounded-lg transition" id="experience-tab" onclick="showSection('experience')">
+                        Experience
+                    </button>
+                    <button class="resume-tab w-full text-left text-lg font-semibold text-gray-700 hover:text-red-500 hover:bg-gray-100 py-2 px-4 rounded-lg transition" id="projects-tab" onclick="showSection('projects')">
+                        Projects
+                    </button>
+                </div>
             </div>
-        </section>
 
-        <nav id="navbar">
-            <h2>Jaydon Moses</h2>
-            <div class="nav-links">
-                <button class="dropbtn">
-                    Menu
-                    <span class="dropdown-icon">&#9660;</span>
-                </button>
-                <div class="dropdown-content">
-                    <a href="resume.html">Resume</a>
-                    <a href="projects.html">Projects</a>
-                </div>
+            <!-- Resume Content -->
+            <div class="w-3/4 ml-8">
+                <section id="education">
+                    <h3 class="text-2xl font-semibold text-red-500">Education</h3>
+                    <p class="text-lg text-gray-600 mt-4"><strong>Northeastern University</strong> (Boston, MA)<br><em>Sept. 2024 – Present</em><br>Bachelor of Science in Computer Science and Biology </p>
+                </section>
+
+                <section id="skills" style="display: none;">
+                    <h3 class="text-2xl font-semibold text-red-500">Technical Skills</h3>
+                    <p class="text-lg text-gray-600 mt-4"><strong>Programming Languages:</strong> C#, Java, Python, C, C++, JavaScript</p>
+                    <p class="text-lg text-gray-600 mt-4"><strong>Web & Database Technologies:</strong> C#, Java, Python, C, C++, JavaScript</p>
+                    <p class="text-lg text-gray-600 mt-4"><strong>Tools & Frameworks:</strong> Unity, Visual Studio Code, MySQL</p>
+                    <p class="text-lg text-gray-600 mt-4"><strong>Certifications:</strong> Python (Kaggle)</p>
+                </section>
+
+                <section id="experience" style="display: none;">
+                    <h3 class="text-2xl font-semibold text-red-500">Experience</h3>
+                    <p class="text-lg text-gray-600 mt-4"><strong>Assistant Manager, Irving Oil</strong> - Jul 2023 – Sep 2024</p>
+                    <li class="text-lg text-gray-600 mt-4">Oversaw daily store operations, inventory management, and vendor coordination</li>
+                    <li class="text-lg text-gray-600 mt-4">Provided customer service interactions, handling transactions, inquiries, and issue resolution</li>
+                     <li class="text-lg text-gray-600 mt-4">Supervised employees, optimizing scheduling, task delegation, and loss prevention strategies.</li>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" style="display: none;">
+                    <h3 class="text-2xl font-semibold text-red-500 mb-4">Projects</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Project Card -->
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
+                            <img src="placeholder1.jpg" alt="2D Multiplayer Game" class="w-full h-40 object-cover">
+                            <div class="p-4">
+                                <h4 class="text-xl font-semibold text-gray-800">2D Multiplayer Game</h4>
+                                <p class="text-gray-600 text-sm mt-2">Developed a real-time multiplayer game in Unity using C#.</p>
+                            </div>
+                        </div>
+
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
+                            <img src="placeholder2.jpg" alt="Blackjack Game" class="w-full h-40 object-cover">
+                            <div class="p-4">
+                                <h4 class="text-xl font-semibold text-gray-800">Blackjack Game</h4>
+                                <p class="text-gray-600 text-sm mt-2">Created a fully functional Blackjack game in Java with GUI.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </nav>
-
-        <section id="about-me">
-            <h2>About Me</h2>
-            <p>I am a first-year student in Computer Science and Biology at Northeastern University. I am also
-                interested in biotech and software as a career focus. The ability to utilize technology to make life
-                easier is the core of my goal. I am proficient in a variety of programming languages, including SQL,
-                Python, and JavaScript. Feel free to reach out to me at either
-                <a href="mailto:moses.ja@northeastern.edu">moses.ja@northeastern.edu</a> or
-                <a href="mailto:jaydon.10.moses@gmail.com">jaydon.10.moses@gmail.com</a>.
-            </p>
-            <a href="#contact" class="hero-button">Contact Me</a>
-        </section>
-
-        <section id="highlights">
-            <h2>Highlights</h2>
-            <div class="carousel">
-                <div class="carousel-item">
-                    <img src="placeholder-image1.jpg" alt="Highlight 1">
-                    <p>Description of Highlight 1. This could be a brief summary of a project or achievement.</p>
-                    <a href="#">Learn More</a>
-                </div>
-                <div class="carousel-item">
-                    <img src="placeholder-image2.jpg" alt="Highlight 2">
-                    <p>Description of Highlight 2. This could be a brief summary of a project or achievement.</p>
-                    <a href="#">Learn More</a>
-                </div>
-                <div class="carousel-item">
-                    <img src="placeholder-image3.jpg" alt="Highlight 3">
-                    <p>Description of Highlight 3. This could be a brief summary of a project or achievement.</p>
-                    <a href="#">Learn More</a>
-                </div>
-                </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact Me</h2>
-            <form>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name">
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
-
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-            <div class="contact-info">
-                <p>Please Reach out</p>
-                <p>I am text block. Click edit button to change this text.</p>
-            </div>
-        </section>
+        </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 Jaydon Moses</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-        <a href="#" style="color: white; text-decoration: underline;">PURCHASE NOW</a>
+    <!-- Footer Section -->
+    <footer class="bg-red-500 text-white py-8 mt-16">
+        <div class="container mx-auto px-8 text-center">
+            <div class="space-x-8 mb-4">
+                <a href="https://www.linkedin.com/in/jaydonmoses/" target="_blank" class="hover:text-gray-300">LinkedIn</a>
+                <a href="https://github.com/jaydonmoses" target="_blank" class="hover:text-gray-300">GitHub</a>
+                <a href="mailto:jaydon.10.moses@gmail.com" class="hover:text-gray-300">Email</a>
+            </div>
+            <p>&copy; 2025 Jaydon Moses. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script>
-        // --- No Navbar Initially ---
-        document.getElementById('navbar').style.display = 'none';
-
-        // --- Navigation Bar on Scroll ---
-        const heroSection = document.getElementById('hero');
-        const navbar = document.getElementById('navbar');
-
-        function updateNavbar() {
-            if (window.scrollY > heroSection.offsetHeight) {
-                navbar.style.display = 'flex';
-            } else {
-                navbar.style.display = 'none';
-            }
+        function showSection(section) {
+            document.querySelectorAll("#education, #skills, #experience, #projects").forEach(sec => sec.style.display = "none");
+            document.getElementById(section).style.display = "block";
+            document.querySelectorAll(".resume-tab").forEach(tab => tab.classList.remove("bg-gray-100", "text-red-500"));
+            document.getElementById(`${section}-tab`).classList.add("bg-gray-100", "text-red-500");
         }
-
-        window.addEventListener('scroll', updateNavbar, {
-            passive: true
-        });
-        window.addEventListener('load', updateNavbar, {
-            passive: true
-        });
-
-        // --- Section Highlighting on Scroll ---
-        const sections = document.querySelectorAll('.section-highlight');
-
-        function highlightOnScroll() {
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                if (window.scrollY >= sectionTop - sectionHeight / 2 && window.scrollY < sectionTop + sectionHeight /
-                    2) {
-                    section.classList.add('section-highlighted');
-                } else {
-                    section.classList.remove('section-highlighted');
-                }
-            });
-        }
-
-        window.addEventListener('scroll', highlightOnScroll, {
-            passive: true
-        });
-        window.addEventListener('load', highlightOnScroll, {
-            passive: true
-        });
     </script>
-
 </body>
 
 </html>
