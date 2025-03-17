@@ -323,7 +323,8 @@
 }
 
 /* Navigation buttons */
-.prev-btn, .next-btn {
+.prev-btn,
+.next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -337,10 +338,36 @@
     z-index: 1;
 }
 
-.prev-btn:hover, .next-btn:hover {
+.prev-btn:hover,
+.next-btn:hover {
     background-color: var(--dark-cherry-red); /* Darker cherry red on hover */
 }
 
+/* Image and Video Styling */
+.slide img,
+.slide video {
+    width: 100%; /* Take full width of the slide */
+    height: 256px; /* Fixed height (adjust as needed) */
+    object-fit: cover; /* Maintain aspect ratio, crop if necessary */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
+
+/* Video Container (for more control) */
+.video-container {
+    position: relative;
+    width: 100%; /* Take full width of the slide */
+    height: 256px; /* Match the image height */
+    overflow: hidden; /* Clip content that overflows */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 .footer-link {
     color: var(--off-white);
@@ -398,7 +425,7 @@
 <section class="hero-section">
     <img src="Images for Website/profile-picture.jpg" alt="Jaydon Moses" class="profile-picture mb-4">
     <h1>Jaydon Moses</h1>
-    <p>Aspiring Computer Scientist & Biologist</p>
+    <p>Computer Scientist & Biologist</p>
 </section>
 
 <!-- About Me -->
@@ -410,38 +437,56 @@
 
 <section id="recent-accomplishments" class="bg-white p-10 shadow-lg rounded-lg text-center mt-12">
     <h2 class="text-3xl font-bold text-red-600 mb-6">Recent Accomplishments</h2>
-    
-    <!-- Slider Container -->
+
     <div class="slider-container relative">
-        <!-- Slides -->
         <div class="slides flex overflow-hidden">
-            <!-- Slide 1 -->
             <div class="slide w-full flex-shrink-0">
-                <img src="Images for Website/accomplishment1.png" alt="Improved Blackjack Game" class="w-full h-40 object-cover rounded-lg">
+                <img src="Images for Website/accomplishment1.png" alt="Improved Blackjack Game"
+                     class="w-full h-64 object-cover rounded-lg">
                 <div class="p-6">
                     <h3 class="text-2xl font-semibold text-gray-800">Improved Blackjack Game</h3>
-                    <p class="text-lg text-gray-600 mt-2">I enhanced my Blackjack game by adding dynamic user interface elements using Java Swing. The game is now more interactive with graphical elements, improving the overall user experience.</p>
+                    <p class="text-lg text-gray-600 mt-2">I enhanced my Blackjack game by adding dynamic user
+                        interface elements using Java Swing. The game is now more interactive with graphical
+                        elements, improving the overall user experience.</p>
                 </div>
             </div>
 
-            <!-- Slide 2 -->
             <div class="slide w-full flex-shrink-0">
-                <img src="Images for Website/accomplishment2.jpg" alt="AI-Powered Resume Analyzer" class="w-full h-40 object-cover rounded-lg">
+                <div class="video-container">
+                    <video class="w-full h-64 object-cover rounded-lg" autoplay loop muted>
+                        <source src="Images for Website/Fighter - SampleScene.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
                 <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-gray-800">AI-Powered Resume Analyzer</h3>
-                    <p class="text-lg text-gray-600 mt-2">I built an AI-powered resume analyzer to help job seekers optimize their resumes. Using natural language processing, it provides suggestions to improve the content and structure.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800">2D Multiplayer Game</h3>
+                    <p class="text-lg text-gray-600 mt-2">2D multiplayer game developed in Unity</p>
+                    <p class="text-lg text-gray-600 mt-2"><strong>Languages:</strong> C#, Unity</p>
+                    <a href="https://github.com/jaydonmoses/multiplayer-game" target="_blank"
+                       class="project-link">Coming Soon</a>
                 </div>
             </div>
 
-            <!-- Slide 3 -->
             <div class="slide w-full flex-shrink-0">
-                <img src="Images for Website/accomplishment3.jpg" alt="Web Scraping for Research Opportunities" class="w-full h-40 object-cover rounded-lg">
+                <img src="Images for Website/accomplishment3.jpg" alt="Coming Soon"
+                     class="w-full h-64 object-cover rounded-lg">
                 <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-gray-800">Web Scraping for Research Opportunities</h3>
-                    <p class="text-lg text-gray-600 mt-2">I developed a web scraper to gather research opportunities at Northeastern University, helping students easily find relevant research projects and faculty.</p>
+                    <h3 class="text-2xl font-semibold text-gray-800">Coming Soon</h3>
+                    <p class="text-lg text-gray-600 mt-2">Coming Soon</p>
                 </div>
             </div>
         </div>
+
+        <button
+            class="prev-btn absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
+            &#10094;
+        </button>
+        <button
+            class="next-btn absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
+            &#10095;
+        </button>
+    </div>
+</section>
 
         <!-- Navigation Buttons -->
         <button class="prev-btn absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
