@@ -265,7 +265,8 @@
     height: 100%;
     z-index: -1; /* Ensures it stays behind everything */
     pointer-events: none;
-    
+        }
+        
     #particles-js {
     position: fixed;
     top: 0;
@@ -276,7 +277,43 @@
     pointer-events: none;  /* Prevents interaction with the particles */
 }
 
+/* Slider container */
+.slider-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
 }
+
+/* Slide styling */
+.slide {
+    display: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Show the active slide */
+.slide.active {
+    display: block;
+}
+
+/* Navigation buttons */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    background-color: var(--cherry-red); /* Cherry red */
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: var(--dark-cherry-red); /* Darker cherry red on hover */
+}
+
 
 .footer-link {
     color: var(--off-white);
@@ -299,25 +336,35 @@
 <nav id="navbar" class="fixed top-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md py-4 px-8 flex justify-between items-center z-50">
     <h2 class="text-xl font-bold text-cherry-red">Jaydon Moses</h2>
 
-    <!-- Hamburger Menu (Mobile) -->
-    <button id="menu-btn" class="md:hidden text-cherry-red text-2xl">
-        ☰
-    </button>
-
     <!-- Navbar Links -->
     <div id="nav-links" class="hidden md:flex space-x-6">
         <a href="#about-me" class="nav-link font-semibold">About</a>
         <a href="#resume" class="nav-link font-semibold">Resume</a>
+        <a href="#recent-accomplishments" class="nav-link font-semibold">Recent Accomplishments</a>
         <a href="#contact" class="nav-link font-semibold">Contact</a>
     </div>
 </nav>
 
-<!-- Mobile Menu (Hidden by Default) -->
-<div id="mobile-menu" class="hidden flex flex-col bg-white shadow-lg absolute top-16 left-0 w-full py-4 px-8">
-    <a href="#about-me" class="mobile-link py-2">About</a>
-    <a href="#resume" class="mobile-link py-2">Resume</a>
-    <a href="#contact" class="mobile-link py-2">Contact</a>
-</div>
+<!-- Mobile Navbar -->
+<nav class="bg-gray-900 text-white p-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold">YourLogo</a>
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-2xl">
+            &#9776; <!-- Hamburger icon -->
+        </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 text-white">
+        <ul class="space-y-4 p-4">
+            <li><a href="#recent-accomplishments" class="text-lg hover:text-red-600">Recent Accomplishments</a></li>
+            <li><a href="#projects" class="text-lg hover:text-red-600">Projects</a></li>
+            <li><a href="#contact" class="text-lg hover:text-red-600">Contact</a></li>
+            <!-- Add other links as needed -->
+        </ul>
+    </div>
+</nav>
 
 
 <!-- Hero Section -->
@@ -333,6 +380,52 @@
     <p class="text-lg text-gray-600 mt-4">I am a first-year student at Northeastern University pursuing Computer Science & Biology...</p>
     <a href="#resume" class="btn btn-primary mt-6">View Resume</a>
 </section>
+
+<section id="recent-accomplishments" class="bg-white p-10 shadow-lg rounded-lg text-center mt-12">
+    <h2 class="text-3xl font-bold text-red-600 mb-6">Recent Accomplishments</h2>
+    
+    <!-- Slider Container -->
+    <div class="slider-container relative">
+        <!-- Slides -->
+        <div class="slides flex overflow-hidden">
+            <!-- Slide 1 -->
+            <div class="slide w-full flex-shrink-0">
+                <img src="Images for Website/accomplishment1.jpg" alt="Improved Blackjack Game" class="w-full h-40 object-cover rounded-lg">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Improved Blackjack Game</h3>
+                    <p class="text-lg text-gray-600 mt-2">I enhanced my Blackjack game by adding dynamic user interface elements using Java Swing. The game is now more interactive with graphical elements, improving the overall user experience.</p>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide w-full flex-shrink-0">
+                <img src="Images for Website/accomplishment2.jpg" alt="AI-Powered Resume Analyzer" class="w-full h-40 object-cover rounded-lg">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">AI-Powered Resume Analyzer</h3>
+                    <p class="text-lg text-gray-600 mt-2">I built an AI-powered resume analyzer to help job seekers optimize their resumes. Using natural language processing, it provides suggestions to improve the content and structure.</p>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide w-full flex-shrink-0">
+                <img src="Images for Website/accomplishment3.jpg" alt="Web Scraping for Research Opportunities" class="w-full h-40 object-cover rounded-lg">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold text-gray-800">Web Scraping for Research Opportunities</h3>
+                    <p class="text-lg text-gray-600 mt-2">I developed a web scraper to gather research opportunities at Northeastern University, helping students easily find relevant research projects and faculty.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button class="prev-btn absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
+            &#10094;
+        </button>
+        <button class="next-btn absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
+            &#10095;
+        </button>
+    </div>
+</section>
+
 
 <!-- Resume Section -->
 <section id="resume" class="section">
@@ -536,6 +629,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+    // Toggle mobile menu visibility
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
 // Particle Background Initialization using particlesJS
 particlesJS("interactive-bg", {
     "particles": {
@@ -563,6 +664,32 @@ window.addEventListener("resize", function () {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
+
+// JavaScript for slider functionality
+const slides = document.querySelectorAll('.slide');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let currentSlide = 0;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+    showSlide(currentSlide);
+});
+
+nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+    showSlide(currentSlide);
+});
+
+// Initialize the first slide as active
+showSlide(currentSlide);
+
 </script>
 
 </body>
