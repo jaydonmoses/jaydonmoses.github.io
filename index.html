@@ -323,8 +323,7 @@
 }
 
 /* Navigation buttons */
-.prev-btn,
-.next-btn {
+.prev-btn, .next-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -338,8 +337,7 @@
     z-index: 1;
 }
 
-.prev-btn:hover,
-.next-btn:hover {
+.prev-btn:hover, .next-btn:hover {
     background-color: var(--dark-cherry-red); /* Darker cherry red on hover */
 }
 
@@ -348,8 +346,9 @@
 .slide video {
     width: 100%; /* Take full width of the slide */
     height: 256px; /* Fixed height (adjust as needed) */
-    object-fit: cover; /* Maintain aspect ratio, crop if necessary */
+    object-fit: contain; /* Show the entire image, add padding if needed */
     border-radius: 8px; /* Optional: Add rounded corners */
+    background-color: #f0f0f0; /* Optional: Background color for padding areas */
 }
 
 /* Video Container (for more control) */
@@ -366,7 +365,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain; /* Show the entire video */
+    background-color: #f0f0f0; /* Optional: Background color for padding areas */
 }
 
 .footer-link {
@@ -378,6 +378,25 @@
 .footer-link:hover {
     color: #FFD700; /* Gold highlight effect */
     text-decoration: underline;
+    
+    .enlarged-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10; /* Ensure it's on top */
+}
+
+.enlarged-video video,
+.enlarged-video img {
+    max-width: 90%; /* Adjust as needed */
+    max-height: 90%; /* Adjust as needed */
+}
 
     </style>
 </head>
@@ -437,56 +456,38 @@
 
 <section id="recent-accomplishments" class="bg-white p-10 shadow-lg rounded-lg text-center mt-12">
     <h2 class="text-3xl font-bold text-red-600 mb-6">Recent Accomplishments</h2>
-
+    
+    <!-- Slider Container -->
     <div class="slider-container relative">
+        <!-- Slides -->
         <div class="slides flex overflow-hidden">
+            <!-- Slide 1 -->
             <div class="slide w-full flex-shrink-0">
-                <img src="Images for Website/accomplishment1.png" alt="Improved Blackjack Game"
-                     class="w-full h-64 object-cover rounded-lg">
+                <img src="Images for Website/accomplishment1.png" alt="Improved Blackjack Game" class="w-full h-40 object-cover rounded-lg">
                 <div class="p-6">
                     <h3 class="text-2xl font-semibold text-gray-800">Improved Blackjack Game</h3>
-                    <p class="text-lg text-gray-600 mt-2">I enhanced my Blackjack game by adding dynamic user
-                        interface elements using Java Swing. The game is now more interactive with graphical
-                        elements, improving the overall user experience.</p>
+                    <p class="text-lg text-gray-600 mt-2">I enhanced my Blackjack game by adding dynamic user interface elements using Java Swing. The game is now more interactive with graphical elements, improving the overall user experience.</p>
                 </div>
             </div>
 
+            <!-- Slide 2 -->
             <div class="slide w-full flex-shrink-0">
-                <div class="video-container">
-                    <video class="w-full h-64 object-cover rounded-lg" autoplay loop muted>
-                        <source src="Images for Website/Fighter - SampleScene.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
+                <img src="Images for Website/accomplishment2.jpg" alt="Coming Soon" class="w-full h-40 object-cover rounded-lg">
                 <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-gray-800">2D Multiplayer Game</h3>
-                    <p class="text-lg text-gray-600 mt-2">2D multiplayer game developed in Unity</p>
-                    <p class="text-lg text-gray-600 mt-2"><strong>Languages:</strong> C#, Unity</p>
-                    <a href="https://github.com/jaydonmoses/multiplayer-game" target="_blank"
-                       class="project-link">Coming Soon</a>
+                    <h3 class="text-2xl font-semibold text-gray-800">Coming Soon</h3>
+                    <p class="text-lg text-gray-600 mt-2">Coming Soon</p>
                 </div>
             </div>
 
+            <!-- Slide 3 -->
             <div class="slide w-full flex-shrink-0">
-                <img src="Images for Website/accomplishment3.jpg" alt="Coming Soon"
-                     class="w-full h-64 object-cover rounded-lg">
+                <img src="Images for Website/accomplishment3.jpg" alt="Comin Soon" class="w-full h-40 object-cover rounded-lg">
                 <div class="p-6">
                     <h3 class="text-2xl font-semibold text-gray-800">Coming Soon</h3>
                     <p class="text-lg text-gray-600 mt-2">Coming Soon</p>
                 </div>
             </div>
         </div>
-
-        <button
-            class="prev-btn absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
-            &#10094;
-        </button>
-        <button
-            class="next-btn absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
-            &#10095;
-        </button>
-    </div>
-</section>
 
         <!-- Navigation Buttons -->
         <button class="prev-btn absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
@@ -586,55 +587,70 @@
             </div>
         </section>
 
-        <!-- Projects Section (Hidden by default) -->
         <section id="projects" class="resume-section hidden">
-            <h3 class="text-2xl font-semibold text-cherry-red">Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                <!-- Project 1: 2D Multiplayer Game -->
-                <div class="project-card">
-                    <div class="video-container">
-                        <video class="w-full h-40 object-cover rounded-t-lg" autoplay loop muted>
-                            <source src="Images for Website/Fighter - SampleScene.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold"> Super-Smash-Fighters</h4>
-                        <p class="text-gray-600 mt-2">2D multiplayer game developed in Unity</p>
-                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> C#, Unity</p>
-                        <a href="https://github.com/jaydonmoses/multiplayer-game" target="_blank" class="project-link">Coming Soon</a>
-                    </div>
-                </div>
+    <h3 class="text-2xl font-semibold text-cherry-red">Projects</h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-                <!-- Project 2: Blackjack Java -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <img src="Images for Website/blackjack-game.png" alt="Blackjack game" class="w-full h-40 object-cover rounded-t-lg">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold">Blackjack Java</h4>
-                        <p class="text-gray-600 mt-2">Created a interactive blackjack game based on the real world game with virtual currency.</p>
-                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> Java, Swing</p>
-                        <a href="https://github.com/jaydonmoses/Blackjack-Game" target="_blank" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-
-                <!-- Project 3: Web Scraper -->
-                <div class="project-card">
-                    <div class="image-container">
-                        <img src="Images for Website/web-scraper.png" alt="Web Scraper" class="w-full h-40 object-cover rounded-t-lg">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold">Faculty Web Scraper</h4>
-                        <p class="text-gray-600 mt-2">Automated tool to extract faculty data & emails from Northeastern’s website.</p>
-                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> Python, BeautifulSoup</p>
-                        <a href="https://github.com/jaydonmoses/web-scraper" target="_blank" class="project-link">View on GitHub</a>
-                    </div>
-                </div>
-
+        <div class="project-card cursor-pointer" data-project="multiplayer">
+            <div class="video-container">
+                <video class="w-full h-40 object-cover rounded-t-lg" autoplay loop muted>
+                    <source src="Images for Website/Fighter - SampleScene.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
             </div>
-        </section>
+            <div class="p-6">
+                <h4 class="text-xl font-semibold"> Super-Smash-Fighters</h4>
+                <p class="text-gray-600 mt-2">2D multiplayer game developed in Unity</p>
+                <p class="text-gray-600 mt-2"><strong>Languages:</strong> C#, Unity</p>
+                <a href="https://github.com/jaydonmoses/multiplayer-game" target="_blank"
+                   class="project-link">Coming Soon</a>
+            </div>
+            <div class="enlarged-video hidden absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center">
+                <video class="max-w-full max-h-full" controls>
+                    <source src="Images for Website/Fighter - SampleScene.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+        <div class="project-card cursor-pointer" data-project="blackjack">
+            <div class="image-container">
+                <img src="Images for Website/blackjack-game.png" alt="Blackjack game"
+                     class="w-full h-40 object-cover rounded-t-lg">
+            </div>
+            <div class="p-6">
+                <h4 class="text-xl font-semibold">Blackjack Java</h4>
+                <p class="text-gray-600 mt-2">Created an interactive blackjack game based on the real
+                    world game with virtual currency.</p>
+                <p class="text-gray-600 mt-2"><strong>Languages:</strong> Java, Swing</p>
+                <a href="https://github.com/jaydonmoses/Blackjack-Game" target="_blank"
+                   class="project-link">View on GitHub</a>
+            </div>
+            <div class="enlarged-video hidden absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center">
+                <img src="Images for Website/blackjack-game.png" alt="Blackjack game"
+                     class="max-w-full max-h-full">
+            </div>
+        </div>
+
+        <div class="project-card cursor-pointer" data-project="scraper">
+            <div class="image-container">
+                <img src="Images for Website/web-scraper.png" alt="Web Scraper"
+                     class="w-full h-40 object-cover rounded-t-lg">
+            </div>
+            <div class="p-6">
+                <h4 class="text-xl font-semibold">Faculty Web Scraper</h4>
+                <p class="text-gray-600 mt-2">Automated tool to extract faculty data & emails from
+                    Northeastern’s website.</p>
+                <p class="text-gray-600 mt-2"><strong>Languages:</strong> Python, BeautifulSoup</p>
+                <a href="https://github.com/jaydonmoses/web-scraper" target="_blank"
+                   class="project-link">View on GitHub</a>
+            </div>
+            <div class="enlarged-video hidden absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center">
+                <img src="Images for Website/web-scraper.png" alt="Web Scraper"
+                     class="max-w-full max-h-full">
+            </div>
+        </div>
+
     </div>
 </section>
 
@@ -791,6 +807,25 @@ nextBtn.addEventListener('click', () => {
 
 // Initialize the first slide as active
 showSlide(currentSlide);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const projectCards = document.querySelectorAll('.project-card');
+
+    projectCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const enlargedVideo = this.querySelector('.enlarged-video');
+            enlargedVideo.classList.toggle('hidden');
+        });
+    });
+
+    // Close enlarged video when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!event.target.closest('.project-card')) {
+            const enlargedVideos = document.querySelectorAll('.enlarged-video');
+            enlargedVideos.forEach(video => video.classList.add('hidden'));
+        }
+    });
+});
 
 </script>
 
