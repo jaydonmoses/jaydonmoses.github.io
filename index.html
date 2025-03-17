@@ -1,358 +1,570 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaydon Moses - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</head>
-
-<body class="bg-gray-100 font-sans">
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md py-4 px-8 flex justify-between items-center z-50">
-        <h2 class="text-xl font-bold text-gray-800">Jaydon Moses</h2>
-        <div class="space-x-6">
-            <a href="#about-me" class="text-red-500 font-semibold hover:text-red-600 transition">About</a>
-            <a href="#resume" class="text-red-500 font-semibold hover:text-red-600 transition">Resume</a>
-            <a href="#contact" class="text-red-500 font-semibold hover:text-red-600 transition">Contact</a>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="flex flex-col items-center text-center bg-gradient-to-r from-red-500 to-red-700 text-white py-32 rounded-b-3xl mt-16">
-        <img src="Images for Website/profile-picture.png" alt="Jaydon Moses" class="profile-picture shadow-lg mb-4">
-        <h1 class="text-5xl font-bold">Jaydon Moses</h1>
-        <p class="text-xl mt-4">Aspiring Computer Scientist & Biologist</p>
-    </section>
-
-    <div class="container mx-auto px-8 py-12">
-    
-        <!-- About Me Section -->
-<section id="about-me" class="bg-white p-10 shadow-lg rounded-lg text-center">
-    <h2 class="text-3xl font-bold text-red-500">About Me</h2>
-    <p class="text-lg text-gray-600 mt-4">I am a first-year student in Computer Science and Biology at Northeastern University. I am interested in biotech and software, aiming to leverage technology to improve lives. I am proficient in SQL, Python, and JavaScript. Feel free to contact me!</p>
-    <div class="mt-6 space-x-4">
-        <a href="#resume" class="bg-white text-red-500 px-6 py-3 rounded-lg font-semibold shadow-md hover:scale-105 transition">View Resume</a>
-    </div>
-</section>
-
-<!-- Recent Accomplishments Section (Updated with Image to the Side) -->
-<section id="recent-accomplishments" class="bg-white p-10 shadow-lg rounded-lg text-center mt-12">
-    <h2 class="text-3xl font-bold text-red-500">Recent Accomplishments</h2>
-    <div class="flex flex-col md:flex-row items-center mt-6">
-        <img src="Images for Website/recent-accomplishment.png" alt="Recent Accomplishment" class="w-full md:w-1/3 rounded-lg shadow-md mb-6 md:mb-0">
-
-        <div class="md:ml-6 w-full md:w-2/3 mt-6 md:mt-0">
-            <p class="text-lg text-gray-600">
-                Recently, I made significant improvements to my Blackjack project. I utilized Java Swing to enhance its interactivity, making the user interface more engaging and responsive. These changes allowed me to provide a more intuitive gaming experience with interactive buttons, graphical elements, and dynamic updates during gameplay.
-            </p>
-        </div>
-    </div>
-</section>
-
-        <!-- Resume Section -->
-        <div id="resume" class="flex container mx-auto px-8 py-12">
-            <!-- Sidebar -->
-            <div class="w-1/4 p-6 bg-white shadow-lg rounded-lg sticky top-24">
-                <h2 class="text-3xl font-bold text-red-500 mb-4">Resume</h2>
-                <div class="space-y-4">
-                    <button class="resume-tab active transition-all duration-300 ease-in-out" id="education-tab" onclick="showSection('education')">📚 Education</button>
-                    <button class="resume-tab transition-all duration-300 ease-in-out" id="skills-tab" onclick="showSection('skills')">💻 Skills</button>
-                    <button class="resume-tab transition-all duration-300 ease-in-out" id="experience-tab" onclick="showSection('experience')">🚀 Experience</button>
-                    <button class="resume-tab transition-all duration-300 ease-in-out" id="projects-tab" onclick="showSection('projects')">🛠️ Projects</button>
-                </div>
-            </div>
-
-            <!-- Resume Content -->
-            <div class="w-3/4 ml-8">
-                <section id="education" class="resume-section bg-white p-6 shadow-lg rounded-lg">
-                    <h3 class="text-2xl font-semibold text-red-500">Education</h3>
-                    <div class="flex items-center mt-4">
-                        <img src="Images for Website/NU_icon.png" alt="Northeastern University Icon" class="w-10 h-10 mr-2"> <p class="text-lg text-gray-600">
-                            <strong>Northeastern University</strong> (Boston, MA)<br>
-                            <em>Sept. 2024 – Present</em><br>
-                            Bachelor of Science in Computer Science and Biology
-                        </p>
-                    </div>
-                </section>
-
-                <section id="skills" class="resume-section bg-white p-6 shadow-lg rounded-lg mt-6 hidden">
-                    <h3 class="text-2xl font-semibold text-red-500">Skills</h3>
-                    <p class="text-lg text-gray-600 mt-4"><strong>Programming Languages:</strong> C#, Java, Python, C, C++, JavaScript</p>
-                    <p class="text-lg text-gray-600 mt-4"><strong>Web & Database Technologies:</strong> MySQL, AWS, HTML, CSS, React</p>
-                    <p class="text-lg text-gray-600 mt-4"><strong>Tools & Frameworks:</strong> Unity, Visual Studio Code, MySQL</p>
-                
-                    <h3 class="text-lg text-gray-600 mt-4"><strong>Certifications</strong></h3>
-                    <div class="grid grid-cols-2 gap-6 mt-4">
-                        <div class="bg-gray-200 p-4 rounded-lg shadow-md">
-                            <img src="Images for Website/KAGGLE PYTHON.png" alt="Python Kaggle Certification" class="w-full rounded">
-                            <p class="text-center text-gray-700 mt-2">Python (Kaggle)</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="experience" class="resume-section bg-white p-6 shadow-lg rounded-lg mt-6 hidden">
-    <h3 class="text-2xl font-semibold text-red-500 mb-6">Experience</h3>
-
-    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 mb-6">
-        <div class="flex items-center mb-4">
-            <img src="Images for Website/Irving_Oil.png" alt="Irving Oil" class="w-12 h-12 mr-4">
-            <h4 class="text-xl font-semibold text-gray-800">Assistant Manager, Irving Oil</h4>
-        </div>
-        <p class="text-lg text-gray-600">
-            <strong>Dover, NH</strong><br>
-            <em>Jul 2023 – Sep 2024</em><br>
-            • Oversaw daily store operations, inventory management, and vendor coordination.<br>
-            • Provided customer service interactions, handling transactions, inquiries, and issue resolution.<br>
-            • Supervised employees, optimizing scheduling, task delegation, and loss prevention strategies.
-        </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 mb-6">
-        <div class="flex items-center mb-4">
-            <img src="Images for Website/flip_the_bird.png" alt="Flip The Bird" class="w-12 h-12 mr-4">
-            <h4 class="text-xl font-semibold text-gray-800">Cashier, Flip The Bird</h4>
-        </div>
-        <p class="text-lg text-gray-600">
-            <strong>Danvers, MA</strong><br>
-            <em>Feb 2024 – Aug 2024</em><br>
-            • Customer service experience handling a large volume of customers.<br>
-            • Kitchen prep, handling orders, transactions, and ensuring smooth kitchen operations.<br>
-            • Independently ran the smoothie station, maintaining speed, accuracy, and quality control.
-        </p>
-    </div>
-
-    <div class="bg-white p-6 rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 mb-6">
-        <div class="flex items-center mb-4">
-            <img src="Images for Website/amazon-robotics-logo.png" alt="Amazon Robotics" class="w-12 h-12 mr-4">
-            <h4 class="text-xl font-semibold text-gray-800">Robotics Camp, Amazon Robotics</h4>
-        </div>
-        <p class="text-lg text-gray-600">
-            <strong>Reading, MA</strong><br>
-            <em>Summer 2019</em><br>
-            • Part of a competition, I wrote programmatically promoted by Amazon Robotics, I was part of a four-member team.<br>
-            • Team designed a robot whose movements can be programmatically controlled.<br>
-            • My team developed a 5-level game for this competition from concept, design, to execution.<br>
-            • Awarded by judges as 3rd place out of 5 total teams.
-        </p>
-    </div>
-</section>
-
-<section id="projects" class="resume-section bg-white p-6 shadow-lg rounded-lg mt-6 hidden">
-    <h3 class="text-2xl font-semibold text-red-500 mb-4">Projects</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
-            <div class="video-container">
-                <video class="w-full h-40 object-cover" muted loop>
-                    <source src="Images for Website/Fighter - SampleScene - Windows, Mac, Linux - Unity 2021.3.12f1 Personal _DX11_ 2024-04-01 11-18-05.mp4" type="video/mp4">                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="p-4">
-                <h4 class="text-xl font-semibold text-gray-800">2D Multiplayer Game</h4>
-                <p class="text-gray-600 mt-2">
-                    A real-time 2D multiplayer game with networked gameplay mechanics, allowing players to interact in a shared virtual environment.
-                </p>
-                <p class="text-gray-600 mt-2">
-                    <strong>Languages:</strong> C#, Unity
-                </p>
-                <p class="text-sm text-gray-500 mt-2">
-                    Click to enlarge video.
-                </p>
-            </div>
-        </div>
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
-            <div class="video-container">
-                <video class="w-full h-40 object-cover" muted loop>
-                    <source src="videos/placeholder-video1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="p-4">
-                <h4 class="text-xl font-semibold text-gray-800">Blackjack in Java</h4>
-                <p class="text-gray-600 mt-2">
-                    A classic Blackjack game implemented in Java, featuring interactive gameplay and a user-friendly interface.
-                </p>
-                <p class="text-gray-600 mt-2">
-                    <strong>Languages:</strong> Java
-                </p>
-                <p class="text-sm text-gray-500 mt-2">
-                    Click to enlarge video.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Contact Section as a Card -->
-<section id="contact" class="bg-white p-10 mt-12 shadow-lg rounded-lg text-center">
-    <div class="bg-white p-10 shadow-lg rounded-lg transform hover:scale-105 transition-all duration-300">
-        <h2 class="text-3xl font-bold text-red-500">Contact Me</h2>
-        <form class="mt-6 space-y-4">
-            <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-lg text-lg" required />
-            <input type="email" placeholder="Your Email" class="w-full px-4 py-2 border rounded-lg text-lg" required />
-            <textarea placeholder="Your Message" rows="5" class="w-full px-4 py-2 border rounded-lg text-lg" required></textarea>
-            <button type="submit" class="bg-red-500 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition">Send Message</button>
-        </form>
-    </div>
-</section>
-
-<footer class="bg-red-500 text-white py-8 mt-16">
-    <div class="container mx-auto px-8 text-center">
-        <div class="space-x-8 mb-4">
-            <a href="https://www.linkedin.com/in/jaydonmoses/" target="_blank" class="hover:text-gray-300">
-                <img src="Images for Website/linkedin-icon.png" alt="LinkedIn" class="inline-block w-6 h-6">
-            </a>
-            <a href="https://github.com/jaydonmoses" target="_blank" class="hover:text-gray-300">
-                <img src="Images for Website/github-icon.png" alt="GitHub" class="inline-block w-6 h-6">
-            </a>
-            <a href="mailto:jaydon.10.moses@gmail.com" class="hover:text-gray-300">
-                <img src="Images for Website/gmail-icon.png" alt="Gmail" class="inline-block w-6 h-6">
-            </a>
-        </div>
-        <p>&copy; 2025 Jaydon Moses. All Rights Reserved.</p>
-    </div>
-</footer>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.36.0"></script>
 
     <style>
-      
+        /* Root Variables */
+        :root {
+            --cherry-red: #D32F2F;
+            --dark-cherry-red: #B71C1C;
+            --off-white: #F9F9F9;
+            --dark-gray: #444;
+            --light-gray: #666;
+        }
+
+
+        /* General Styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--off-white);
+            color: var(--dark-gray);
+        }
+
+        /* Navbar */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: var(--cherry-red);
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover {
+            color: var(--dark-cherry-red);
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(to right, var(--cherry-red), var(--off-white));
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--off-white);
+            border-radius: 0 0 50px 50px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+        }
+
+        /* Profile Picture */
         .profile-picture {
-          width: 200px; /* Adjust as needed */
-          height: 200px; /* Adjust as needed */
-          object-fit: cover; /* Crop to fit dimensions */
-          border-radius: 50%; /* Make it circular */
-        }
-
-        .video-container video {
-            transition: transform 0.3s ease;
-        }
-
-        .video-container:hover video {
-            transform: scale(1.1); /* Reverted to 1.1 */
-        }
-
-        video:-webkit-full-screen {
-            width: 100%;
-            height: 100%;
-        }
-
-        video:-moz-full-screen {
-            width: 100%;
-            height: 100%;
-        }
-
-        video:-ms-fullscreen {
-            width: 100%;
-            height: 100%;
-        }
-
-        video:fullscreen {
-            width: 100%;
-            height: 100%;
-        }
-
-        .profile-picture {
-            width: 200px; /* Adjust as needed */
-            height: 200px; /* Adjust as needed */
+            width: 180px;
+            height: 180px;
             object-fit: cover;
             border-radius: 50%;
-            transition: transform 0.3s ease; /* Add transition */
+            transition: transform 0.3s ease;
+            box-shadow: 0px 0px 8px var(--dark-cherry-red);
+            border: 4px solid var(--off-white);
         }
 
         .profile-picture:hover {
-            transform: scale(1.1); /* Enlarge on hover */
+            transform: scale(1.1);
         }
 
-        .my-button {
-            transition: transform 0.3s ease;
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: 0.3s ease-in-out;
+            text-align: center;
         }
 
-        .my-button:hover {
-            transform: translateY(-5px);
+        .btn-primary {
+            background-color: var(--cherry-red);
+            color: var(--off-white);
         }
 
-        .fade-in {
-            opacity: 0;
-            transition: opacity 1s ease;
+        .btn-primary:hover {
+            background-color: var(--dark-cherry-red);
         }
 
-        .fade-in.show {
-            opacity: 1;
+        /* Section Styling */
+        .section {
+            background-color: var(--off-white);
+            padding: 50px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
+
+        /* Footer */
+        footer {
+            background-color: var(--cherry-red);
+            color: var(--off-white);
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+        
+.resume-tab {
+    padding: 12px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--off-white);
+    color: var(--cherry-red);
+    font-weight: bold;
+}
+
+.resume-tab:hover,
+.resume-tab.active {
+    background-color: var(--cherry-red);
+    color: var(--off-white);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-card {
+    background-color: var(--off-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--cherry-red);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.project-link:hover {
+    color: var(--dark-cherry-red);
+    text-decoration: underline;
+}
+
+/* Navbar Links */
+.nav-link {
+    color: var(--cherry-red);
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--dark-cherry-red);
+    font-weight: bold;
+    border-bottom: 2px solid var(--cherry-red);
+}
+
+/* General Mobile Adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Increases readability on small screens */
+    }
+
+    h1 {
+        font-size: 2.2rem; /* Reduce size for mobile */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section {
+        padding: 50px 10px; /* Adjusts padding on mobile */
+        border-radius: 0 0 30px 30px;
+    }
+
+    /* Navbar */
+    #nav-links {
+        display: none;
+    }
+
+    #menu-btn {
+        display: block;
+    }
+
+    #mobile-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .mobile-link {
+        padding: 12px;
+        text-align: center;
+        font-size: 18px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Resume Tabs */
+    .resume-tab {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    /* Project Section */
+    .grid {
+        grid-template-columns: 1fr; /* Stacks projects vertically */
+    }
+
+    .project-card {
+        width: 100%;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 20px;
+    }
+}
+
+/* Ensure better spacing on tablets */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px;
+    }
+}
+
+        #interactive-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures it stays behind everything */
+    pointer-events: none;
+    
+    #particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  /* Makes sure it stays behind other elements */
+    pointer-events: none;  /* Prevents interaction with the particles */
+}
+
+}
+
+.footer-link {
+    color: var(--off-white);
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.footer-link:hover {
+    color: #FFD700; /* Gold highlight effect */
+    text-decoration: underline;
 
     </style>
+</head>
 
-    <script>
-        function showSection(section) {
-            document.querySelectorAll(".resume-section").forEach(sec => sec.classList.add("hidden"));
-            document.getElementById(section).classList.remove("hidden");
+<body>
+    <!-- Particle Background Container -->
+    <div id="particles-js"></div>  <!-- Particle container -->
 
-            document.querySelectorAll(".resume-tab").forEach(tab => tab.classList.remove("bg-gray-200", "text-red-500", "font-bold"));
-            document.getElementById(`${section}-tab`).classList.add("bg-gray-200", "text-red-500", "font-bold");
-        }
+<!-- Navbar -->
+<nav id="navbar" class="fixed top-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md py-4 px-8 flex justify-between items-center z-50">
+    <h2 class="text-xl font-bold text-cherry-red">Jaydon Moses</h2>
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    <!-- Hamburger Menu (Mobile) -->
+    <button id="menu-btn" class="md:hidden text-cherry-red text-2xl">
+        ☰
+    </button>
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
+    <!-- Navbar Links -->
+    <div id="nav-links" class="hidden md:flex space-x-6">
+        <a href="#about-me" class="nav-link font-semibold">About</a>
+        <a href="#resume" class="nav-link font-semibold">Resume</a>
+        <a href="#contact" class="nav-link font-semibold">Contact</a>
+    </div>
+</nav>
 
-    window.addEventListener('scroll', () => {
-        const fadeInElements = document.querySelectorAll('.fade-in');
-        fadeInElements.forEach(element => {
-            if (isElementInViewport(element)) {
-                element.classList.add('show');
-            }
-        });
-    });
+<!-- Mobile Menu (Hidden by Default) -->
+<div id="mobile-menu" class="hidden flex flex-col bg-white shadow-lg absolute top-16 left-0 w-full py-4 px-8">
+    <a href="#about-me" class="mobile-link py-2">About</a>
+    <a href="#resume" class="mobile-link py-2">Resume</a>
+    <a href="#contact" class="mobile-link py-2">Contact</a>
+</div>
 
-    function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-    }
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <img src="Images for Website/profile-picture.png" alt="Jaydon Moses" class="profile-picture mb-4">
+    <h1>Jaydon Moses</h1>
+    <p>Aspiring Computer Scientist & Biologist</p>
+</section>
+
+<!-- About Me -->
+<section id="about-me" class="section text-center">
+    <h2 class="text-3xl font-bold text-cherry-red">About Me</h2>
+    <p class="text-lg text-gray-600 mt-4">I am a first-year student at Northeastern University pursuing Computer Science & Biology...</p>
+    <a href="#resume" class="btn btn-primary mt-6">View Resume</a>
+</section>
+
+<!-- Resume Section -->
+<section id="resume" class="section">
+    <h2 class="text-3xl font-bold text-cherry-red text-center mb-6">Resume</h2>
+
+    <!-- Resume Tabs -->
+    <div class="flex justify-center space-x-4 mb-6">
+        <button class="resume-tab active" id="education-tab" onclick="showSection('education')">📚 Education</button>
+        <button class="resume-tab" id="skills-tab" onclick="showSection('skills')">💻 Skills</button>
+        <button class="resume-tab" id="experience-tab" onclick="showSection('experience')">🚀 Experience</button>
+        <button class="resume-tab" id="projects-tab" onclick="showSection('projects')">🛠️ Projects</button>
+    </div>
+
+    <!-- Resume Content -->
+    <div id="resume-content">
         
-        document.addEventListener('DOMContentLoaded', function() {
-            const videoContainers = document.querySelectorAll('.video-container');
+        <!-- Education -->
+        <section id="education" class="resume-section">
+            <h3 class="text-2xl font-semibold text-cherry-red">Education</h3>
+            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
+                <div class="flex items-center">
+                    <img src="Images for Website/NU_icon.png" alt="Northeastern University" class="w-12 h-12 mr-3">
+                    <p class="text-lg text-gray-600">
+                        <strong>Northeastern University</strong> (Boston, MA)<br>
+                        <em>Sept. 2024 – Present</em><br>
+                        B.S. in Computer Science and Biology<br>
+                        Relevant Coursework: Discrete Structures, General Biology 1, General Chemistry
+                    </p>
+                </div>
+            </div>
+        </section>
 
-        videoContainers.forEach(container => {
-            const video = container.querySelector('video');
+        <!-- Skills -->
+        <section id="skills" class="resume-section hidden">
+            <h3 class="text-2xl font-semibold text-cherry-red">Technical Skills</h3>
+            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
+                <p class="text-lg"><strong>Languages:</strong> C#, Java, Python, C, C++, JavaScript</p>
+                <p class="text-lg"><strong>Web & Databases:</strong> MySQL, AWS, HTML, CSS, React</p>
+                <p class="text-lg"><strong>Tools:</strong> Unity, Visual Studio Code</p>
+                
+                <h3 class="mt-4 text-lg font-semibold">Certifications</h3>
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                    <div class="p-4 bg-gray-200 rounded-lg shadow-md">
+                        <img src="Images for Website/KAGGLE PYTHON.png" alt="Python Kaggle Certification" class="w-full rounded">
+                        <p class="text-center text-gray-700 mt-2">Python (Kaggle)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            container.addEventListener('mouseenter', () => {
-                video.play();
-            });
+        <!-- Experience -->
+        <section id="experience" class="resume-section hidden">
+            <h3 class="text-2xl font-semibold text-cherry-red">Experience</h3>
+            <div class="mt-4 space-y-6">
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h4 class="text-xl font-semibold">Assistant Manager, Irving Oil</h4>
+                    <p class="text-lg text-gray-600">Oversaw daily store operations, inventory management, and customer interactions.</p>
+                </div>
 
-            container.addEventListener('mouseleave', () => {
-                video.pause();
-                video.currentTime = 0;
-            });
+                <div class="p-6 bg-white shadow-lg rounded-lg">
+                    <h4 class="text-xl font-semibold">Cashier, Flip The Bird</h4>
+                    <p class="text-lg text-gray-600">Managed high-volume customer transactions and assisted in kitchen prep.</p>
+                </div>
+            </div>
+        </section>
 
-            video.addEventListener('click', () => {
-                if (video.requestFullscreen) {
-                    video.requestFullscreen();
-                } else if (video.mozRequestFullScreen) {
-                    video.mozRequestFullScreen();
-                } else if (video.webkitRequestFullscreen) {
-                    video.webkitRequestFullscreen();
-                } else if (video.msRequestFullscreen) {
-                    video.msRequestFullscreen();
-                }
-            });
+        <!-- Projects Section (Hidden by default) -->
+        <section id="projects" class="resume-section hidden">
+            <h3 class="text-2xl font-semibold text-cherry-red">Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Project 1: 2D Multiplayer Game -->
+                <div class="project-card">
+                    <div class="video-container">
+                        <video class="w-full h-40 object-cover rounded-t-lg" autoplay loop muted>
+                            <source src="Images for Website/Fighter - SampleScene.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold">2D Multiplayer Game</h4>
+                        <p class="text-gray-600 mt-2">Real-time multiplayer game with networked gameplay mechanics.</p>
+                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> C#, Unity</p>
+                        <a href="https://github.com/jaydon-moses/multiplayer-game" target="_blank" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: Resume Analyzer -->
+                <div class="project-card">
+                    <div class="image-container">
+                        <img src="Images for Website/resume-analyzer.png" alt="Resume Analyzer" class="w-full h-40 object-cover rounded-t-lg">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold">Resume Analyzer</h4>
+                        <p class="text-gray-600 mt-2">AI-powered system that evaluates resumes and provides feedback.</p>
+                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> Python, NLP, Flask</p>
+                        <a href="https://github.com/jaydon-moses/resume-analyzer" target="_blank" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: Web Scraper -->
+                <div class="project-card">
+                    <div class="image-container">
+                        <img src="Images for Website/web-scraper.png" alt="Web Scraper" class="w-full h-40 object-cover rounded-t-lg">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-semibold">Faculty Web Scraper</h4>
+                        <p class="text-gray-600 mt-2">Automated tool to extract faculty data & emails from Northeastern’s website.</p>
+                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> Python, BeautifulSoup</p>
+                        <a href="https://github.com/jaydon-moses/web-scraper" target="_blank" class="project-link">View on GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</section>
+
+
+<!-- Contact Section (Not part of the resume tab navigation) -->
+<section id="contact" class="section text-center">
+    <h2 class="text-3xl font-bold text-cherry-red">Contact Me</h2>
+    <p class="text-lg text-gray-600 mt-4">Feel free to reach out for inquiries or collaborations.</p>
+    <div class="mt-6 space-x-4">
+        <a href="mailto:jaydon.moses@example.com" class="btn btn-primary">Email Me</a>
+        <a href="https://www.linkedin.com/in/jaydon-moses/" target="_blank" class="btn btn-primary">LinkedIn</a>
+        <a href="https://github.com/jaydon-moses" target="_blank" class="btn btn-primary">GitHub</a>
+    </div>
+</section>
+
+<!-- Footer Section (Not part of the resume tab navigation) -->
+<footer class="bg-cherry-red text-off-white text-center py-6 mt-12">
+    <p class="text-lg">© 2024 Jaydon Moses.
+
+
+
+<script>
+// Function to switch between resume sections
+function showSection(sectionId) {
+    // Hide all sections
+    const sections = document.querySelectorAll('.resume-section');
+    sections.forEach(section => section.classList.add('hidden'));
+
+    // Show the selected section
+    const activeSection = document.getElementById(sectionId);
+    activeSection.classList.remove('hidden');
+
+    // Update the active tab
+    const tabs = document.querySelectorAll('.resume-tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+    const activeTab = document.getElementById(sectionId + '-tab');
+    activeTab.classList.add('active');
+}
+
+// Initialize by showing the Education section by default
+showSection('education');
+
+// Smooth Scrolling
+const links = document.querySelectorAll('a');
+links.forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute("href").substring(1);
+        const targetSection = document.getElementById(targetId);
+
+        window.scrollTo({
+            top: targetSection.offsetTop - 60, // Adjust for navbar height
+            behavior: "smooth"
         });
     });
+});
+
+// Highlight Active Section in Navbar
+function highlightSection() {
+    let scrollPos = window.scrollY + 80; // Adjust sensitivity
+
+    const sections = document.querySelectorAll('.resume-section');
+    sections.forEach(section => {
+        if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+            links.forEach(link => link.classList.remove("active"));
+            document.querySelector(`a[href="#${section.id}"]`).classList.add("active");
+        }
+    });
+}
+window.addEventListener("scroll", highlightSection);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mobileMenu = document.getElementById("mobile-menu");
+    const menuBtn = document.getElementById("menu-btn");
+
+    menuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    // Close menu when clicking a link
+    document.querySelectorAll(".mobile-link").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+});
+
+// Particle Background Initialization using particlesJS
+particlesJS("interactive-bg", {
+    "particles": {
+        "number": {
+            "value": 100
+        },
+        "size": {
+            "value": 3
+        },
+        "move": {
+            "speed": 1,
+            "direction": "none"
+        },
+        "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#d32f2f"
+        }
+    }
+});
+
+// Resize Canvas When Window Resizes
+window.addEventListener("resize", function () {
+    const canvas = document.getElementById('interactive-bg');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
 </script>
+
 </body>
 
 </html>
