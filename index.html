@@ -22,7 +22,7 @@
 
     <!-- Hero Section -->
     <section class="flex flex-col items-center text-center bg-gradient-to-r from-red-500 to-red-700 text-white py-32 rounded-b-3xl mt-16">
-        <img src="Images for Website/profile-picture.png" alt="Jaydon Moses" class="w-40 h-40 rounded-full shadow-lg mb-4">
+        <img src="Images for Website/profile-picture.png" alt="Jaydon Moses" class="profile-picture shadow-lg mb-4">
         <h1 class="text-5xl font-bold">Jaydon Moses</h1>
         <p class="text-xl mt-4">Aspiring Computer Scientist & Biologist</p>
     </section>
@@ -194,6 +194,27 @@
             <p>&copy; 2025 Jaydon Moses. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <style>
+        /* ... your other styles ... */
+      
+        .profile-picture {
+          width: 200px; /* Adjust as needed */
+          height: 200px; /* Adjust as needed */
+          object-fit: cover; /* Crop to fit dimensions */
+          border-radius: 50%; /* Make it circular */
+        }
+
+
+        .video-container video {
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        .video-container:hover video {
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+
+      </style>
 
     <script>
         function showSection(section) {
