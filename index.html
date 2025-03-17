@@ -332,34 +332,37 @@
     <!-- Particle Background Container -->
     <div id="particles-js"></div>  <!-- Particle container -->
 
-<!-- Navbar -->
-<nav id="navbar" class="fixed top-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md py-4 px-8 flex justify-between items-center z-50">
-    <h2 class="text-xl font-bold text-cherry-red">Jaydon Moses</h2>
-
-    <!-- Navbar Links -->
-    <div id="nav-links" class="hidden md:flex space-x-6">
-        <a href="#about-me" class="nav-link font-semibold">About</a>
-        <a href="#resume" class="nav-link font-semibold">Resume</a>
-        <a href="#recent-accomplishments" class="nav-link font-semibold">Recent Accomplishments</a>
-        <a href="#contact" class="nav-link font-semibold">Contact</a>
+<!-- Desktop Navbar (Visible only on larger screens) -->
+<nav class="bg-gray-100 text-white p-4 hidden md:block">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold">Jaydon Moses</a>
+        <ul class="flex space-x-8">
+            <li><a href="#about-me" class="text-lg hover:text-red-600">About Me</a></li>
+            <li><a href="#recent-accomplishments" class="text-lg hover:text-red-600">Recent Accomplishments</a></li>
+            <li><a href="#resume" class="text-lg hover:text-red-600">Resume</a></li>
+            <li><a href="#contact" class="text-lg hover:text-red-600">Contact</a></li>
+            <!-- Add other links as needed -->
+        </ul>
     </div>
 </nav>
 
-<!-- Mobile Navbar -->
-<nav class="bg-gray-900 text-white p-4">
+<!-- Mobile Navbar (Visible only on smaller screens) -->
+<nav class="bg-gray-100 text-white p-4 md:hidden">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#" class="text-2xl font-bold">YourLogo</a>
+        <a href="#" class="text-2xl font-bold">Jaydon Moses</a>
         <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="md:hidden text-2xl">
+        <button id="mobile-menu-button" class="text-2xl">
             &#9776; <!-- Hamburger icon -->
         </button>
     </div>
 
     <!-- Mobile Menu Dropdown -->
-    <div id="mobile-menu" class="hidden md:hidden bg-gray-900 text-white">
+    <div id="mobile-menu" class="hidden bg-gray-100 text-white">
         <ul class="space-y-4 p-4">
             <li><a href="#recent-accomplishments" class="text-lg hover:text-red-600">Recent Accomplishments</a></li>
-            <li><a href="#projects" class="text-lg hover:text-red-600">Projects</a></li>
+            <li><a href="#about-me" class="text-lg hover:text-red-600">About Me</a></li>
+            <li><a href="#recent-accomplishments" class="text-lg hover:text-red-600">Recent Accomplishments</a></li>
+            <li><a href="#resume" class="text-lg hover:text-red-600">Resume</a></li>
             <li><a href="#contact" class="text-lg hover:text-red-600">Contact</a></li>
             <!-- Add other links as needed -->
         </ul>
@@ -377,7 +380,7 @@
 <!-- About Me -->
 <section id="about-me" class="section text-center">
     <h2 class="text-3xl font-bold text-cherry-red">About Me</h2>
-    <p class="text-lg text-gray-600 mt-4">I am a first-year student at Northeastern University pursuing Computer Science & Biology...</p>
+    <p class="text-lg text-gray-600 mt-4">I am a first-year student in Computer Science and Biology at Northeastern University. I am also interested in biotech and software as a career focus. The ability to utilize technology to make life easier is the core of my goal. I am proficient in a variety of programming languages, including SQL, Python, and JavaScript. Feel free to reach out to me at either moses.ja@northeastern.edu or jaydon.10.moses@gmail.com.</p>
     <a href="#resume" class="btn btn-primary mt-6">View Resume</a>
 </section>
 
@@ -479,15 +482,37 @@
         <!-- Experience -->
         <section id="experience" class="resume-section hidden">
             <h3 class="text-2xl font-semibold text-cherry-red">Experience</h3>
-            <div class="mt-4 space-y-6">
-                <div class="p-6 bg-white shadow-lg rounded-lg">
-                    <h4 class="text-xl font-semibold">Assistant Manager, Irving Oil</h4>
-                    <p class="text-lg text-gray-600">Oversaw daily store operations, inventory management, and customer interactions.</p>
+            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
+                <div class="flex items-center">
+                    <img src="Images for Website/Irving_Oil.png" alt="Northeastern University" class="w-12 h-12 mr-3">
+                    <p class="text-lg text-gray-600">
+                        <strong>Assistant Manager, Irving Oil</strong> (Dover, NH )<br>
+                        <em>Jul 2023 – Sep 2024</em><br> 
+• Oversaw daily store operations, inventory management, and vendor coordination. <br>• Provided customer service interactions, handling transactions, inquiries, and issue resolution <br>• Supervised employees, optimizing scheduling, task delegation, and loss prevention strategies.<br>
+                    </p>
                 </div>
+            </div>
 
-                <div class="p-6 bg-white shadow-lg rounded-lg">
-                    <h4 class="text-xl font-semibold">Cashier, Flip The Bird</h4>
-                    <p class="text-lg text-gray-600">Managed high-volume customer transactions and assisted in kitchen prep.</p>
+
+            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
+                <div class="flex items-center">
+                    <img src="Images for Website/flip_the_bird.png" alt="Northeastern University" class="w-12 h-12 mr-3">
+                    <p class="text-lg text-gray-600">
+                        <strong>Cashier, Flip the Bird</strong> (Danvers, MA)<br>
+                        <em>Feb 2024 – Aug 2024</em><br>
+                        • Customer service experience handling a large volume of customers <br>• Kitchen prep, handling orders, transactions, and ensuring smooth kitchen operations. <br>• Independently ran the smoothie station, maintaining speed, accuracy, and quality control.<br>
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
+                <div class="flex items-center">
+                    <img src="Images for Website/amazon-robotics-logo.png" alt="Northeastern University" class="w-12 h-12 mr-3">
+                    <p class="text-lg text-gray-600">
+                        <strong>Robotics Camp, Amazon Robotics</strong> (Reading, MA)<br>
+                        <em>Summer 2019</em><br>
+                        • Part of a competition, I wrote programmatically promoted by Amazon Robotics, I was part of a four-member team designing a robot whose movements can be programmatically controlled <br>• My team developed a 5-level game for this competition from concept, design, to execution <br>• Awarded by judges as 3rd place out of 5 total teams <br>• Independently ran the smoothie station, maintaining speed, accuracy, and quality control.<br>
+                    </p>
                 </div>
             </div>
         </section>
@@ -506,23 +531,23 @@
                         </video>
                     </div>
                     <div class="p-6">
-                        <h4 class="text-xl font-semibold">2D Multiplayer Game</h4>
-                        <p class="text-gray-600 mt-2">Real-time multiplayer game with networked gameplay mechanics.</p>
+                        <h4 class="text-xl font-semibold"> Super-Smash-Fighters</h4>
+                        <p class="text-gray-600 mt-2">2D multiplayer game developed in Unity</p>
                         <p class="text-gray-600 mt-2"><strong>Languages:</strong> C#, Unity</p>
-                        <a href="https://github.com/jaydon-moses/multiplayer-game" target="_blank" class="project-link">View on GitHub</a>
+                        <a href="https://github.com/jaydon-moses/multiplayer-game" target="_blank" class="project-link">Coming Soon</a>
                     </div>
                 </div>
 
-                <!-- Project 2: Resume Analyzer -->
+                <!-- Project 2: Blackjack Java -->
                 <div class="project-card">
                     <div class="image-container">
-                        <img src="Images for Website/resume-analyzer.png" alt="Resume Analyzer" class="w-full h-40 object-cover rounded-t-lg">
+                        <img src="Images for Website/blackjack-game.png" alt="Blackjack game" class="w-full h-40 object-cover rounded-t-lg">
                     </div>
                     <div class="p-6">
-                        <h4 class="text-xl font-semibold">Resume Analyzer</h4>
-                        <p class="text-gray-600 mt-2">AI-powered system that evaluates resumes and provides feedback.</p>
-                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> Python, NLP, Flask</p>
-                        <a href="https://github.com/jaydon-moses/resume-analyzer" target="_blank" class="project-link">View on GitHub</a>
+                        <h4 class="text-xl font-semibold">Blackjack Java</h4>
+                        <p class="text-gray-600 mt-2">Created a interactive blackjack game based on the real world game with virtual currency.</p>
+                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> Java, Swing</p>
+                        <a href="https://github.com/jaydonmoses/Blackjack-Game" target="_blank" class="project-link">View on GitHub</a>
                     </div>
                 </div>
 
@@ -636,7 +661,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuButton.addEventListener('click', () => {
         mobileMenu.classList.toggle('hidden');
     });
-
+    
 // Particle Background Initialization using particlesJS
 particlesJS("interactive-bg", {
     "particles": {
