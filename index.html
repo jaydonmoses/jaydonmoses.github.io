@@ -216,11 +216,19 @@
         display: block;
     }
 
-    #mobile-menu {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+    /* Initially hidden mobile menu */
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.hidden {
+    display: none;
+}
+
+/* Show the menu when not hidden */
+.mobile-menu.visible {
+    display: block;
+}
 
     .mobile-link {
         padding: 12px;
@@ -346,28 +354,25 @@
     </div>
 </nav>
 
-<!-- Mobile Navbar (Visible only on smaller screens) -->
-<nav class="bg-gray-100 text-white p-4 md:hidden">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#" class="text-2xl font-bold">Jaydon Moses</a>
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="text-2xl">
+<!-- Mobile Navbar -->
+<div class="mobile-navbar fixed top-0 left-0 w-full bg-white shadow-md z-50 md:hidden">
+    <div class="flex justify-between items-center p-4">
+        <h1 class="text-2xl font-bold text-cherry-red">My Portfolio</h1>
+        <button id="menu-toggle" class="text-3xl text-cherry-red">
             &#9776; <!-- Hamburger icon -->
         </button>
     </div>
 
-    <!-- Mobile Menu Dropdown -->
-    <div id="mobile-menu" class="hidden bg-gray-100 text-white">
-        <ul class="space-y-4 p-4">
-            <li><a href="#recent-accomplishments" class="text-lg hover:text-red-600">Recent Accomplishments</a></li>
-            <li><a href="#about-me" class="text-lg hover:text-red-600">About Me</a></li>
-            <li><a href="#recent-accomplishments" class="text-lg hover:text-red-600">Recent Accomplishments</a></li>
-            <li><a href="#resume" class="text-lg hover:text-red-600">Resume</a></li>
-            <li><a href="#contact" class="text-lg hover:text-red-600">Contact</a></li>
-            <!-- Add other links as needed -->
+    <!-- Mobile Menu (Initially hidden) -->
+    <div id="mobile-menu" class="mobile-menu hidden">
+        <ul class="flex flex-col items-center">
+            <li><a href="#about" class="text-lg py-2">About</a></li>
+            <li><a href="#recent-accomplishments" class="text-lg py-2">Recent Accomplishments</a></li>
+            <li><a href="#resume" class="text-lg py-2">Resume</a></li>
+            <li><a href="#contact" class="text-lg py-2">Contact</a></li>
         </ul>
     </div>
-</nav>
+</div>
 
 
 <!-- Hero Section -->
@@ -534,7 +539,7 @@
                         <h4 class="text-xl font-semibold"> Super-Smash-Fighters</h4>
                         <p class="text-gray-600 mt-2">2D multiplayer game developed in Unity</p>
                         <p class="text-gray-600 mt-2"><strong>Languages:</strong> C#, Unity</p>
-                        <a href="https://github.com/jaydon-moses/multiplayer-game" target="_blank" class="project-link">Coming Soon</a>
+                        <a href="https://github.com/jaydonmoses/multiplayer-game" target="_blank" class="project-link">Coming Soon</a>
                     </div>
                 </div>
 
@@ -560,7 +565,7 @@
                         <h4 class="text-xl font-semibold">Faculty Web Scraper</h4>
                         <p class="text-gray-600 mt-2">Automated tool to extract faculty data & emails from Northeastern’s website.</p>
                         <p class="text-gray-600 mt-2"><strong>Languages:</strong> Python, BeautifulSoup</p>
-                        <a href="https://github.com/jaydon-moses/web-scraper" target="_blank" class="project-link">View on GitHub</a>
+                        <a href="https://github.com/jaydonmoses/web-scraper" target="_blank" class="project-link">View on GitHub</a>
                     </div>
                 </div>
 
@@ -575,9 +580,9 @@
     <h2 class="text-3xl font-bold text-cherry-red">Contact Me</h2>
     <p class="text-lg text-gray-600 mt-4">Feel free to reach out for inquiries or collaborations.</p>
     <div class="mt-6 space-x-4">
-        <a href="mailto:jaydon.moses@example.com" class="btn btn-primary">Email Me</a>
-        <a href="https://www.linkedin.com/in/jaydon-moses/" target="_blank" class="btn btn-primary">LinkedIn</a>
-        <a href="https://github.com/jaydon-moses" target="_blank" class="btn btn-primary">GitHub</a>
+        <a href="mailto:jaydon.10.moses@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://www.linkedin.com/in/jaydonmoses/" target="_blank" class="btn btn-primary">LinkedIn</a>
+        <a href="https://github.com/jaydonmoses" target="_blank" class="btn btn-primary">GitHub</a>
     </div>
 </section>
 
