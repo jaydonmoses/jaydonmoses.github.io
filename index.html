@@ -144,13 +144,22 @@
     <h3 class="text-2xl font-semibold text-red-500 mb-4">Projects</h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
-            <div class="video-container"> 
+            <div class="video-container">
                 <video class="w-full h-40 object-cover" muted loop>
                     <source src="Images for Website/Fighter - SampleScene - Windows, Mac, Linux - Unity 2021.3.12f1 Personal _DX11_ 2024-04-01 11-18-05.mp4" type="video/mp4">                    Your browser does not support the video tag.
                 </video>
             </div>
             <div class="p-4">
                 <h4 class="text-xl font-semibold text-gray-800">2D Multiplayer Game</h4>
+                <p class="text-gray-600 mt-2">
+                    A real-time 2D multiplayer game with networked gameplay mechanics, allowing players to interact in a shared virtual environment.
+                </p>
+                <p class="text-gray-600 mt-2">
+                    <strong>Languages:</strong> C#, Unity
+                </p>
+                <p class="text-sm text-gray-500 mt-2">
+                    Click to enlarge video.
+                </p>
             </div>
         </div>
         <div class="bg-white shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition">
@@ -162,6 +171,15 @@
             </div>
             <div class="p-4">
                 <h4 class="text-xl font-semibold text-gray-800">Blackjack in Java</h4>
+                <p class="text-gray-600 mt-2">
+                    A classic Blackjack game implemented in Java, featuring interactive gameplay and a user-friendly interface.
+                </p>
+                <p class="text-gray-600 mt-2">
+                    <strong>Languages:</strong> Java
+                </p>
+                <p class="text-sm text-gray-500 mt-2">
+                    Click to enlarge video.
+                </p>
             </div>
         </div>
     </div>
@@ -183,20 +201,24 @@
     </div>
 </section>
 
-    <!-- Footer -->
-    <footer class="bg-red-500 text-white py-8 mt-16">
-        <div class="container mx-auto px-8 text-center">
-            <div class="space-x-8 mb-4">
-                <a href="https://www.linkedin.com/in/jaydonmoses/" target="_blank" class="hover:text-gray-300">LinkedIn</a>
-                <a href="https://github.com/jaydonmoses" target="_blank" class="hover:text-gray-300">GitHub</a>
-                <a href="mailto:jaydon.10.moses@gmail.com" class="hover:text-gray-300">Email</a>
-            </div>
-            <p>&copy; 2025 Jaydon Moses. All Rights Reserved.</p>
+<footer class="bg-red-500 text-white py-8 mt-16">
+    <div class="container mx-auto px-8 text-center">
+        <div class="space-x-8 mb-4">
+            <a href="https://www.linkedin.com/in/jaydonmoses/" target="_blank" class="hover:text-gray-300">
+                <img src="Images for Website/linkedin-icon.jpg" alt="LinkedIn" class="inline-block w-6 h-6">
+            </a>
+            <a href="https://github.com/jaydonmoses" target="_blank" class="hover:text-gray-300">
+                <img src="Images for Website/github-icon.jpg" alt="GitHub" class="inline-block w-6 h-6">
+            </a>
+            <a href="mailto:jaydon.10.moses@gmail.com" class="hover:text-gray-300">
+                <img src="Images for Website/gmail-icon.png" alt="Gmail" class="inline-block w-6 h-6">
+            </a>
         </div>
-    </footer>
+        <p>&copy; 2025 Jaydon Moses. All Rights Reserved.</p>
+    </div>
+</footer>
 
     <style>
-        /* ... your other styles ... */
       
         .profile-picture {
           width: 200px; /* Adjust as needed */
@@ -205,26 +227,12 @@
           border-radius: 50%; /* Make it circular */
         }
 
-
-        .video-container video {
-            transition: transform 0.3s ease; /* Smooth transition */
-        }
-
-        .video-container:hover video {
-            transform: scale(1.1); /* Enlarge on hover */
-        }
-
-        .video-container video {
-        transition: transform 0.3s ease;
-        }
-        /* ... your other styles ... */
-
         .video-container video {
             transition: transform 0.3s ease;
         }
 
         .video-container:hover video {
-            transform: scale(1.5); /* Increased scale value */
+            transform: scale(1.1); /* Reverted to 1.1 */
         }
 
         video:-webkit-full-screen {
@@ -246,6 +254,36 @@
             width: 100%;
             height: 100%;
         }
+
+        .profile-picture {
+            width: 200px; /* Adjust as needed */
+            height: 200px; /* Adjust as needed */
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.3s ease; /* Add transition */
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.1); /* Enlarge on hover */
+        }
+
+        .my-button {
+            transition: transform 0.3s ease;
+        }
+
+        .my-button:hover {
+            transform: translateY(-5px);
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+        }
+
     </style>
 
     <script>
@@ -257,6 +295,34 @@
             document.getElementById(`${section}-tab`).classList.add("bg-gray-200", "text-red-500", "font-bold");
         }
 
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        const fadeInElements = document.querySelectorAll('.fade-in');
+        fadeInElements.forEach(element => {
+            if (isElementInViewport(element)) {
+                element.classList.add('show');
+            }
+        });
+    });
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
         
         document.addEventListener('DOMContentLoaded', function() {
             const videoContainers = document.querySelectorAll('.video-container');
