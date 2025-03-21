@@ -3,845 +3,642 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaydon Moses - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <title>Jaydon Moses - Software Engineer</title>
+    <meta name="description" content="Jaydon Moses is a software engineer based in Dallas, Texas who specializes in building exceptional digital experiences">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.36.0"></script>
-
-        <!-- Standard Favicon -->
-        <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
-
-        <!-- 16x16 Favicon -->
-        <link rel="icon" href="favicon_io/favicon-16x16.png" type="image/png" sizes="16x16">
-    
-        <!-- 32x32 Favicon -->
-        <link rel="icon" href="favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
-    
-        <!-- Android Chrome Icons -->
-        <link rel="icon" href="favicon_io/android-chrome-192x192.png" type="image/png" sizes="192x192">
-        <link rel="icon" href="favicon_io/android-chrome-512x512.png" type="image/png" sizes="512x512">
-    
-        <!-- Apple Touch Icon -->
-        <link rel="apple-touch-icon" href="favicon_io/apple-touch-icon.png">
-    
-        <!-- Web Manifest -->
-        <link rel="manifest" href="favicon_io/site.webmanifest">
-
+    <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Root Variables */
         :root {
-            --cherry-red: #D32F2F;
-            --dark-cherry-red: #B71C1C;
-            --off-white: #F9F9F9;
-            --dark-gray: #444;
-            --light-gray: #666;
+            --primary-color: #ff6b6b;
+            --secondary-color: #f9f9f9;
+            --text-color: #555; /* Darker text in light mode */
+            --dark-bg: #1a1a1a;
+            --dark-text: #fff; /* White text in dark mode */
+            --light-particles: #ffb6c1;
+            --dark-particles: #8b0000;
         }
 
-
-        /* General Styling */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background-color: var(--off-white);
-            color: var(--dark-gray);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
         }
 
-        /* Navbar */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        body.dark {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
         }
 
-        nav a {
-            color: var(--cherry-red);
-            transition: color 0.3s ease-in-out;
+        .bg-primary {
+            background-color: var(--secondary-color);
         }
 
-        nav a:hover {
-            color: var(--dark-cherry-red);
-            font-weight: bold;
+        .text-primary {
+            color: var(--primary-color);
         }
 
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(to right, var(--cherry-red), var(--off-white));
-            text-align: center;
-            padding: 80px 20px;
-            color: var(--off-white);
-            border-radius: 0 0 50px 50px;
+        .dark .bg-primary {
+            background-color: var(--dark-bg);
         }
 
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: bold;
+        .dark .text-primary {
+            color: var(--dark-text); /* Ensure primary text is white in dark mode */
         }
 
-        .hero-section p {
-            font-size: 1.5rem;
+        /* Animated background */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle, var(--dark-particles) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            animation: snowfall 10s linear infinite;
         }
 
-        /* Profile Picture */
-        .profile-picture {
-            width: 180px;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 50%;
-            transition: transform 0.3s ease;
-            box-shadow: 0px 0px 8px var(--dark-cherry-red);
-            border: 4px solid var(--off-white);
+        body.dark .background-animation {
+            background: radial-gradient(circle, var(--light-particles) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
 
-        .profile-picture:hover {
-            transform: scale(1.1);
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        /* Buttons */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            transition: 0.3s ease-in-out;
-            text-align: center;
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.8); /* Light mode */
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .btn-primary {
-            background-color: var(--cherry-red);
-            color: var(--off-white);
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .btn-primary:hover {
-            background-color: var(--dark-cherry-red);
+        .dark .project-card {
+            background-color: rgba(30, 30, 30, 0.8); /* Dark mode */
         }
 
-        /* Section Styling */
-        .section {
-            background-color: var(--off-white);
-            padding: 50px;
-            margin: 40px auto;
-            border-radius: 12px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        .animated-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.5;
+            animation: snowfall 10s linear infinite;
         }
 
-        /* Footer */
-        footer {
-            background-color: var(--cherry-red);
-            color: var(--off-white);
-            text-align: center;
+        @keyframes snowfall {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 0 100%;
+            }
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8); /* Light mode */
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
             padding: 20px;
-            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        footer p {
-            margin: 0;
+        .dark .card {
+            background-color: rgba(30, 30, 30, 0.8); /* Dark mode */
         }
-        
-.resume-tab {
-    padding: 12px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    background-color: var(--off-white);
-    color: var(--cherry-red);
-    font-weight: bold;
-}
 
-.resume-tab:hover,
-.resume-tab.active {
-    background-color: var(--cherry-red);
-    color: var(--off-white);
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
+        .dark-mode-icon {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
 
+        .dark .dark-mode-icon {
+            color: var(--dark-text);
+        }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+        /* Skill cards semi-transparent */
+        .bg-gray-100 {
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent */
+        }
 
-.project-card {
-    background-color: var(--off-white);
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-}
+        .dark .bg-gray-700 {
+            background-color: rgba(55, 65, 81, 0.8); /* Semi-transparent */
+        }
 
-.project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
+        /* Ensure particles in dark mode are visible throughout the body */
+        body.dark .background-animation {
+            background: radial-gradient(circle, var(--light-particles) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
 
-.project-link {
-    display: inline-block;
-    margin-top: 10px;
-    color: var(--cherry-red);
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
-}
+        /* Update light mode background to secondary color */
+        body {
+            background-color: var(--secondary-color);
+        }
 
-.project-link:hover {
-    color: var(--dark-cherry-red);
-    text-decoration: underline;
-}
+        body.dark {
+            background-color: var(--dark-bg);
+        }
 
-/* Navbar Links */
-.nav-link {
-    color: var(--cherry-red);
-    transition: color 0.3s ease-in-out;
-}
+        /* Skills section: Use SVG files from the internet */
+        .skills-grid img {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto;
+        }
 
-.nav-link:hover,
-.nav-link.active {
-    color: var(--dark-cherry-red);
-    font-weight: bold;
-    border-bottom: 2px solid var(--cherry-red);
-}
-
-/* General Mobile Adjustments */
-@media (max-width: 768px) {
-    body {
-        font-size: 16px; /* Increases readability on small screens */
-    }
-
-    h1 {
-        font-size: 2.2rem; /* Reduce size for mobile */
-    }
-
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    .hero-section {
-        padding: 50px 10px; /* Adjusts padding on mobile */
-        border-radius: 0 0 30px 30px;
-    }
-
-    /* Navbar */
-    #nav-links {
-        display: none;
-    }
-
-    #menu-btn {
-        display: block;
-    }
-
-    /* Initially hidden mobile menu */
-.mobile-menu {
-    display: none;
-}
-
-.mobile-menu.hidden {
-    display: none;
-}
-
-/* Show the menu when not hidden */
-.mobile-menu.visible {
-    display: block;
-}
-
-    .mobile-link {
-        padding: 12px;
-        text-align: center;
-        font-size: 18px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    /* Resume Tabs */
-    .resume-tab {
-        font-size: 14px;
-        padding: 8px 10px;
-    }
-
-    /* Project Section */
-    .grid {
-        grid-template-columns: 1fr; /* Stacks projects vertically */
-    }
-
-    .project-card {
-        width: 100%;
-    }
-
-    /* Contact Section */
-    .contact-section {
-        padding: 20px;
-    }
-}
-
-/* Ensure better spacing on tablets */
-@media (max-width: 1024px) {
-    .container {
-        padding: 20px;
-    }
-}
-
-        #interactive-bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensures it stays behind everything */
-    pointer-events: none;
+        .skills-container {
+          /* Assuming other cards use a white background with a subtle shadow */
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          margin-bottom: 20px;
         }
         
-    #particles-js {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;  /* Makes sure it stays behind other elements */
-    pointer-events: none;  /* Prevents interaction with the particles */
-}
+        .about {
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+          margin-bottom: 20px;
+        }
 
-/* Slider container */
-.slider-container {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-}
+        .about-nav {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+        }
 
-/* Slide styling */
-.slide {
-    display: none;
-    transition: transform 0.3s ease-in-out;
-}
+        .about-nav button {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
 
-/* Show the active slide */
-.slide.active {
-    display: block;
-}
+        .about-nav button.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
 
-/* Navigation buttons */
-.prev-btn, .next-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    background-color: var(--cherry-red); /* Cherry red */
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    z-index: 1;
-}
+        .about-content {
+            display: none;
+        }
 
-.prev-btn:hover, .next-btn:hover {
-    background-color: var(--dark-cherry-red); /* Darker cherry red on hover */
-}
+        .about-content.active {
+            display: block;
+        }
 
-/* Image and Video Styling */
-.slide img,
-.slide video {
-    width: 100%; /* Take full width of the slide */
-    height: 256px; /* Fixed height (adjust as needed) */
-    object-fit: contain; /* Show the entire image, add padding if needed */
-    border-radius: 8px; /* Optional: Add rounded corners */
-    background-color: #f0f0f0; /* Optional: Background color for padding areas */
-}
+        .contact {
+          /* Assuming skill and project cards use a white background with a subtle shadow */
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+        }
+        
+        .text-blue-600 {
+            color: #ff6b6b; /* Red */
+        }
 
-/* Video Container (for more control) */
-.video-container {
-    position: relative;
-    width: 100%; /* Take full width of the slide */
-    height: 256px; /* Match the image height */
-    overflow: hidden; /* Clip content that overflows */
-}
+        .dark .text-blue-300 {
+            color: #ff6b6b; /* Red */
+        }
 
-.video-container video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain; /* Show the entire video */
-    background-color: #f0f0f0; /* Optional: Background color for padding areas */
-}
+        .hover\:text-blue-600:hover {
+            color: #ff6b6b; /* Red */
+        }
 
-.footer-link {
-    color: var(--off-white);
-    font-weight: bold;
-    transition: color 0.3s ease-in-out;
-}
+        .dark .hover\:text-blue-400:hover {
+            color: #ff6b6b; /* Red */
+        }
+        
+        /* Instagram-style tabs for Education, Experience, and Latest News */
+        .about-nav {
+            display: flex;
+            justify-content: center;
+            border-bottom: 1px solid #ddd;
+        }
 
-.footer-link:hover {
-    color: #FFD700; /* Gold highlight effect */
-    text-decoration: underline;
-    
-    .enlarged-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 10; /* Ensure it's on top */
-}
+        .about-nav button {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            border: none;
+            background: none;
+            cursor: pointer;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
 
-.enlarged-video video,
-.enlarged-video img {
-    max-width: 90%; /* Adjust as needed */
-    max-height: 90%; /* Adjust as needed */
-}
+        .about-nav button.active {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
 
+        .about-content {
+            display: none;
+        }
+
+        .about-content.active {
+            display: block;
+        }
+
+        .contact {
+          /* Assuming skill and project cards use a white background with a subtle shadow */
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          padding: 20px;
+        }
+        
+        /* ... rest of the Contact.css ... */
+
+        /* Change all blue text to red text */
+        .text-blue-600 {
+            color: #ff6b6b; /* Red */
+        }
+
+        .dark .text-blue-300 {
+            color: #ff6b6b; /* Red */
+        }
+
+        .hover\:text-blue-600:hover {
+            color: #ff6b6b; /* Red */
+        }
+
+        .dark .hover\:text-blue-400:hover {
+            color: #ff6b6b; /* Red */
+        }
+
+        .dark .text-gray-300 {
+            color: var(--dark-text); /* Change gray text to white in dark mode */
+        }
+
+        .dark .text-gray-200 {
+            color: var(--dark-text); /* Change gray text to white in dark mode */
+        }
+
+        .dark .text-gray-100 {
+            color: var(--dark-text); /* Change gray text to white in dark mode */
+        }
+
+        .dark .hover\:text-gray-100:hover {
+            color: var(--dark-text); /* Ensure hover text is white in dark mode */
+        }
+
+        .dark .text-gray-800 {
+            color: var(--dark-text); /* Change gray text to white in dark mode */
+        }
+
+        .dark .text-gray-700 {
+            color: var(--dark-text); /* Change gray text to white in dark mode */
+        }
+
+        .dark .text-gray-600 {
+            color: var(--dark-text); /* Change gray text to white in dark mode */
+        }
+
+        .dark .text-gray-500 {
+            color: var(--dark-text); /* Change gray text to white in dark mode */
+        }
+
+        .dark .text-gray-400 {
+            color: var(--dark-text); /* Change gray text to white in dark mode */
+        }
+
+        /* Contact section icons */
+        .contact img {
+            filter: invert(0); /* Black in light mode */
+            transition: filter 0.3s;
+        }
+
+        .dark .contact img {
+            filter: invert(1); /* White in dark mode */
+        }
+
+        /* Button gradient */
+        .bg-gradient-to-r {
+            background: linear-gradient(to right, #ff4d4d, #ff6b6b); /* Red gradient */
+        }
+
+        .hover\:from-green-600:hover {
+            background: linear-gradient(to right, #ff3333, #ff5050); /* Darker red gradient on hover */
+        }
+
+        /* Red headings */
+        .about-content h2,
+        .contact h2,
+        .about-nav button.active {
+            color: #ff6b6b; /* Red */
+        }
+
+        /* Navbar title */
+        .navbar-title {
+            color: #ff6b6b; /* Red */
+        }
+
+        /* Icons should be white in dark mode and black in light mode */
+        img.icon {
+            filter: invert(0); /* Black in light mode */
+            transition: filter 0.3s;
+        }
+
+        .dark img.icon {
+            filter: invert(1); /* White in dark mode */
+        }
     </style>
 </head>
+<body class="font-sans text-gray-800">
+    <div class="background-animation"></div>
+    <div class="container mx-auto px-4">
+        <header class="flex justify-between items-center py-8 px-6 shadow-lg transition-all duration-500 hover:shadow-2xl">
+            <div class="text-2xl font-bold navbar-title transition-transform duration-300 hover:scale-110">Jaydon Moses</div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors duration-300 hover:underline">About</a>
+                <a href="#resume" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors duration-300 hover:underline">Skills</a>
+                <a href="#projects" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors duration-300 hover:underline">Projects</a>
+                <a href="#contact" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors duration-300 hover:underline">Contact</a>
+            </nav>
+            <i id="darkModeToggle" class="fas fa-moon dark-mode-icon"></i>
+        </header>
 
-<body>
-    <!-- Particle Background Container -->
-    <div id="particles-js"></div>  <!-- Particle container -->
-
-<!-- Desktop Navbar (Visible only on larger screens) -->
-<nav class="bg-gray-100 text-white p-4 hidden md:block">
-    <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <a href="#" class="text-2xl font-bold">Jaydon Moses</a>
-        <ul class="flex space-x-8">
-            <li><a href="#about-me" class="text-lg hover:text-red-600">About Me</a></li>
-            <li><a href="#recent-accomplishments" class="text-lg hover:text-red-600">Recent Accomplishments</a></li>
-            <li><a href="#resume" class="text-lg hover:text-red-600">Resume</a></li>
-            <li><a href="#contact" class="text-lg hover:text-red-600">Contact</a></li>
-            <!-- Add other links as needed -->
-        </ul>
-    </div>
-</nav>
-
-<!-- Mobile Navbar -->
-<div class="mobile-navbar fixed top-0 left-0 w-full bg-white shadow-md z-50 md:hidden">
-    <div class="flex justify-between items-center p-4">
-        <h1 class="text-2xl font-bold text-cherry-red">Jaydon Moses</h1>
-        <button id="menu-toggle" class="text-3xl text-cherry-red">
-            &#9776; <!-- Hamburger icon -->
-        </button>
-    </div>
-
-    <!-- Mobile Menu (Initially hidden) -->
-    <div id="mobile-menu" class="mobile-menu hidden">
-        <ul class="flex flex-col items-center">
-            <li><a href="#about" class="text-lg py-2">About Me</a></li>
-            <li><a href="#recent-accomplishments" class="text-lg py-2">Recent Accomplishments</a></li>
-            <li><a href="#resume" class="text-lg py-2">Resume</a></li>
-            <li><a href="#contact" class="text-lg py-2">Contact</a></li>
-        </ul>
-    </div>
-</div>
-
-
-<!-- Hero Section -->
-<section class="hero-section">
-    <img src="Images for Website/profile-picture.jpg" alt="Jaydon Moses" class="profile-picture mb-4">
-    <h1>Jaydon Moses</h1>
-    <p>Computer Scientist & Biologist</p>
-</section>
-
-<!-- About Me -->
-<section id="about-me" class="section text-center">
-    <h2 class="text-3xl font-bold text-cherry-red">About Me</h2>
-    <p class="text-lg text-gray-600 mt-4">I am a first-year student in Computer Science and Biology at Northeastern University. I am also interested in biotech and software as a career focus. The ability to utilize technology to make life easier is the core of my goal. I am proficient in a variety of programming languages, including SQL, Python, and JavaScript. Feel free to reach out to me at either moses.ja@northeastern.edu or jaydon.10.moses@gmail.com.</p>
-    <a href="#resume" class="btn btn-primary mt-6">View Resume</a>
-</section>
-
-<section id="recent-accomplishments" class="bg-white p-10 shadow-lg rounded-lg text-center mt-12">
-    <h2 class="text-3xl font-bold text-red-600 mb-6">Recent Accomplishments</h2>
-    
-    <!-- Slider Container -->
-    <div class="slider-container relative">
-        <!-- Slides -->
-        <div class="slides flex overflow-hidden">
-            <!-- Slide 1 -->
-            <div class="slide w-full flex-shrink-0">
-                <img src="Images for Website/accomplishment1.png" alt="Improved Blackjack Game" class="w-full h-40 object-cover rounded-lg">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-gray-800">Improved Blackjack Game</h3>
-                    <p class="text-lg text-gray-600 mt-2">I enhanced my Blackjack game by adding dynamic user interface elements using Java Swing. The game is now more interactive with graphical elements, improving the overall user experience.</p>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="slide w-full flex-shrink-0">
-                <img src="Images for Website/accomplishment2.jpg" alt="Coming Soon" class="w-full h-40 object-cover rounded-lg">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-gray-800">Coming Soon</h3>
-                    <p class="text-lg text-gray-600 mt-2">Coming Soon</p>
-                </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="slide w-full flex-shrink-0">
-                <img src="Images for Website/accomplishment3.jpg" alt="Comin Soon" class="w-full h-40 object-cover rounded-lg">
-                <div class="p-6">
-                    <h3 class="text-2xl font-semibold text-gray-800">Coming Soon</h3>
-                    <p class="text-lg text-gray-600 mt-2">Coming Soon</p>
-                </div>
+        <div id="mobile-menu" class="hidden fixed inset-0 bg-gray-900 bg-opacity-90 z-50">
+            <div class="flex flex-col items-center justify-center h-full space-y-6">
+                <a href="#about" class="text-white text-xl">About</a>
+                <a href="#recent-accomplishments" class="text-white text-xl">Skills</a>
+                <a href="#resume" class="text-white text-xl">Projects</a>
+                <a href="#contact" class="text-white text-xl">Contact</a>
+                <button id="close-menu-btn" class="text-white text-2xl">&times;</button>
             </div>
         </div>
 
-        <!-- Navigation Buttons -->
-        <button class="prev-btn absolute top-1/2 left-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
-            &#10094;
-        </button>
-        <button class="next-btn absolute top-1/2 right-4 transform -translate-y-1/2 text-white bg-red-600 rounded-full p-2 hover:bg-red-700">
-            &#10095;
-        </button>
-    </div>
-</section>
-
-
-<section id="resume" class="section">
-    <h2 class="text-3xl font-bold text-cherry-red text-center mb-6">Resume</h2>
-
-    <div class="flex justify-center space-x-4 mb-6">
-        <button class="resume-tab active" id="education-tab" onclick="showSection('education')">
-            📚 Education
-        </button>
-        <button class="resume-tab" id="skills-tab" onclick="showSection('skills')">
-            💻 Skills
-        </button>
-        <button class="resume-tab" id="experience-tab" onclick="showSection('experience')">
-            🚀 Experience
-        </button>
-        <button class="resume-tab" id="projects-tab" onclick="showSection('projects')">
-            🛠️ Projects
-        </button>
-    </div>
-
-    <div id="resume-content">
-
-        <section id="education" class="resume-section">
-            <h3 class="text-2xl font-semibold text-cherry-red">Education</h3>
-            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
-                <div class="flex items-center">
-                    <img src="Images for Website/NU_icon.png" alt="Northeastern University"
-                         class="w-12 h-12 mr-3">
-                    <p class="text-lg text-gray-600">
-                        <strong>Northeastern University</strong> (Boston, MA)<br>
-                        <em>Sept. 2024 – Present</em><br>
-                        B.S. in Computer Science and Biology<br>
-                        Relevant Coursework: Discrete Structures, General Biology 1, General Chemistry
-                    </p>
-                </div>
-            </div>
+        <section class="text-center py-16 relative">
+            <div class="animated-background"></div>
+            <a href="https://github.com/jaydonmoses" target="_blank">
+                <img src="https://avatars.githubusercontent.com/u/87380423?v=4" alt="Jaydon Moses" class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg">
+            </a>
+            <h1 class="text-4xl font-bold text-gray-800 dark:text-gray-200">Jaydon Moses</h1>
+            <p class="text-lg mt-2 text-gray-700 dark:text-gray-300">Computer Scientist & Biologist</p>
+            <a href="#projects" class="mt-6 inline-block bg-red-500 text-white dark:bg-red-400 dark:text-white px-6 py-2 rounded-lg shadow hover:bg-red-600 dark:hover:bg-red-600">View My Portfolio</a>
         </section>
 
-        <section id="skills" class="resume-section hidden">
-            <h3 class="text-2xl font-semibold text-cherry-red">Technical Skills</h3>
-            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
-                <p class="text-lg"><strong>Languages:</strong> C#, Java, Python, C, C++, JavaScript</p>
-                <p class="text-lg"><strong>Web & Databases:</strong> MySQL, AWS, HTML, CSS, React</p>
-                <p class="text-lg"><strong>Tools:</strong> Unity, Visual Studio Code</p>
-
-                <h3 class="mt-4 text-lg font-semibold">Certifications</h3>
-                <div class="grid grid-cols-2 gap-4 mt-4">
-                    <div class="p-4 bg-gray-200 rounded-lg shadow-md">
-                        <img src="Images for Website/KAGGLE PYTHON.png" alt="Python Kaggle Certification"
-                             class="w-full rounded">
-                        <p class="text-center text-gray-700 mt-2">Python (Kaggle)</p>
+        <section id="about" class="py-16">
+            <div class="card max-w-4xl mx-auto">
+                <div class="about-nav flex justify-center space-x-4 mb-6">
+                    <button data-section="education" class="px-4 py-2 bg-gray-200 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 active">Education</button>
+                    <button data-section="experience" class="px-4 py-2 bg-gray-200 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700">Experience</button>
+                    <button data-section="news" class="px-4 py-2 bg-gray-200 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700">Latest News</button>
+                </div>
+                <div class="about-content-sections">
+                    <div id="education" class="about-content text-center" style="display: block;">
+                        <h2 class="text-3xl font-bold mb-4">Education</h2>
+                        <p class="text-gray-700 dark:text-gray-300">I am currently pursuing a degree in Computer Science and Biology at Northeastern University.</p>
+                    </div>
+                    <div id="experience" class="about-content text-center">
+                        <h2 class="text-3xl font-bold mb-4">Experience</h2>
+                        <p class="text-gray-700 dark:text-gray-300">I have experience in software development, working on various projects involving web and mobile applications.</p>
+                    </div>
+                    <div id="news" class="about-content text-center">
+                        <h2 class="text-3xl font-bold mb-4">Latest News</h2>
+                        <p class="text-gray-700 dark:text-gray-300">Stay tuned for updates on my latest projects and accomplishments.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="experience" class="resume-section hidden">
-            <h3 class="text-2xl font-semibold text-cherry-red">Experience</h3>
-            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
-                <div class="flex items-center">
-                    <img src="Images for Website/Irving_Oil.png" alt="Northeastern University"
-                         class="w-12 h-12 mr-3">
-                    <p class="text-lg text-gray-600">
-                        <strong>Assistant Manager, Irving Oil</strong> (Dover, NH)<br>
-                        <em>Jul 2023 – Sep 2024</em><br>
-                        • Oversaw daily store operations, inventory management, and vendor coordination.
-                        <br>• Provided customer service interactions, handling transactions, inquiries, and issue
-                        resolution <br>• Supervised employees, optimizing scheduling, task delegation, and loss
-                        prevention strategies.<br>
-                    </p>
-                </div>
-            </div>
-
-            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
-                <div class="flex items-center">
-                    <img src="Images for Website/flip_the_bird.png" alt="Northeastern University"
-                         class="w-12 h-12 mr-3">
-                    <p class="text-lg text-gray-600">
-                        <strong>Cashier, Flip the Bird</strong> (Danvers, MA)<br>
-                        <em>Feb 2024 – Aug 2024</em><br>
-                        • Customer service experience handling a large volume of customers <br>• Kitchen prep,
-                        handling orders, transactions, and ensuring smooth kitchen operations. <br>• Independently
-                        ran the smoothie station, maintaining speed, accuracy, and quality control.<br>
-                    </p>
-                </div>
-            </div>
-
-            <div class="mt-4 p-6 bg-white shadow-lg rounded-lg">
-                <div class="flex items-center">
-                    <img src="Images for Website/amazon-robotics-logo.png" alt="Northeastern University"
-                         class="w-12 h-12 mr-3">
-                    <p class="text-lg text-gray-600">
-                        <strong>Robotics Camp, Amazon Robotics</strong> (Reading, MA)<br>
-                        <em>Summer 2019</em><br>
-                        • Part of a competition, I wrote programmatically promoted by Amazon Robotics, I was
-                        part of a four-member team designing a robot whose movements can be programmatically
-                        controlled <br>• My team developed a 5-level game for this competition from concept,
-                        design, to execution <br>• Awarded by judges as 3rd place out of 5 total teams <br>•
-                        Independently ran the smoothie station, maintaining speed, accuracy, and quality control.<br>
-                    </p>
-                </div>
+        <section id="projects" class="py-16">
+            <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-300 mb-8">Projects</h2>
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Projects will be dynamically loaded here -->
             </div>
         </section>
 
-        <section id="projects" class="resume-section hidden">
-            <h3 class="text-2xl font-semibold text-cherry-red">Projects</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section id="resume" class="py-16">
+            <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-300 mb-8">Skills</h2>
+            <div id="skills-grid" class="skills-grid flex flex-wrap justify-center gap-4">
+                <!-- Skills will be dynamically loaded here -->
+            </div>
+        </section>
 
-                <div class="project-card cursor-pointer" data-project="multiplayer">
-                    <div class="video-container">
-                        <video class="w-full h-40 object-cover rounded-t-lg" autoplay loop muted>
-                            <source src="Images for Website/Fighter - SampleScene.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+        <section id="contact" class="py-16">
+            <div class="card max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-center mb-6">Contact Me</h2>
+                <div class="about-contact-container flex flex-col md:flex-row justify-between items-center">
+                    <div class="space-y-4 text-center md:text-left">
+                        <p class="text-gray-700 dark:text-gray-300 flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/map-pin.svg" alt="Location" class="inline-block mr-2 w-6 h-6">
+                            Dallas, Texas
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300 flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/mail.svg" alt="Email" class="inline-block mr-2 w-6 h-6">
+                            <a href="mailto:moses.ja@northeastern.edu" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">moses.ja@northeastern.edu</a>
+                        </p>
+                        <p class="text-gray-700 dark:text-gray-300 flex items-center">
+                            <img src="https://unpkg.com/lucide-static@latest/icons/phone.svg" alt="Phone" class="inline-block mr-2 w-6 h-6">
+                            <a href="tel:+1234567890" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">+1 (234) 567-890</a>
+                        </p>
+                        <div class="flex justify-center md:justify-start space-x-4">
+                            <a href="https://www.linkedin.com/in/jaydon-moses/" target="_blank" class="hover:text-blue-500 transition-colors duration-300">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/linkedin.svg" alt="LinkedIn" class="w-8 h-8">
+                            </a>
+                            <a href="https://github.com/your-github" target="_blank" class="hover:text-blue-400 transition-colors duration-300">
+                                <img src="https://unpkg.com/lucide-static@latest/icons/github.svg" alt="GitHub" class="w-8 h-8">
+                            </a>
+                        </div>
                     </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold"> Super-Smash-Fighters</h4>
-                        <p class="text-gray-600 mt-2">2D multiplayer game developed in Unity</p>
-                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> C#, Unity</p>
-                        <a href="https://github.com/jaydonmoses/multiplayer-game" target="_blank"
-                           class="project-link">Coming Soon</a>
-                    </div>
-                    <div
-                        class="enlarged-video hidden absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center">
-                        <video class="max-w-full max-h-full" controls>
-                            <source src="Images for Website/Fighter - SampleScene.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
+                    <div class="mt-8 md:mt-0">
+                        <button class="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105">
+                            Download CV
+                        </button>
                     </div>
                 </div>
-
-                <div class="project-card cursor-pointer" data-project="blackjack">
-                    <div class="image-container">
-                        <img src="Images for Website/blackjack-game.png" alt="Blackjack game"
-                             class="w-full h-40 object-cover rounded-t-lg">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold">Blackjack Java</h4>
-                        <p class="text-gray-600 mt-2">Created an interactive blackjack game based on the real
-                            world game with virtual currency.</p>
-                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> Java, Swing</p>
-                        <a href="https://github.com/jaydonmoses/Blackjack-Game" target="_blank"
-                           class="project-link">View on GitHub</a>
-                    </div>
-                    <div
-                        class="enlarged-video hidden absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center">
-                        <img src="Images for Website/blackjack-game.png" alt="Blackjack game"
-                             class="max-w-full max-h-full">
-                    </div>
-                </div>
-
-                <div class="project-card cursor-pointer" data-project="scraper">
-                    <div class="image-container">
-                        <img src="Images for Website/web-scraper.png" alt="Web Scraper"
-                             class="w-full h-40 object-cover rounded-t-lg">
-                    </div>
-                    <div class="p-6">
-                        <h4 class="text-xl font-semibold">Faculty Web Scraper</h4>
-                        <p class="text-gray-600 mt-2">Automated tool to extract faculty data & emails from
-                            Northeastern’s website.</p>
-                        <p class="text-gray-600 mt-2"><strong>Languages:</strong> Python, BeautifulSoup</p>
-                        <a href="https://github.com/jaydonmoses/web-scraper" target="_blank"
-                           class="project-link">Currently In Progress</a>
-                    </div>
-                    <div
-                        class="enlarged-video hidden absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 flex items-center justify-center">
-                        <img src="Images for Website/web-scraper.png" alt="Web Scraper"
-                             class="max-w-full max-h-full">
-                    </div>
-                </div>
-
             </div>
         </section>
     </div>
-</section>
 
-<section id="contact" class="section text-center">
-    <h2 class="text-3xl font-bold text-cherry-red">Contact Me</h2>
-    <p class="text-lg text-gray-600 mt-4">Feel free to reach out for inquiries or collaborations.</p>
-    <div class="mt-6 space-x-4">
-        <a href="https://github.com/jaydonmoses" target="_blank">
-            <img src="Images for Website/github-icon.png" alt="GitHub" class="w-10 h-10 inline-block"/>
-        </a>
-        <a href="https://www.linkedin.com/in/jaydonmoses/" target="_blank">
-            <img src="Images for Website/linkedin-icon.png" alt="LinkedIn" class="w-10 h-10 inline-block"/>
-        </a>
-        <a href="mailto:jaydon.10.moses@gmail.com">
-            <img src="Images for Website/gmail-icon.png" alt="Email" class="w-10 h-10 inline-block"/>
-        </a>
-    </div>
-</section>
+    <footer class="bg-red-400 text-white text-center py-4">
+        <p>© 2024 Jaydon Moses. All rights reserved.</p>
+    </footer>
 
-<footer class="bg-cherry-red text-off-white text-center py-6 mt-12">
-    <p class="text-lg">© 2024 Jaydon Moses.</p>
-</footer>
+    <script>
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
 
-<script>
-// Function to switch between resume sections
-function showSection(sectionId) {
-    // Hide all sections
-    const sections = document.querySelectorAll('.resume-section');
-    sections.forEach(section => section.classList.add('hidden'));
-
-    // Show the selected section
-    const activeSection = document.getElementById(sectionId);
-    activeSection.classList.remove('hidden');
-
-    // Update the active tab
-    const tabs = document.querySelectorAll('.resume-tab');
-    tabs.forEach(tab => tab.classList.remove('active'));
-
-    const activeTab = document.getElementById(sectionId + '-tab');
-    activeTab.classList.add('active');
-}
-
-// Initialize by showing the Education section by default
-showSection('education');
-
-// Smooth Scrolling
-const links = document.querySelectorAll('a');
-links.forEach(link => {
-    link.addEventListener("click", function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute("href").substring(1);
-        const targetSection = document.getElementById(targetId);
-
-        window.scrollTo({
-            top: targetSection.offsetTop - 60, // Adjust for navbar height
-            behavior: "smooth"
+        darkModeToggle.addEventListener('click', () => {
+            const isDarkMode = body.classList.toggle('dark');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+            darkModeToggle.classList.toggle('fa-moon', !isDarkMode);
+            darkModeToggle.classList.toggle('fa-sun', isDarkMode);
         });
-    });
-});
 
-// Highlight Active Section in Navbar
-function highlightSection() {
-    let scrollPos = window.scrollY + 80; // Adjust sensitivity
-
-    const sections = document.querySelectorAll('.resume-section');
-    sections.forEach(section => {
-        if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-            links.forEach(link => link.classList.remove("active"));
-            document.querySelector(`a[href="#${section.id}"]`).classList.add("active");
+        // Initialize dark mode based on localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark');
+            darkModeToggle.classList.add('fa-sun');
+        } else {
+            darkModeToggle.classList.add('fa-moon');
         }
-    });
-}
-window.addEventListener("scroll", highlightSection);
 
-document.addEventListener("DOMContentLoaded", function () {
-    const mobileMenu = document.getElementById("mobile-menu");
-    const menuBtn = document.getElementById("menu-btn");
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+        if (backToTopButton) {
+            window.addEventListener('scroll', () => {
+                backToTopButton.style.opacity = window.scrollY > 200 ? 1 : 0;
+                backToTopButton.style.transform = window.scrollY > 200 ? 'translateY(0)' : 'translateY(20px)';
+            });
 
-    menuBtn.addEventListener("click", function () {
-        mobileMenu.classList.toggle("hidden");
-    });
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
 
-    // Close menu when clicking a link
-    document.querySelectorAll(".mobile-link").forEach(link => {
-        link.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        if (menuBtn && mobileMenu && closeMenuBtn) {
+            const toggleMobileMenu = () => mobileMenu.classList.toggle('hidden');
+            menuBtn.addEventListener('click', toggleMobileMenu);
+            closeMenuBtn.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Highlight active link on scroll
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+        if (navLinks.length && sections.length) {
+            window.addEventListener('scroll', () => {
+                let currentSectionId = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href').slice(1) === currentSectionId);
+                });
+            });
+        }
+
+        // Initialize AOS
+        AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
+
+        // GitHub API Integration for Projects with repository images
+        async function fetchProjects() {
+            try {
+                const response = await fetch('https://api.github.com/users/jaydonmoses/repos', {
+                    headers: {
+                        Accept: 'application/vnd.github+json',
+                        'X-GitHub-Api-Version': '2022-11-28'
+                    }
+                });
+                const repos = await response.json();
+                const projectsGrid = document.getElementById('projects-grid');
+                if (projectsGrid) {
+                    projectsGrid.innerHTML = repos.map(repo => `
+                        <div class="project-card">
+                            <img src="${repo.owner.avatar_url}" alt="${repo.name}" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">${repo.name}</h3>
+                                <p class="text-gray-600 dark:text-gray-400 mb-4">${repo.description || 'No description available.'}</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Language: ${repo.language || 'N/A'}</p>
+                                <a href="${repo.html_url}" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">View Project</a>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            } catch (error) {
+                console.error('Error fetching projects:', error);
+            }
+        }
+        fetchProjects();
+
+        // GitHub API Integration for Skills with proper fallback and color handling
+        async function fetchSkills() {
+            try {
+                const response = await fetch('https://api.github.com/users/jaydonmoses/repos', {
+                    headers: {
+                        Accept: 'application/vnd.github+json',
+                        'X-GitHub-Api-Version': '2022-11-28'
+                    }
+                });
+                const repos = await response.json();
+                const languages = {};
+                repos.forEach(repo => {
+                    if (repo.language) {
+                        languages[repo.language] = (languages[repo.language] || 0) + 1;
+                    }
+                });
+                const skillsGrid = document.getElementById('skills-grid');
+                if (skillsGrid) {
+                    skillsGrid.innerHTML = Object.keys(languages).map(language => {
+                        const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/${language.toLowerCase()}.svg`;
+                        return `
+                            <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow text-center">
+                                <img src="${iconUrl}" alt="${language}" class="w-12 h-12 mx-auto icon" onerror="this.src='https://via.placeholder.com/48?text=${language[0]}'">
+                                <span class="block mt-2 font-semibold text-gray-800 dark:text-gray-200">${language}</span>
+                            </div>
+                        `;
+                    }).join('');
+                }
+            } catch (error) {
+                console.error('Error fetching skills:', error);
+            }
+        }
+        fetchSkills();
+
+        // Tab functionality for About section (Instagram-style)
+        const aboutNavButtons = document.querySelectorAll('.about-nav button');
+        const aboutContentSections = document.querySelectorAll('.about-content-sections > div');
+        aboutNavButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                aboutNavButtons.forEach(btn => btn.classList.remove('active'));
+                aboutContentSections.forEach(section => section.style.display = 'none'); // Hide all sections
+                button.classList.add('active');
+                const sectionId = button.dataset.section;
+                document.getElementById(sectionId).style.display = 'block'; // Show the selected section
+            });
         });
-    });
-});
 
-// Toggle Mobile Menu Visibility
-document.getElementById("menu-toggle").addEventListener("click", function() {
-    var mobileMenu = document.getElementById("mobile-menu");
-    mobileMenu.classList.toggle("hidden");
-    mobileMenu.classList.toggle("visible");
-});
-    
-// Particle Background Initialization using particlesJS
-particlesJS("interactive-bg", {
-    "particles": {
-        "number": {
-            "value": 100
-        },
-        "size": {
-            "value": 3
-        },
-        "move": {
-            "speed": 1,
-            "direction": "none"
-        },
-        "line_linked": {
-            "enable": true,
-            "distance": 150,
-            "color": "#d32f2f"
-        }
-    }
-});
-
-// Resize Canvas When Window Resizes
-window.addEventListener("resize", function () {
-    const canvas = document.getElementById('interactive-bg');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-});
-
-// JavaScript for slider functionality
-const slides = document.querySelectorAll('.slide');
-const prevBtn = document.querySelector('.prev-btn');
-const nextBtn = document.querySelector('.next-btn');
-
-let currentSlide = 0;
-
-function showSlide(index) {
-    slides.forEach(slide => slide.classList.remove('active'));
-    slides[index].classList.add('active');
-}
-
-prevBtn.addEventListener('click', () => {
-    currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
-    showSlide(currentSlide);
-});
-
-nextBtn.addEventListener('click', () => {
-    currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
-    showSlide(currentSlide);
-});
-
-// Initialize the first slide as active
-showSlide(currentSlide);
-
-document.addEventListener('DOMContentLoaded', function() {
-    const projectCards = document.querySelectorAll('.project-card');
-
-    projectCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const enlargedVideo = this.querySelector('.enlarged-video');
-            enlargedVideo.classList.toggle('hidden');
-        });
-    });
-
-    // Close enlarged video when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.project-card')) {
-            const enlargedVideos = document.querySelectorAll('.enlarged-video');
-            enlargedVideos.forEach(video => video.classList.add('hidden'));
-        }
-    });
-});
-
-</script>
-
+        // Set default active tab to Education
+        document.querySelector('.about-nav button[data-section="education"]').classList.add('active');
+        document.getElementById('education').style.display = 'block';
+    </script>
 </body>
-
 </html>
