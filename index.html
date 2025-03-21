@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jaydon Moses - Software Engineer</title>
+<<<<<<< HEAD
     <meta name="description" content="Jaydon Moses is a software engineer based in Dallas, Texas who specializes in building exceptional digital experiences">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.3.0/dist/tailwind.min.css">
@@ -16,8 +17,34 @@
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.36.0"></script>
     <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+=======
+    <meta name="description" content="Jaydon Moses is a software engineer based in Dallas, Texas who specializes in building exceptional digital experiences.">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.36.0"></script>
+
+        <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon">
+
+        <link rel="icon" href="favicon_io/favicon-16x16.png" type="image/png" sizes="16x16">
+    
+        <link rel="icon" href="favicon_io/favicon-32x32.png" type="image/png" sizes="32x32">
+    
+        <link rel="icon" href="favicon_io/android-chrome-192x192.png" type="image/png" sizes="192x192">
+        <link rel="icon" href="favicon_io/android-chrome-512x512.png" type="image/png" sizes="512x512">
+    
+        <link rel="apple-touch-icon" href="favicon_io/apple-touch-icon.png">
+    
+        <link rel="manifest" href="favicon_io/site.webmanifest">
+
+>>>>>>> 73ab8584e3fe1f7c89184ab1f537a1eb0a91afe1
     <style>
         :root {
+<<<<<<< HEAD
             --primary-color: #ff6b6b;
             --secondary-color: #f9f9f9;
             --text-color: #555; /* Darker text in light mode */
@@ -27,6 +54,297 @@
             --dark-particles: #8b0000;
         }
 
+=======
+            --deep-crimson: #C72C41;
+            --rich-burgundy: #A50034;
+            --soft-white: #FFFFFF;
+            --gentle-gray-light: #F5F5F5;
+            --gentle-gray-dark: #D9D9D9;
+            --text-color: #333;
+            --bg-color: #f8f8f8;
+            --card-bg: rgba(255, 255, 255, 0.9);
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+             --footer-bg: #ffffff;
+        }
+        
+         /* Base Styles */
+        :root {
+            --primary-color: #007aff;
+            --text-color: #333;
+            --bg-color: #f8f8f8;
+            --bg-gradient: linear-gradient(to bottom, #f9f9f9, #e3e3e3);
+            --card-bg: rgba(199, 44, 65, 0.1); /* Transparent red */
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --text-primary: #333;
+            --footer-bg: white;
+            --font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Dark Mode Variables */
+        [data-theme="dark"] {
+            --primary-color: #0a84ff;
+            --text-color: #f5f5f5; /* Lighter text color */
+            --bg-color: #121212; /* Darker background */
+            --bg-gradient: linear-gradient(to bottom, #1a1a1a, #2d2d2d);
+            --card-bg: rgba(255, 255, 255, 0.1); /* Transparent white for cards */
+            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --text-primary: #e0e0e0;
+             --footer-bg: #2d2d2d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            color: var(--text-color);
+            background: var(--bg-gradient);
+            line-height: 1.6;
+            transition: all 0.3s ease;
+        }
+
+        
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 122, 255, 0.2);
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .skill {
+            background-color: var(--card-bg);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+        }
+
+        .profile {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+        }
+
+        .profile img:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: var(--footer-bg);
+            margin-top: 4rem;
+        }
+
+        /* Project Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project {
+            background: var(--card-bg);
+            backdrop-filter: blur(8px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Dark Mode Toggle */
+        .theme-toggle {
+            position: relative;
+            margin-left: auto;
+            margin-right: 2rem;
+        }
+
+        .dark-mode-toggle {
+            opacity: 0;
+            position: absolute;
+        }
+
+        .dark-mode-label {
+            cursor: pointer;
+            padding: 0.5rem;
+            position: relative;
+        }
+
+        .sun-icon,
+        .moon-icon {
+            width: 24px;
+            height: 24px;
+            transition: transform 0.3s;
+            stroke: var(--text-primary);
+        }
+
+        .sun-icon {
+            display: none;
+        }
+
+        [data-theme="dark"] .sun-icon {
+            display: block;
+        }
+
+        [data-theme="dark"] .moon-icon {
+            display: none;
+        }
+
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            color: var(--text-primary);
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary-color);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            border: none;
+            outline: none;
+            z-index: 999;
+        }
+
+        /* General Styling */
+>>>>>>> 73ab8584e3fe1f7c89184ab1f537a1eb0a91afe1
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--secondary-color);
@@ -47,12 +365,27 @@
             color: var(--primary-color);
         }
 
+<<<<<<< HEAD
         .dark .bg-primary {
             background-color: var(--dark-bg);
         }
 
         .dark .text-primary {
             color: var(--dark-text); /* Ensure primary text is white in dark mode */
+=======
+        /* Hero Section */
+        .hero-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to right, var(--cherry-red), var(--off-white));
+            text-align: center;
+            font-size: 3.5rem;
+            font-weight: bold;
+>>>>>>> 73ab8584e3fe1f7c89184ab1f537a1eb0a91afe1
         }
 
         /* Animated background */
@@ -97,6 +430,7 @@
             background-color: rgba(30, 30, 30, 0.8); /* Dark mode */
         }
 
+<<<<<<< HEAD
         .animated-background {
             position: absolute;
             top: 0;
@@ -109,6 +443,16 @@
             z-index: -1;
             opacity: 0.5;
             animation: snowfall 10s linear infinite;
+=======
+        /* Section Styling */
+        .section {
+            background-color: var(--off-white);
+            padding: 50px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+>>>>>>> 73ab8584e3fe1f7c89184ab1f537a1eb0a91afe1
         }
 
         @keyframes snowfall {
@@ -183,6 +527,7 @@
           margin-bottom: 20px;
         }
         
+<<<<<<< HEAD
         .about {
           background-color: #fff;
           border-radius: 8px;
@@ -434,11 +779,373 @@
                     <div id="news" class="about-content text-center">
                         <h2 class="text-3xl font-bold mb-4">Latest News</h2>
                         <p class="text-gray-700 dark:text-gray-300">Stay tuned for updates on my latest projects and accomplishments.</p>
+=======
+        .resume-tab {
+            padding: 12px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            background-color: var(--off-white);
+            color: var(--cherry-red);
+            font-weight: bold;
+        }
+
+        .resume-tab:hover,
+        .resume-tab.active {
+            background-color: var(--cherry-red);
+            color: var(--off-white);
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .project-card {
+            background-color: var(--off-white);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--cherry-red);
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .project-link:hover {
+            color: var(--dark-cherry-red);
+            text-decoration: underline;
+        }
+
+        /* Navbar Links */
+        .nav-link {
+            color: var(--cherry-red);
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--dark-cherry-red);
+            font-weight: bold;
+            border-bottom: 2px solid var(--cherry-red);
+        }
+
+        /* General Mobile Adjustments */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Increases readability on small screens */
+            }
+
+            h1 {
+                font-size: 2.2rem; /* Reduce size for mobile */
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero-section {
+                padding: 50px 10px; /* Adjusts padding on mobile */
+                border-radius: 0 0 30px 30px;
+            }
+
+            /* Navbar */
+            #nav-links {
+                display: none;
+            }
+
+            #menu-btn {
+                display: block;
+            }
+
+            /* Initially hidden mobile menu */
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.hidden {
+            display: none;
+        }
+
+        /* Show the menu when not hidden */
+        .mobile-menu.visible {
+            display: block;
+        }
+
+            .mobile-link {
+                padding: 12px;
+                text-align: center;
+                font-size: 18px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+
+            /* Resume Tabs */
+            .resume-tab {
+                font-size: 14px;
+                padding: 8px 10px;
+            }
+
+            /* Project Section */
+            .grid {
+                grid-template-columns: 1fr; /* Stacks projects vertically */
+            }
+
+            .project-card {
+                width: 100%;
+            }
+
+            /* Contact Section */
+            .contact-section {
+                padding: 20px;
+            }
+        }
+
+        /* Ensure better spacing on tablets */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 20px;
+            }
+        }
+
+                #interactive-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensures it stays behind everything */
+            pointer-events: none;
+                }
+                
+            #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Makes sure it stays behind other elements */
+            pointer-events: none; /* Prevents interaction with the particles */
+        }
+
+        /* Slider container */
+        .slider-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+        }
+
+        /* Slide styling */
+        .slide {
+            display: none;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Show the active slide */
+        .slide.active {
+            display: block;
+        }
+
+        /* Navigation buttons */
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            background-color: var(--cherry-red); /* Cherry red */
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+            background-color: var(--dark-cherry-red); /* Darker cherry red on hover */
+        }
+
+        /* Image and Video Styling */
+        .slide img, .slide video {
+            width: 100%; /* Take full width of the slide */
+            height: 256px; /* Fixed height (adjust as needed) */
+            object-fit: contain; /* Show the entire image, add padding if needed */
+            border-radius: 8px; /* Optional: Add rounded corners */
+            background-color: #f0f0f0; /* Optional: Background color for padding areas */
+        }
+
+        /* Video Container (for more control) */
+        .video-container {
+            position: relative;
+            width: 100%; /* Take full width of the slide */
+            height: 256px; /* Match the image height */
+            overflow: hidden; /* Clip content that overflows */
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Show the entire video */
+            background-color: #f0f0f0; /* Optional: Background color for padding areas */
+        }
+
+        /* Footer Links */
+        .footer-link {
+            color: var(--off-white);
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .footer-link:hover {
+            color: #FFD700; /* Gold highlight effect */
+            text-decoration: underline; .enlarged-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */ display: flex; align-items: center; justify-content: center; z-index: 10; /* Ensure it's on top */ } .enlarged-video video, .enlarged-video img { max-width: 90%; /* Adjust as needed */ max-height: 90%; /* Adjust as needed */ }
+
+        /* Hamburger Menu Styling */
+        #menu-btn {
+            display: block;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        #menu-icon {
+            width: 24px;
+            height: 24px;
+            fill: var(--text-color);
+            transition: transform 0.3s ease;
+        }
+
+        #menu-btn:hover #menu-icon {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">Jaydon Moses</div>
+            <nav>
+                <ul id="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#recent-accomplishments">Skills</a></li>
+                    <li><a href="#resume">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="theme-toggle">
+                    <input type="checkbox" id="darkMode" class="dark-mode-toggle">
+                    <label for="darkMode" class="dark-mode-label">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"/>
+                            <line x1="12" y1="1" x2="12" y2="3"/>
+                            <line x1="12" y1="21" x2="12" y2="23"/>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                            <line x1="1" y1="12" x2="3" y2="12"/>
+                            <line x1="21" y1="12" x2="23" y2="12"/>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 37 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </label>
+                </div>
+                 <button id="menu-btn" class="block md:hidden text-gray-700 hover:text-gray-900 focus:outline-none focus:shadow-outline">
+                    <svg id="menu-icon" class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"/>
+                    </svg>
+                </button>
+            </nav>
+        </header>
+
+        <div id="mobile-menu" class="mobile-menu hidden fixed top-0 left-0 w-full h-full bg-gray-900 bg-opacity-90 z-50">
+            <div class="mobile-menu-content relative top-1/4">
+                <ul class="block">
+                    <li class="mobile-link"><a href="#about">About</a></li>
+                    <li class="mobile-link"><a href="#recent-accomplishments">Skills</a></li>
+                    <li class="mobile-link"><a href="#resume">Projects</a></li>
+                    <li class="mobile-link"><a href="#contact">Contact</a></li>
+                </ul>
+                 <button id="close-menu-btn" class="absolute top-4 right-4 text-white hover:text-gray-300 focus:outline-none focus:shadow-outline">
+                    <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.829-4.828 4.828a1 1 0 0 1-1.414-1.414l4.829-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.829 4.829 4.829 4.828z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <section class="hero-section">
+            <img src="Images for Website/profile-picture.jpg" alt="Jaydon Moses" class="profile-picture mb-4">
+            <h1>Jaydon Moses</h1>
+            <p>Computer Scientist & Biologist</p>
+        </section>
+
+        <section id="about" class="section text-center">
+            <h2 class="text-3xl font-bold text-cherry-red">About Me</h2>
+            <p class="text-lg text-gray-600 mt-4">I am a first-year student in Computer Science and Biology at Northeastern University. I am also interested in biotech and software as a career focus. The ability to utilize technology to make life easier is the core of my goal. I am proficient in a variety of programming languages, including SQL, Python, and JavaScript. Feel free to reach out to me at either moses.ja@northeastern.edu or jaydon.10.moses@gmail.com.</p>
+            <a href="#resume" class="btn btn-primary mt-6">View Resume</a>
+        </section>
+
+        <section id="recent-accomplishments" class="section text-center">
+            <h2 class="text-3xl font-bold text-cherry-red mb-6">Recent Accomplishments</h2>
+            <div class="slider-container relative">
+                <div class="slides flex overflow-hidden">
+                    <div class="slide w-full flex-shrink-0">
+                        <img src="Images for Website/accomplishment1.png" alt="Improved Blackjack Game" class="w-full h-40 object-cover rounded-lg">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800">Improved Blackjack Game</h3>
+                            <p class="text-lg text-gray-600 mt-2">Implemented a new scoring system and betting logic.</p>
+                        </div>
+                    </div>
+                    <div class="slide w-full flex-shrink-0">
+                        <img src="Images for Website/accomplishment2.png" alt="GPA Calculator" class="w-full h-40 object-cover rounded-lg">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800">GPA Calculator</h3>
+                            <p class="text-lg text-gray-600 mt-2">Developed a tool to calculate GPA, factoring in credit hours and grades.</p>
+                        </div>
+                    </div>
+                    <div class="slide w-full flex-shrink-0">
+                        <img src="Images for Website/accomplishment3.png" alt="Lab Reports" class="w-full h-40 object-cover rounded-lg">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800">Lab Reports</h3>
+                            <p class="text-lg text-gray-600 mt-2">Authored detailed lab reports for Biology coursework.</p>
+                        </div>
+                    </div>
+                    <div class="slide w-full flex-shrink-0">
+                        <img src="Images for Website/accomplishment4.png" alt="Attendance Tracker" class="w-full h-40 object-cover rounded-lg">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-gray-800">Attendance Tracker</h3>
+                            <p class="text-lg text-gray-600 mt-2">Created a system to track student attendance with accuracy.</p>
+                        </div>
+>>>>>>> 73ab8584e3fe1f7c89184ab1f537a1eb0a91afe1
                     </div>
                 </div>
+                <button class="prev-btn absolute left-0 top-1/2 transform -translate-y-1/2 text-white rounded-full p-2 focus:outline-none">❮</button>
+                <button class="next-btn absolute right-0 top-1/2 transform -translate-y-1/2 text-white rounded-full p-2 focus:outline-none">❯</button>
             </div>
         </section>
 
+<<<<<<< HEAD
         <section id="projects" class="py-16">
             <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-300 mb-8">Projects</h2>
             <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -485,10 +1192,77 @@
                         </button>
                     </div>
                 </div>
+=======
+        <section id="resume" class="section text-center">
+            <h2 class="text-3xl font-bold text-cherry-red mb-6">Skills</h2>
+            <div class="skills">
+                <span class="skill">Python</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">SQL</span>
+                <span class="skill">Biology</span>
+                <span class="skill">Chemistry</span>
+                <span class="skill">Physics</span>
+                <span class="skill">C++</span>
+                <span class="skill">R</span>
+                <span class="skill">Swift</span>
+                <span class="skill">Java</span>
+            </div>
+            <div class="text-center">
+                <a href="Jaydon_Moses_Resume.pdf" target="_blank" class="btn btn-primary">Download Full Resume</a>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <h2 class="text-3xl font-bold text-cherry-red text-center mb-8">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="enlarged-video hidden">
+                        <video controls>
+                            <source src="Videos/blackjack.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <img src="Images for Website/blackjack.png" alt="Blackjack Game" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Blackjack Game</h3>
+                        <p class="text-gray-600 mb-4">Improved an existing Blackjack game by adding a scoring system, betting, and interactive features.</p>
+                        <a href="https://github.com/your-repo/blackjack" target="_blank" class="project-link">View Project</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                     <div class="enlarged-video hidden">
+                        <video controls>
+                            <source src="Videos/gpa_calculator.mov" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <img src="Images for Website/gpa_calculator.png" alt="GPA Calculator" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">GPA Calculator</h3>
+                        <p class="text-gray-600 mb-4">Developed a GPA calculator tool with a user-friendly interface and the ability to handle various credit hours and grades.</p>
+                        <a href="https://github.com/your-repo/gpa-calculator" target="_blank" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section text-center">
+            <h2 class="text-3xl font-bold text-cherry-red mb-6">Contact Me</h2>
+            <p class="text-lg text-gray-600">Email: moses.ja@northeastern.edu or jaydon.10.moses@gmail.com</p>
+            <div class="social-links mt-8">
+                <a href="https://www.linkedin.com/in/jaydon-moses/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin text-3xl"></i>
+                </a>
+                <a href="https://github.com/your-github" target="_blank" class="social-link">
+                    <i class="fab fa-github text-3xl"></i>
+                </a>
+>>>>>>> 73ab8584e3fe1f7c89184ab1f537a1eb0a91afe1
             </div>
         </section>
     </div>
 
+<<<<<<< HEAD
     <footer class="bg-red-400 text-white text-center py-4">
         <p>© 2024 Jaydon Moses. All rights reserved.</p>
     </footer>
@@ -642,3 +1416,292 @@
     </script>
 </body>
 </html>
+=======
+    <footer>
+        <p>© 2024 Jaydon Moses. All rights reserved.</p>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Dark mode toggle functionality
+        const darkModeToggle = document.getElementById('darkMode');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.removeAttribute('data-theme');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+
+        // Check for saved theme on page load
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            darkModeToggle.checked = true;
+        }
+
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                backToTopButton.style.opacity = 1;
+                backToTopButton.style.transform = 'translateY(0)';
+            } else {
+                backToTopButton.style.opacity = 0;
+                backToTopButton.style.transform = 'translateY(20px)';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile menu functionality
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileLinks = document.querySelectorAll('.mobile-link a');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+             mobileMenu.classList.toggle('visible');
+        }
+
+        menuBtn.addEventListener('click', toggleMobileMenu);
+        closeMenuBtn.addEventListener('click', toggleMobileMenu);
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMobileMenu);
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(event.target) && event.target !== menuBtn) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Highlight active link on scroll
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section');
+            let currentSectionId = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+        });
+
+        // Particle.js initialization
+        window.onload = function() {
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,  // Slightly more particles
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": '#C72C41' // Deep Crimson
+                },
+                "shape": {
+                    "type": 'circle',
+                    "stroke": {
+                        "width": 0,
+                        "color": '#000000'
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    },
+                    "image": {
+                        "src": 'img/github.svg',
+                        "width": 100,
+                        "height": 100
+                    }
+                },
+                "opacity": {
+                    "value": 0.8,
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 0.5,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,  // Slightly larger particles
+                    "random": true,
+                    "anim": {
+                        "enable": true,
+                        "speed": 2,
+                        "size_min": 1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": '#A50034', // Rich Burgundy
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,  // Slightly slower speed
+                    "direction": 'none',
+                    "random": false,
+                    "straight": false,
+                    "out_mode": 'out',
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                },
+                "nb": 400
+            },
+            "interactivity": {
+                "detect_on": 'canvas',
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": 'grab'
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": 'push'
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "opacity": 0.8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+        };
+
+        // Slider functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide === 0) ? slides.length - 1 : currentSlide - 1;
+            showSlide(currentSlide);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide === slides.length - 1) ? 0 : currentSlide + 1;
+            showSlide(currentSlide);
+        });
+
+        // Initialize the first slide as active
+        showSlide(currentSlide);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+
+            projectCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const enlargedVideo = this.querySelector('.enlarged-video');
+                    enlargedVideo.classList.toggle('hidden');
+                });
+            });
+
+            // Close enlarged video when clicking outside
+            document.addEventListener('click', function(event) {
+                if (!event.target.closest('.project-card')) {
+                    const enlargedVideos = document.querySelectorAll('.enlarged-video');
+                    enlargedVideos.forEach(video => video.classList.add('hidden'));
+                }
+            });
+        });
+
+// Mobile menu
+const mobileMenuElement = document.getElementById('mobile-menu');
+const mobileMenuCloseBtn = document.getElementById('close-menu-btn');
+const mobileMenuLinks = document.querySelectorAll('.mobile-menu-content a');
+
+function toggleMobileMenu() {
+    mobileMenuElement.classList.toggle('hidden');
+    mobileMenuElement.classList.toggle('visible');
+}
+
+menuBtn.addEventListener('click', toggleMobileMenu);
+mobileMenuCloseBtn.addEventListener('click', toggleMobileMenu);
+
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', toggleMobileMenu);
+});
+
+// Close mobile menu on outside click
+document.addEventListener('click', (event) => {
+    if (!mobileMenuElement.classList.contains('hidden') && !mobileMenuElement.contains(event.target) && event.target !== menuBtn) {
+        toggleMobileMenu();
+    }
+});
+    </script>
+</body>
+</html>
+>>>>>>> 73ab8584e3fe1f7c89184ab1f537a1eb0a91afe1
