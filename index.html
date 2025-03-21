@@ -379,6 +379,55 @@
         .dark img.icon {
             filter: invert(1); /* White in dark mode */
         }
+
+        /* Skill cards background color for light and dark mode */
+        .skill-card {
+            background-color: #fff; /* White for light mode */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark .skill-card {
+            background-color: #000; /* Black for dark mode */
+            color: #fff; /* Ensure text is white in dark mode */
+        }
+
+        /* Experience and Education cards */
+        .info-card {
+            background-color: #fff; /* Light mode */
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .dark .info-card {
+            background-color: #1a1a1a; /* Dark mode */
+            color: #fff;
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            margin: 0.25rem 0;
+        }
+
+        .info-card img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+
+        /* Center-align images in info cards */
+        .info-card img {
+            display: block;
+            margin: 0 auto 10px;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800">
@@ -424,16 +473,13 @@
                 </div>
                 <div class="about-content-sections">
                     <div id="education" class="about-content text-center" style="display: block;">
-                        <h2 class="text-3xl font-bold mb-4">Education</h2>
-                        <p class="text-gray-700 dark:text-gray-300">I am currently pursuing a degree in Computer Science and Biology at Northeastern University.</p>
+                        <!-- Education cards will be dynamically loaded here -->
                     </div>
-                    <div id="experience" class="about-content text-center">
-                        <h2 class="text-3xl font-bold mb-4">Experience</h2>
-                        <p class="text-gray-700 dark:text-gray-300">I have experience in software development, working on various projects involving web and mobile applications.</p>
+                    <div id="experience" class="about-content text-center" style="display: none;">
+                        <!-- Experience cards will be dynamically loaded here -->
                     </div>
-                    <div id="news" class="about-content text-center">
-                        <h2 class="text-3xl font-bold mb-4">Latest News</h2>
-                        <p class="text-gray-700 dark:text-gray-300">Stay tuned for updates on my latest projects and accomplishments.</p>
+                    <div id="news" class="about-content text-center" style="display: none;">
+                        <!-- Latest news will be dynamically loaded here -->
                     </div>
                 </div>
             </div>
@@ -589,7 +635,7 @@
         }
         fetchProjects();
 
-        // GitHub API Integration for Skills with proper fallback and color handling
+        // GitHub API Integration for Skills using skill-icons
         async function fetchSkills() {
             try {
                 const response = await fetch('https://api.github.com/users/jaydonmoses/repos', {
@@ -608,11 +654,13 @@
                 const skillsGrid = document.getElementById('skills-grid');
                 if (skillsGrid) {
                     skillsGrid.innerHTML = Object.keys(languages).map(language => {
-                        const iconUrl = `https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/${language.toLowerCase()}.svg`;
+                        // Correct the filename for Java in the skill-icons repository
+                        const formattedLanguage = language === 'Java' ? 'Java-Dark' : language;
+                        const iconUrl = `https://raw.githubusercontent.com/tandpfun/skill-icons/main/icons/${formattedLanguage}.svg`;
                         return `
-                            <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow text-center">
+                            <div class="skill-card p-4 rounded-lg shadow text-center">
                                 <img src="${iconUrl}" alt="${language}" class="w-12 h-12 mx-auto icon" onerror="this.src='https://via.placeholder.com/48?text=${language[0]}'">
-                                <span class="block mt-2 font-semibold text-gray-800 dark:text-gray-200">${language}</span>
+                                <span class="block mt-2 font-semibold">${language}</span>
                             </div>
                         `;
                     }).join('');
@@ -639,6 +687,95 @@
         // Set default active tab to Education
         document.querySelector('.about-nav button[data-section="education"]').classList.add('active');
         document.getElementById('education').style.display = 'block';
+
+        // Data for experience, education, and latest news
+        const experienceData = [
+            {
+                title: "Assistant Manager",
+                company: "Irving Oil",
+                duration: "Jul 2023 - Sep 2024 · 1 yr 3 mos",
+                location: "Dover, New Hampshire, United States",
+                type: "On-site",
+                description: [
+                    "Oversaw daily store operations, inventory management, and vendor coordination.",
+                    "Provided customer service interactions, handling transactions, inquiries, and issue resolution."
+                ],
+                logo: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Irving_Oil_logo.svg/1200px-Irving_Oil_logo.svg.png"
+            },
+            {
+                title: "Store Cashier",
+                company: "Flip The Bird",
+                duration: "Feb 2024 - Aug 2024 · 7 mos",
+                location: "Danvers, Massachusetts, United States",
+                type: "On-site",
+                description: [
+                    "Customer service experience handling a large volume of customers.",
+                    "Kitchen prep, handling orders, transactions, and ensuring smooth kitchen operations."
+                ],
+                logo: "https://flipthebird.com/wp-content/uploads/2020/10/flip-the-bird-logo.png"
+            }
+        ];
+
+        const educationData = [
+            {
+                institution: "Northeastern University",
+                degree: "Bachelor of Science - BS, Computer Science",
+                graduation: "May 2028",
+                activities: "Dean's List",
+                coursework: [
+                    "Fundamentals of CS",
+                    "Discrete Structures",
+                    "General Biology",
+                    "General Chemistry"
+                ],
+                logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Northeastern_University_seal.svg/1200px-Northeastern_University_seal.svg.png"
+            }
+        ];
+
+        const latestNews = `
+            <p class="text-gray-700 dark:text-gray-300">
+                I am currently working on a Khoury Research Application, which will allow students to connect with professors to collaborate on research projects.
+            </p>
+        `;
+
+        // Render experience, education, and latest news
+        function renderAboutContent() {
+            const experienceContainer = document.getElementById('experience');
+            const educationContainer = document.getElementById('education');
+            const newsContainer = document.getElementById('news');
+
+            // Render experience cards
+            experienceContainer.innerHTML = experienceData.map(exp => `
+                <div class="info-card">
+                    <img src="${exp.logo}" alt="${exp.company}" class="rounded-full">
+                    <h3 class="text-center">${exp.title}</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 text-center">${exp.company}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 text-center">${exp.duration} · ${exp.type}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 text-center">${exp.location}</p>
+                    <ul class="list-disc pl-5 mt-2">
+                        ${exp.description.map(desc => `<li>${desc}</li>`).join('')}
+                    </ul>
+                </div>
+            `).join('');
+
+            // Render education cards
+            educationContainer.innerHTML = educationData.map(edu => `
+                <div class="info-card">
+                    <img src="${edu.logo}" alt="${edu.institution}" class="rounded-full">
+                    <h3 class="text-center">${edu.institution}</h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 text-center">${edu.degree}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 text-center">Graduation: ${edu.graduation}</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 text-center">Activities: ${edu.activities}</p>
+                    <p class="mt-2 font-semibold text-center">Relevant Coursework:</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 text-center">${edu.coursework.join(', ')}</p>
+                </div>
+            `).join('');
+
+            // Render latest news
+            newsContainer.innerHTML = latestNews;
+        }
+
+        document.addEventListener('DOMContentLoaded', renderAboutContent);
     </script>
 </body>
 </html>
