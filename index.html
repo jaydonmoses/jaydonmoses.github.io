@@ -129,6 +129,12 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
         .dark .card {
             background-color: rgba(30, 30, 30, 0.8); /* Dark mode */
         }
@@ -305,7 +311,7 @@
         }
 
         .dark .text-gray-300 {
-            color: var(--dark-text); /* Change gray text to white in dark mode */
+            color: var (--dark-text); /* Change gray text to white in dark mode */
         }
 
         .dark .text-gray-200 {
@@ -383,12 +389,12 @@
 
         /* Skill cards background color for light and dark mode */
         .skill-card {
-            background-color: #fff; /* White for light mode */
+            background-color: #f0f4f8; /* Light blue-gray for light mode */
             transition: background-color 0.3s, color 0.3s;
         }
 
         .dark .skill-card {
-            background-color: #000; /* Black for dark mode */
+            background-color: #1a1a1a; /* Dark blue-gray for dark mode */
             color: #fff; /* Ensure text is white in dark mode */
         }
 
@@ -509,12 +515,145 @@
             gap: 0.5rem;
             margin: 0;
         }
+
+        /* Hover effects for skill icons */
+        .skill img {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .skill img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+        }
+
+        /* Hover effect for profile picture */
+        .profile-picture {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations for contact information */
+        .contact-info {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .contact-info:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .contact-info:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .contact-info:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        /* Animations for education and experience sections */
+        .education-card, .experience-card {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .education-card:nth-child(1), .experience-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .education-card:nth-child(2), .experience-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .education-card:nth-child(3), .experience-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* FadeInUp animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fadeInUp {
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Trigger animation on scroll */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fadeIn {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        .fadeIn:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .fadeIn:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .fadeIn:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        /* Hover animations for education and experience cards */
+        .education-card, .experience-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .education-card:hover, .experience-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
     </style>
 </head>
 <body class="font-sans text-gray-800">
     <div class="background-animation"></div>
     <div class="container mx-auto px-4">
-        <header class="flex justify-between items-center py-8 px-6 shadow-lg transition-all duration-500 hover:shadow-2xl">
+        <header class="flex justify-between items-center py-8 px-6 shadow-lg transition-all duration-500 hover:shadow-2xl fadeInUp">
             <div class="text-2xl font-bold navbar-title transition-transform duration-300 hover:scale-110">Jaydon Moses</div>
             <nav class="hidden md:flex space-x-6">
                 <a href="#about" class="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100 transition-colors duration-300 hover:underline">About</a>
@@ -535,17 +674,17 @@
             </div>
         </div>
 
-        <section class="text-center py-16 relative">
+        <section class="text-center py-16 relative fadeInUp">
             <div class="animated-background"></div>
             <a href="https://github.com/jaydonmoses" target="_blank">
-                <img src="https://avatars.githubusercontent.com/u/87380423?v=4" alt="Jaydon Moses" class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg">
+                <img src="https://avatars.githubusercontent.com/u/87380423?v=4" alt="Jaydon Moses" class="w-40 h-40 rounded-full mx-auto mb-4 shadow-lg profile-picture">
             </a>
             <h1 class="text-4xl font-bold text-gray-800 dark:text-gray-200">Jaydon Moses</h1>
             <p class="text-lg mt-2 text-gray-700 dark:text-gray-300">Computer Scientist & Biologist</p>
             <a href="#projects" class="mt-6 inline-block bg-red-500 text-white dark:bg-red-400 dark:text-white px-6 py-2 rounded-lg shadow hover:bg-red-600 dark:hover:bg-red-600">View My Portfolio</a>
         </section>
 
-        <section id="about" class="py-16">
+        <section id="about" class="py-16 scroll-animate">
             <div class="card max-w-4xl mx-auto">
                 <div class="about-nav flex justify-center space-x-4 mb-6">
                     <button data-section="education" class="px-4 py-2 bg-gray-200 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700">Education</button>
@@ -554,57 +693,157 @@
                 </div>
                 <div class="about-content-sections">
                     <div id="education" class="about-content text-center" style="display: none;">
-                        <p class="text-gray-700 dark:text-gray-300">Location: Boston, MA</p>
-                        <p class="text-gray-700 dark:text-gray-300">Cards will be dynamically loaded here.</p>
+                        <div class="education-card">
+                            <p class="text-gray-700 dark:text-gray-300">Location: Boston, MA</p>
+                            <p class="text-gray-700 dark:text-gray-300">Cards will be dynamically loaded here.</p>
+                        </div>
                     </div>
                     <div id="experience" class="about-content text-center" style="display: none;">
-                        <!-- Experience cards will be dynamically loaded here -->
+                        <div class="experience-card">
+                            <!-- Experience cards will be dynamically loaded here -->
+                        </div>
                     </div>
-                    <div id="news" class="about-content text-center" style="display: none;">
+                    <div id="news" class="about-content text-center fadeIn">
                         <!-- Latest news will be dynamically loaded here -->
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="py-16">
+        <section id="projects" class="py-16 scroll-animate">
             <h2 class="text-3xl font-bold text-center text-blue-600 dark:text-blue-300 mb-8">Projects</h2>
             <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Projects will be dynamically loaded here -->
             </div>
         </section>
         
-        <section id="contact" class="py-16">
+        <section id="skills-certifications" class="py-16 scroll-animate">
             <div class="card max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-up">Contact Me</h2>
-                <div class="about-contact-container flex flex-col md:flex-row justify-between items-center">
-                    <div class="space-y-4 text-center md:text-left" data-aos="fade-up" data-aos-delay="100">
-                        <p class="text-gray-700 dark:text-gray-300 flex items-center">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/googlemaps.svg" alt="Location" class="w-6 h-6 mr-2 icon">
-                            Boston, MA
-                        </p>
-                        <p class="text-gray-700 dark:text-gray-300 flex items-center">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/gmail.svg" alt="Gmail" class="w-6 h-6 mr-2 icon">
-                            <a href="mailto:moses.ja@northeastern.edu" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">moses.ja@northeastern.edu</a>
-                        </p>
-                        <p class="text-gray-700 dark:text-gray-300 flex items-center">
-                            <img src="https://fonts.gstatic.com/s/i/materialicons/phone/24px.svg" alt="Phone" class="w-6 h-6 mr-2 icon">
-                            <a href="tel:+19785947083" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">+1 (978) 594-7083</a>
-                        </p>
+                <div class="about-nav flex justify-center space-x-4 mb-6">
+                    <button data-section="skills" class="px-4 py-2 bg-gray-200 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700">Skills</button>
+                    <button data-section="certifications" class="px-4 py-2 bg-gray-200 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700">Certifications</button>
+                </div>
+                <div class="about-content-sections">
+                    <div id="skills" class="about-content text-center fadeIn" style="display: none;">
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=aws" alt="AWS" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=blender" alt="Blender" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=cs" alt="C#" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=cpp" alt="C++" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=html" alt="HTML" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=css" alt="CSS" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=github" alt="GitHub" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=git" alt="Java" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=flask" alt="Flask" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=ps" alt="Photoshop" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=py" alt="Python" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=react" alt="React" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=unity" alt="Unity" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=ts" alt="TypeScript" class="w-16 h-16">
+                            </div>
+                            <div class="skill">
+                                <img src="https://skillicons.dev/icons?i=vscode" alt="VSCode" class="w-16 h-16">
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex justify-center md:justify-start space-x-6 mt-8 md:mt-0" data-aos="fade-up" data-aos-delay="200">
-                        <a href="https://www.linkedin.com/in/jaydonmoses/" target="_blank" class="hover:text-blue-500 transition-transform duration-300 transform hover:scale-110">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg" alt="LinkedIn" class="w-10 h-10 icon">
-                        </a>
-                        <a href="https://github.com/jaydonmoses" target="_blank" class="hover:text-gray-800 transition-transform duration-300 transform hover:scale-110">
-                            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="GitHub" class="w-10 h-10 icon">
-                        </a>
+                    <div id="certifications" class="about-content text-center fadeIn" style="display: none;">
+                        <ul class="list-disc pl-5">
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">Python (Kaggle)</p>
+                        </ul>
+                        <img src="https://jaydonmoses.github.io/Images%20for%20Website/KAGGLE%20PYTHON.png" alt="Python Certification" class="mx-auto rounded-lg shadow-lg w-64">
                     </div>
                 </div>
             </div>
         </section>
+        <script>
+            // Tab functionality for Skills and Certifications section
+            const skillsCertNavButtons = document.querySelectorAll('#skills-certifications .about-nav button');
+            const skillsCertContentSections = document.querySelectorAll('#skills-certifications .about-content-sections > div');
+            skillsCertNavButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    skillsCertNavButtons.forEach(btn => btn.classList.remove('active'));
+                    skillsCertContentSections.forEach(section => section.style.display = 'none'); // Hide all sections
+                    button.classList.add('active');
+                    const sectionId = button.dataset.section;
+                    document.getElementById(sectionId).style.display = 'block'; // Show the selected section
+                });
+            });
 
-    <footer class="bg-red-400 text-white text-center py-4">
+            // Set default active tab to Skills
+            document.querySelector('#skills-certifications .about-nav button[data-section="skills"]').classList.add('active');
+            document.getElementById('skills').style.display = 'block';
+        </script>
+
+        <section id="contact" class="py-16 scroll-animate">
+    <div class="card max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-up">Contact Me</h2>
+        <div class="about-contact-container flex flex-col md:flex-row justify-between items-center">
+            <div class="space-y-4 text-center md:text-left">
+                <p class="text-gray-700 dark:text-gray-300 flex items-center p-2 contact-info">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/googlemaps.svg" alt="Location" class="w-6 h-6 mr-2 icon">
+                    Boston, MA
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 flex items-center p-2 contact-info">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/gmail.svg" alt="Gmail" class="w-6 h-6 mr-2 icon">
+                    <a href="mailto:jaydon.10.moses@gmail.com" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">jaydon.10.moses@gmail.com</a>
+                </p>
+                <p class="text-gray-700 dark:text-gray-300 flex items-center p-2 contact-info">
+                    <img src="https://api.iconify.design/material-symbols:phone-in-talk-rounded.svg" alt="Phone" class="w-6 h-6 mr-2 icon">
+                    <a href="tel:9785947083" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100">+1 978 594 7083</a>
+                </p>
+            </div>
+            <div class="flex justify-center md:justify-start space-x-6 mt-8 md:mt-0" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://www.linkedin.com/in/jaydonmoses/" target="_blank" class="hover:text-blue-500 transition-transform duration-300 transform hover:scale-110">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/linkedin.svg" alt="LinkedIn" class="w-10 h-10 icon">
+                </a>
+                <a href="https://github.com/jaydonmoses" target="_blank" class="hover:text-blue-500 transition-transform duration-300 transform hover:scale-110">
+                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/github.svg" alt="Github" class="w-10 h-10 icon">
+                </a>
+            </div>
+        </div>
+        <div class="mt-8 text-center" data-aos="fade-up" data-aos-delay="300">
+            <a href="your-cv.pdf" download class="bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">Download CV</a>
+        </div>
+    </div>
+</section>
+
+    <footer class="bg-red-400 text-white text-center py-4 fadeInUp">
         <p>© 2024 Jaydon Moses. All rights reserved.</p>
     </footer>
 
@@ -678,7 +917,7 @@
         // Initialize AOS
         AOS.init({ duration: 1000, easing: 'ease-in-out', once: true });
 
-        // GitHub API Integration for Projects with repository images
+        // GitHub API Integration for Projects with README images
         async function fetchProjects() {
             try {
                 const response = await fetch('https://api.github.com/users/jaydonmoses/repos', {
@@ -689,23 +928,45 @@
                 });
                 const repos = await response.json();
                 const projectsGrid = document.getElementById('projects-grid');
+
                 if (projectsGrid) {
-                    projectsGrid.innerHTML = repos.map(repo => `
-                        <div class="project-card">
-                            <img src="${repo.owner.avatar_url}" alt="${repo.name}" class="w-full h-48 object-cover">
-                            <div class="p-6">
-                                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">${repo.name}</h3>
-                                <p class="text-gray-600 dark:text-gray-400 mb-4">${repo.description || 'No description available.'}</p>
-                                <p class="text-sm text-gray-500 dark:text-gray-400">Language: ${repo.language || 'N/A'}</p>
-                                <a href="${repo.html_url}" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">View Project</a>
-                            </div>
-                        </div>
-                    `).join('');
+                    const projectCards = await Promise.all(
+                        repos.map(async (repo) => {
+                            let imageUrl = repo.owner.avatar_url; // Default to avatar if no README image
+                            try {
+                                const readmeResponse = await fetch(`https://raw.githubusercontent.com/${repo.owner.login}/${repo.name}/main/README.md`);
+                                if (readmeResponse.ok) {
+                                    const readmeContent = await readmeResponse.text();
+                                    const imageMatch = readmeContent.match(/!\[.*?\]\((.*?)\)/); // Match Markdown image syntax
+                                    if (imageMatch && imageMatch[1]) {
+                                        imageUrl = imageMatch[1]; // Use the first image found in the README
+                                    }
+                                }
+                            } catch (error) {
+                                console.warn(`Error fetching README for ${repo.name}:`, error);
+                            }
+
+                            return `
+                                <div class="project-card">
+                                    <img src="${imageUrl}" alt="${repo.name}" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">${repo.name}</h3>
+                                        <p class="text-gray-600 dark:text-gray-400 mb-4">${repo.description || 'No description available.'}</p>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Language: ${repo.language || 'N/A'}</p>
+                                        <a href="${repo.html_url}" target="_blank" class="text-blue-600 dark:text-blue-400 hover:underline">View Project</a>
+                                    </div>
+                                </div>
+                            `;
+                        })
+                    );
+
+                    projectsGrid.innerHTML = projectCards.join('');
                 }
             } catch (error) {
                 console.error('Error fetching projects:', error);
             }
         }
+
         fetchProjects();
 
         // GitHub API Integration for Skills using skill-icons
@@ -773,7 +1034,7 @@
                     "Oversaw daily store operations, inventory management, and vendor coordination.",
                     "Provided customer service interactions, handling transactions, inquiries, and issue resolution."
                 ],
-                logo: "https://upload.wikimedia.org/wikipedia/en/thumb/3/3e/Irving_Oil_logo.svg/1200px-Irving_Oil_logo.svg.png"
+                logo: "https://images.seeklogo.com/logo-png/7/1/irving-oil-logo-png_seeklogo-73606.png"
             },
             {
                 title: "Store Cashier",
@@ -785,7 +1046,7 @@
                     "Customer service experience handling a large volume of customers.",
                     "Kitchen prep, handling orders, transactions, and ensuring smooth kitchen operations."
                 ],
-                logo: "https://flipthebird.com/wp-content/uploads/2020/10/flip-the-bird-logo.png"
+                logo: "https://greaterlynnchamber.com/wp-content/uploads/2023/01/Screenshot-2023-01-11-at-2.04.38-PM.png"
             }
         ];
 
@@ -801,7 +1062,7 @@
                     "General Biology",
                     "General Chemistry"
                 ],
-                logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Northeastern_University_seal.svg/1200px-Northeastern_University_seal.svg.png"
+                logo: "data:image/png;base64,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"
             }
         ];
 
@@ -818,8 +1079,8 @@
             const newsContainer = document.getElementById('news');
 
             // Render experience cards
-            experienceContainer.innerHTML = experienceData.map(exp => `
-                <div class="info-card">
+            experienceContainer.innerHTML = experienceData.map((exp, index) => `
+                <div class="info-card experience-card" style="animation-delay: ${index * 0.2}s;">
                     <img src="${exp.logo}" alt="${exp.company}" class="rounded-full">
                     <h3 class="text-center">${exp.title}</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400 text-center">${exp.company}</p>
@@ -832,8 +1093,8 @@
             `).join('');
 
             // Render education cards
-            educationContainer.innerHTML = educationData.map(edu => `
-                <div class="info-card">
+            educationContainer.innerHTML = educationData.map((edu, index) => `
+                <div class="info-card education-card" style="animation-delay: ${index * 0.2}s;">
                     <img src="${edu.logo}" alt="${edu.institution}" class="rounded-full">
                     <h3 class="text-center">${edu.institution}</h3>
                     <p class="text-sm text-gray-600 dark:text-gray-400 text-center">${edu.degree}</p>
@@ -874,6 +1135,51 @@
                 behavior: 'smooth'
             });
         });
+
+        // Scroll animation functionality
+        const scrollElements = document.querySelectorAll('.scroll-animate');
+
+        const elementInView = (el, offset = 100) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return elementTop <= (window.innerHeight - offset);
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('visible');
+        };
+
+        const hideScrollElement = (element) => {
+            element.classList.remove('visible');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 150)) {
+                    displayScrollElement(el);
+                } else {
+                    hideScrollElement(el);
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScrollAnimation);
+
+        // Trigger animations on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            handleScrollAnimation();
+        });
+
+        // Add fade-in transitions for dynamically loaded content
+        document.addEventListener('DOMContentLoaded', () => {
+            const newsSection = document.getElementById('news');
+            const skillsSection = document.getElementById('skills');
+            const certificationsSection = document.getElementById('certifications');
+
+            if (newsSection) newsSection.classList.add('fadeIn');
+            if (skillsSection) skillsSection.classList.add('fadeIn');
+            if (certificationsSection) certificationsSection.classList.add('fadeIn');
+        });
     </script>
+    </div>
 </body> 
 </html>
