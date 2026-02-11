@@ -1,5 +1,7 @@
 # Jaydon Moses Portfolio Website
 
+Link: jaydonmoses.github.io [jaydonmoses.github.io]
+
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS, showcasing projects, skills, and experience in computer science and machine learning.
 
 ## Features
@@ -59,8 +61,7 @@ npm run build
 
 1. **Push your changes** to the main/master branch
 2. **GitHub Actions** will automatically build and deploy your site
-3. **The site** will be available at: `https://jaydonmoses.github.io/jaydonmoses.github.io/`
-
+3. **The site** will be available at: `https://jaydonmoses.github.io/`
 ### Manual Deployment
 
 ```bash
