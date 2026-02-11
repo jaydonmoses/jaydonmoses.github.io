@@ -1,6 +1,6 @@
 # Jaydon Moses Portfolio Website
 
-Link: [jaydonmoses.github.io](jaydonmoses.github.io)
+Link: ([jaydonmoses.github.io](https://jaydonmoses.github.io/))
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS, showcasing projects, skills, and experience in computer science and machine learning.
 
