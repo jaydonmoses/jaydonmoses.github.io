@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jaydonmoses.github.io/jaydonmoses.github.io/",
+  "homepage": "https://jaydonmoses.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
